@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Typography } from "@/components/ui/display";
+import { StyleSheet, View } from "react-native";
 
 const Index = () => {
   return (
     <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+      <Typography variant="heroRegular">كريم نور امام</Typography>
     </View>
   );
 };
