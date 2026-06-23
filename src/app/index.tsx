@@ -1,10 +1,18 @@
 import { Typography } from "@/components/ui/display";
-import { StyleSheet, View } from "react-native";
+import { useTheme, useUserPreferences } from "@/hooks";
+import { Button, StyleSheet, View } from "react-native";
 
 const Index = () => {
+  const theme = useTheme();
+  const { setTheme } = useUserPreferences();
+
   return (
     <View style={styles.container}>
-      <Typography variant="heroRegular">كريم نور امام</Typography>
+      <Typography variant="heroRegular" color={theme.background.overlay}>
+        كريم نور امام
+      </Typography>
+      <Button title="Dark Mode" onPress={() => setTheme("dark")} />
+      <Button title="Light Mode" onPress={() => setTheme("light")} />
     </View>
   );
 };
