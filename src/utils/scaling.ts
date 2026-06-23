@@ -42,7 +42,7 @@ const [shortDimension, longDimension] =
 // ============================================================================
 
 scalingMethods.HS = (size: number) =>
-  (shortDimension / guideLineBaseWidth) * size;
+  Math.round((shortDimension / guideLineBaseWidth) * size);
 
 // ============================================================================
 // VS — VERTICAL SCALE  (think: TOP ↕ BOTTOM)
@@ -68,7 +68,7 @@ scalingMethods.HS = (size: number) =>
 // ============================================================================
 
 scalingMethods.VS = (size: number) =>
-  (longDimension / guideLineBaseHeight) * size;
+  Math.round((longDimension / guideLineBaseHeight) * size);
 
 // ============================================================================
 // FS — FONT SCALE  (only for fontSize)
