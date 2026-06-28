@@ -1,5 +1,6 @@
 import { fonts } from "@/constants";
 import { scalingMethods } from "@/utils";
+import useTranslation from "./useTranslation";
 const { FS, VS } = scalingMethods;
 
 const fontStyles = {
@@ -200,8 +201,8 @@ const fontStyles = {
 };
 
 const useFontStyles = () => {
-  const langauge = "ar"; // Replace this with your logic to determine the current language
-  return fontStyles[langauge];
+  const { language } = useTranslation();
+  return fontStyles[language];
 };
 
 export default useFontStyles;
