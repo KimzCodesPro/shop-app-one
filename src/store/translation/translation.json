@@ -4,15 +4,17 @@
     "keys": {
       "hello": "مرحبا",
       "light": "فاتح",
-      "dark": "داكن"
+      "dark": "داكن",
+      "welcome": "مرحبا {{name}} وعمرك {{age}}"
     }
   },
   "en": {
     "dir": "ltr",
     "keys": {
-      "hello": "Hello",
-      "light": "Light",
-      "dark": "Dark"
+      "hello": "Hello world",
+      "light": "Light mode",
+      "dark": "Dark mode",
+      "welcome": "Welcome {{name}} and your age is {{age}}"
     }
   }
 }
