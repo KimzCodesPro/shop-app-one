@@ -13,7 +13,7 @@ const useStyles = (
 ) => {
   const colors = useTheme();
 
-  const buttonHeight = size === "sm" ? VS(39) : VS(49);
+  const buttonHeight = size === "sm" ? VS(40) : VS(50);
 
   const buttonPaddingHorizontal = size === "sm" ? HS(16) : HS(24);
 
