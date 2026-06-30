@@ -15,6 +15,7 @@ const Button = ({
   style,
   disabled = false,
 }: ButtonProps) => {
+  console.log("render");
   const { styles, colors } = useStyles(variant, size, disabled);
 
   const typographyVariant = size === "sm" ? "smallBold" : "normalBold";

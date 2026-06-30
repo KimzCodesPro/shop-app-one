@@ -1,18 +1,47 @@
 import { Button } from "@/components/ui/inputs";
-import { useUserPreferences } from "@/hooks";
+import { useTheme, useUserPreferences } from "@/hooks";
+import { useState } from "react";
 import { Button as RNButton, StyleSheet, View } from "react-native";
 const Index = () => {
+  const colors = useTheme();
   const { setTheme, setLanguage } = useUserPreferences();
+  const [stateOne, setStateOne] = useState(1);
+  const [stateTwo, setStateTwo] = useState(1);
+
+  const test = () => {
+    setStateOne(stateOne + 1);
+  };
+
+  const testTwo = () => {
+    setStateTwo(stateTwo + 1);
+  };
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      padding: 16,
+      backgroundColor: colors.background.base,
+    },
+  });
 
   return (
     <View style={styles.container}>
       <Button
-        disabled={true}
+        size="lg"
+        variant="ghost"
+        icon="eye"
+        title="Custom Button"
+        onPress={test}
+        loading={{ indicator: false, text: "Loading..." }}
+      />
+      <Button
         size="lg"
         variant="danger"
         icon="eye"
         title="Custom Button"
-        onPress={() => console.log("Button Pressed")}
+        onPress={testTwo}
         loading={{ indicator: false, text: "Loading..." }}
       />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
@@ -22,14 +51,5 @@ const Index = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 16,
-  },
-});
 
 export default Index;
