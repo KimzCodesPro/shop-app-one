@@ -1,4 +1,4 @@
-import { Radio } from "@/components/ui/inputs";
+import { CheckBox } from "@/components/ui/inputs";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useState } from "react";
 import { Button as RNButton, StyleSheet, View } from "react-native";
@@ -26,29 +26,29 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
-      <Radio
-        isActive={onChange.option1}
+      <CheckBox
+        isSelected={onChange.option1}
         onChange={() => {
           setOnChange({
-            ...radioOptionsInit,
+            ...onChange,
             option1: !onChange.option1,
           });
         }}
       />
-      <Radio
-        isActive={onChange.option2}
+      <CheckBox
+        isSelected={onChange.option2}
         onChange={() => {
           setOnChange({
-            ...radioOptionsInit,
+            ...onChange,
             option2: !onChange.option2,
           });
         }}
       />
-      <Radio
-        isActive={onChange.option3}
+      <CheckBox
+        isSelected={onChange.option3}
         onChange={() => {
           setOnChange({
-            ...radioOptionsInit,
+            ...onChange,
             option3: !onChange.option3,
           });
         }}
