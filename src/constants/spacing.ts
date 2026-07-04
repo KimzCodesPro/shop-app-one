@@ -2,6 +2,10 @@ import { scalingMethods } from "../utils/";
 const { HS, VS } = scalingMethods;
 
 const spacing = {
+  space4: {
+    width: HS(4),
+    height: VS(4),
+  },
   space8: {
     width: HS(8),
     height: VS(8),

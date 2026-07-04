@@ -1,6 +1,4 @@
-import Icon from "@/components/icons";
-import { Typography } from "@/components/ui/display";
-import { Button } from "@/components/ui/inputs";
+import { Switch } from "@/components/ui/inputs";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useState } from "react";
 import { Button as RNButton, StyleSheet, View } from "react-native";
@@ -8,16 +6,7 @@ import { Button as RNButton, StyleSheet, View } from "react-native";
 const Index = () => {
   const colors = useTheme();
   const { setTheme, setLanguage } = useUserPreferences();
-  const [stateOne, setStateOne] = useState(1);
-  const [stateTwo, setStateTwo] = useState(1);
-
-  const test = () => {
-    setStateOne(stateOne + 1);
-  };
-
-  const testTwo = () => {
-    setStateTwo(stateTwo + 1);
-  };
+  const [selected, setSelected] = useState(true);
 
   const styles = StyleSheet.create({
     container: {
@@ -31,25 +20,12 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
-      <Typography variant="heroBold" textTransform="lowercase">
-        Hello wORD
-      </Typography>
-      <Icon name="chevron" flip />
-      <Button
-        size="lg"
-        variant="ghost"
-        icon="eye"
-        title="Custom Button"
-        onPress={test}
-        loading={{ indicator: false, text: "Loading..." }}
-      />
-      <Button
-        size="lg"
-        variant="danger"
-        icon="eye"
-        title="Custom Button"
-        onPress={testTwo}
-        loading={{ indicator: false, text: "Loading..." }}
+      <Switch
+        disabled
+        isActive={selected}
+        onChange={() => {
+          setSelected(!selected);
+        }}
       />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
