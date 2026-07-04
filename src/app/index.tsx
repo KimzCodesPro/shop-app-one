@@ -1,7 +1,10 @@
+import Icon from "@/components/icons";
+import { Typography } from "@/components/ui/display";
 import { Button } from "@/components/ui/inputs";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useState } from "react";
 import { Button as RNButton, StyleSheet, View } from "react-native";
+
 const Index = () => {
   const colors = useTheme();
   const { setTheme, setLanguage } = useUserPreferences();
@@ -28,6 +31,10 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
+      <Typography variant="heroBold" textTransform="lowercase">
+        Hello wORD
+      </Typography>
+      <Icon name="chevron" flip />
       <Button
         size="lg"
         variant="ghost"

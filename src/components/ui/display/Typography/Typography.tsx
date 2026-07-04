@@ -7,6 +7,7 @@ type TypographyProps = {
   children: React.ReactNode;
   style?: StyleProp<TextStyle>;
   color?: string;
+  textTransform?: "none" | "capitalize" | "uppercase" | "lowercase";
 } & TextProps;
 
 const Typography = ({
@@ -14,11 +15,15 @@ const Typography = ({
   children,
   style,
   color,
+  textTransform,
   ...props
 }: TypographyProps) => {
   const typographyStyles = useFontStyles();
   return (
-    <Text style={[typographyStyles[variant], { color }, style]} {...props}>
+    <Text
+      style={[typographyStyles[variant], { color, textTransform }, style]}
+      {...props}
+    >
       {children}
     </Text>
   );

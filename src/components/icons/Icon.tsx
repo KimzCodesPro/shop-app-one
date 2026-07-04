@@ -1,11 +1,17 @@
+import { useTranslation } from "@/hooks";
 import { Text, View } from "react-native";
 import iconMapper from "./components/iconMapper";
 import { IconName, IconProps } from "./types";
 
-type IconComponentProps = { name: IconName; isRTL?: boolean } & IconProps;
+type IconComponentProps = { name: IconName; flip?: boolean } & IconProps;
 
-const Icon = ({ name, size, color, style, isRTL }: IconComponentProps) => {
+const Icon = ({ name, size, color, style, flip }: IconComponentProps) => {
+  const { direction } = useTranslation();
+
   const IconComponent = iconMapper[name];
+
+  const shouldFlip = flip && direction === "rtl";
+
   if (!IconComponent) {
     return (
       <View>
@@ -18,7 +24,7 @@ const Icon = ({ name, size, color, style, isRTL }: IconComponentProps) => {
     <IconComponent
       size={size}
       color={color}
-      style={[style, { transform: [{ scaleX: isRTL ? -1 : 1 }] }]}
+      style={[style, { transform: [{ scaleX: shouldFlip ? -1 : 1 }] }]}
     />
   );
 };
