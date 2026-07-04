@@ -1,5 +1,5 @@
 import { Pressable, View } from "react-native";
-import useStyles from "../Radio/useStyles";
+import useStyles from "./useStyles";
 
 type RadioProps = {
   isActive: boolean;

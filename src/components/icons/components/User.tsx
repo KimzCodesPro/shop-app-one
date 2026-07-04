@@ -1,9 +1,11 @@
+import { scalingMethods } from "@/utils";
 import Svg, { Path } from "react-native-svg";
 import { IconProps } from "../types";
-const SVGComponent = ({ size = 24, color = "black", style }: IconProps) => (
+const { HS, VS } = scalingMethods;
+const User = ({ size = 24, color = "black", style }: IconProps) => (
   <Svg
-    width={size}
-    height={size}
+    width={HS(size)}
+    height={VS(size)}
     viewBox="0 0 24 24"
     fill="none"
     stroke={color}
@@ -16,4 +18,4 @@ const SVGComponent = ({ size = 24, color = "black", style }: IconProps) => (
     <Path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
   </Svg>
 );
-export default SVGComponent;
+export default User;

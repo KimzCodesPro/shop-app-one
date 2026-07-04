@@ -2,7 +2,7 @@ import { scalingMethods } from "@/utils";
 import Svg, { Path } from "react-native-svg";
 import { IconProps } from "../types";
 const { HS, VS } = scalingMethods;
-const Chevron = ({ size = 24, color = "black", style }: IconProps) => (
+const Check = ({ size = 24, color = "black", style }: IconProps) => (
   <Svg
     width={HS(size)}
     height={VS(size)}
@@ -14,7 +14,7 @@ const Chevron = ({ size = 24, color = "black", style }: IconProps) => (
     strokeLinejoin="round"
     style={style}
   >
-    <Path d="M15 6l-6 6l6 6" />
+    <Path d="M5 12l5 5l10 -10" />
   </Svg>
 );
-export default Chevron;
+export default Check;
