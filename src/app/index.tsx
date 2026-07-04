@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <View style={styles.container}>
       <CheckBox
-        isActive={onChange.option1}
+        isSelected={onChange.option1}
         onChange={() => {
           setOnChange({
             ...onChange,
@@ -36,7 +36,7 @@ const Index = () => {
         }}
       />
       <CheckBox
-        isActive={onChange.option2}
+        isSelected={onChange.option2}
         onChange={() => {
           setOnChange({
             ...onChange,
@@ -45,7 +45,7 @@ const Index = () => {
         }}
       />
       <CheckBox
-        isActive={onChange.option3}
+        isSelected={onChange.option3}
         onChange={() => {
           setOnChange({
             ...onChange,
