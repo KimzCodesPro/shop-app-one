@@ -1,18 +1,9 @@
-import { CheckBox } from "@/components/ui/inputs";
+import { RowNav } from "@/components/ui/navigations";
 import { useTheme, useUserPreferences } from "@/hooks";
-import { useState } from "react";
 import { Button as RNButton, StyleSheet, View } from "react-native";
-
-const radioOptionsInit = {
-  option1: false,
-  option2: false,
-  option3: false,
-};
 const Index = () => {
   const colors = useTheme();
   const { setTheme, setLanguage } = useUserPreferences();
-
-  const [onChange, setOnChange] = useState(radioOptionsInit);
 
   const styles = StyleSheet.create({
     container: {
@@ -26,32 +17,13 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
-      <CheckBox
-        isSelected={onChange.option1}
-        onChange={() => {
-          setOnChange({
-            ...onChange,
-            option1: !onChange.option1,
-          });
-        }}
-      />
-      <CheckBox
-        isSelected={onChange.option2}
-        onChange={() => {
-          setOnChange({
-            ...onChange,
-            option2: !onChange.option2,
-          });
-        }}
-      />
-      <CheckBox
-        isSelected={onChange.option3}
-        onChange={() => {
-          setOnChange({
-            ...onChange,
-            option3: !onChange.option3,
-          });
-        }}
+      <RowNav
+        onPress={() => {}}
+        variant="danger"
+        title="logout"
+        icon="eye"
+        trailing="chevronWithValue"
+        trailingValue="value"
       />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
