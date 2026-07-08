@@ -1,10 +1,11 @@
-import { RowNav } from "@/components/ui/navigations";
+import { TextInput } from "@/components/ui/inputs";
 import { useTheme, useUserPreferences } from "@/hooks";
+import { useState } from "react";
 import { Button as RNButton, StyleSheet, View } from "react-native";
 const Index = () => {
   const colors = useTheme();
   const { setTheme, setLanguage } = useUserPreferences();
-
+  const [userName, setUserName] = useState("");
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -15,15 +16,21 @@ const Index = () => {
     },
   });
 
+  const userNameOnChange = (text: string) => {
+    setUserName(text);
+  };
+
   return (
     <View style={styles.container}>
-      <RowNav
-        onPress={() => {}}
-        variant="danger"
-        title="logout"
-        icon="eye"
-        trailing="chevronWithValue"
-        trailingValue="value"
+      <TextInput
+        type="text"
+        label="User Name"
+        icon="user"
+        placeholder="Insert User Name"
+        value={userName}
+        onChange={userNameOnChange}
+        onClearInput={() => setUserName("")}
+        errorMessage="this invalid"
       />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
