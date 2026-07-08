@@ -42,7 +42,7 @@ const useStyles = (
       alignItems: "center",
       justifyContent: "center",
       gap: spacing.space8.width,
-      borderRadius: variant === "chip" ? radius.full : radius.md,
+      borderRadius: variant === "chip" ? radius.full : radius.sm,
       borderWidth: HS(1),
       paddingHorizontal: buttonPaddingHorizontal,
       borderColor: borderColorVariant[variant],
