@@ -1,11 +1,12 @@
-import { TextInput } from "@/components/ui/inputs";
+import { FormInput } from "@/components/ui/inputs";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useState } from "react";
 import { Button as RNButton, StyleSheet, View } from "react-native";
+
 const Index = () => {
+  const [userName, setUserName] = useState("");
   const colors = useTheme();
   const { setTheme, setLanguage } = useUserPreferences();
-  const [userName, setUserName] = useState("");
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -16,21 +17,26 @@ const Index = () => {
     },
   });
 
-  const userNameOnChange = (text: string) => {
+  const insertUserName = (text: string) => {
     setUserName(text);
   };
 
   return (
     <View style={styles.container}>
-      <TextInput
+      <FormInput
         type="text"
+        iconName="building"
         label="User Name"
-        icon="user"
-        placeholder="Insert User Name"
+        placeHolder="Inser User Name"
+        clearInput={() => setUserName("")}
         value={userName}
-        onChange={userNameOnChange}
-        onClearInput={() => setUserName("")}
-        errorMessage="this invalid"
+        onChangeText={insertUserName}
+      />
+      <FormInput
+        type="password"
+        label="Email Name"
+        placeHolder="Inser Email Name"
+        errorMessage="there is error"
       />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
