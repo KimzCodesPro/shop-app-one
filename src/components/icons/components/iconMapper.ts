@@ -5,6 +5,7 @@ import Chevron from "./Chevron";
 import Close from "./Close";
 import Eye from "./Eye";
 import EyeOff from "./EyeOff";
+import Lock from "./Lock";
 import User from "./User";
 
 const iconMapper = {
@@ -16,6 +17,7 @@ const iconMapper = {
   check: Check,
   building: Building,
   close: Close,
+  lock: Lock,
 };
 
 export default iconMapper;
