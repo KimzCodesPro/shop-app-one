@@ -1,10 +1,8 @@
-import { FormInput } from "@/components/ui/inputs";
+import { TopBar } from "@/components/ui/navigations";
 import { useTheme, useUserPreferences } from "@/hooks";
-import { useState } from "react";
 import { Button as RNButton, StyleSheet, View } from "react-native";
 
 const Index = () => {
-  const [userName, setUserName] = useState("");
   const colors = useTheme();
   const { setTheme, setLanguage } = useUserPreferences();
   const styles = StyleSheet.create({
@@ -17,26 +15,19 @@ const Index = () => {
     },
   });
 
-  const insertUserName = (text: string) => {
-    setUserName(text);
-  };
+  const topBarActionHandler = () => {};
 
   return (
     <View style={styles.container}>
-      <FormInput
-        type="text"
-        iconName="building"
-        label="User Name"
-        placeHolder="Inser User Name"
-        clearInput={() => setUserName("")}
-        value={userName}
-        onChangeText={insertUserName}
-      />
-      <FormInput
-        type="password"
-        label="Email Name"
-        placeHolder="Inser Email Name"
-        errorMessage="there is error"
+      <TopBar
+        title="account page"
+        goBack
+        forceBack="/"
+        actionBtn={{
+          iconName: "check",
+          onPress: topBarActionHandler,
+          flipOnRTL: false,
+        }}
       />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
