@@ -1,13 +1,15 @@
 import { radius, spacing } from "@/constants";
 import { useFontStyles, useTheme } from "@/hooks";
 import { scalingMethods } from "@/utils";
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { StatusType } from "./types";
 const { HS, VS } = scalingMethods;
 
 const useStyles = (inputCurrentStatus: StatusType) => {
   const colors = useTheme();
   const fontFamilyStyles = useFontStyles();
+
+  const isAndroid = Platform.OS === "android";
 
   const borderColorMapping = {
     default: colors.fg.tertiary,
@@ -31,14 +33,19 @@ const useStyles = (inputCurrentStatus: StatusType) => {
       borderColor: borderColorMapping[inputCurrentStatus],
       borderRadius: radius.sm,
       backgroundColor: colors.background.base,
-      gap: spacing.space12.width,
+      gap: spacing.space8.width,
     },
     textInput: {
       alignSelf: "stretch",
       flex: 1,
       color: colors.fg.primary,
       ...fontFamilyStyles.smallRegular,
-      lineHeight: 0,
+      lineHeight: isAndroid ? fontFamilyStyles.smallRegular.lineHeight : 0,
+      textAlignVertical: "center",
+      textAlign: "left",
+      writingDirection: "ltr",
+      paddingVertical: 0,
+      includeFontPadding: false,
     },
   });
   return { styles, colors };
