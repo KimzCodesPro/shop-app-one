@@ -36,7 +36,7 @@
       "base": "#f59e0b",
       "tint": "#fef3c7"
     },
-    "rating": "#fbbf24"
+    "misc": { "rating": "#fbbf24", "shadow": "#000000" }
   },
   "dark": {
     "fg": {
@@ -75,6 +75,6 @@
       "base": "#f59e0b",
       "tint": "#3a2a08"
     },
-    "rating": "#fbbf24"
+    "misc": { "rating": "#fbbf24", "shadow": "#000000" }
   }
 }
