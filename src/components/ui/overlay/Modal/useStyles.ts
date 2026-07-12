@@ -21,8 +21,9 @@ const useStyles = () => {
       width: "100%",
       backgroundColor: colors.background.base,
       borderRadius: radius.xl,
-      paddingVertical: spacing.space12.height,
-      paddingHorizontal: spacing.space12.width,
+      paddingVertical: spacing.space24.height,
+      paddingHorizontal: spacing.space24.width,
+      gap: spacing.space16.height,
       shadowColor: colors.misc.shadow,
       shadowOffset: {
         width: 0,
