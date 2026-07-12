@@ -15,7 +15,7 @@ const useStyles = () => {
       borderRadius: radius.sheet,
     },
     handleStyle: {
-      paddingTop: spacing.space24.height,
+      paddingTop: spacing.space16.height,
       paddingBottom: 0,
     },
     handleIndicatorStyle: {
@@ -27,9 +27,10 @@ const useStyles = () => {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      paddingHorizontal: spacing.space24.width,
-      paddingVertical: spacing.space20.height,
       gap: spacing.space16.height,
+      paddingHorizontal: spacing.space24.width,
+      paddingTop: spacing.space16.height,
+      paddingBottom: spacing.space24.height,
     },
     title: {
       color: colors.fg.primary,
