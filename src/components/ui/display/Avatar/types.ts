@@ -1,8 +1,10 @@
-export type Size = "sm" | "md" | "lg";
+import { StyleProp, TextStyle } from "react-native";
 
-type AvatarBaseProps = { source: string };
+export type Sizes = "sm" | "md" | "lg";
+
+type AvatarBaseProps = { imgSrc: string; style?: StyleProp<TextStyle> };
 type AvatarTypeProps =
-  | { size?: Exclude<Size, "lg">; enableUploader?: never }
-  | { size?: Exclude<Size, "sm" | "md">; enableUploader?: boolean };
+  | { size?: Exclude<Sizes, "lg">; enableUploader?: never }
+  | { size?: Exclude<Sizes, "sm" | "md">; enableUploader?: boolean };
 
 export type AvatarProps = AvatarTypeProps & AvatarBaseProps;

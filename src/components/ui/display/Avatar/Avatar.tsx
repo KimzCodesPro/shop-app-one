@@ -5,13 +5,13 @@ import { View } from "react-native";
 import { AvatarProps } from "./types";
 import useStyles from "./useStyles";
 
-const Avatar = ({ size = "md", enableUploader, source }: AvatarProps) => {
+const Avatar = ({ size = "md", enableUploader, imgSrc }: AvatarProps) => {
   const { styles, colors } = useStyles(size);
   return (
-    <View style={styles.container}>
+    <View>
       <Image
         style={styles.img}
-        source={source}
+        source={imgSrc}
         contentFit="cover"
         placeholder={avatarPlaceholder}
         placeholderContentFit="cover"
