@@ -1,17 +1,17 @@
-import { avatarPlaceholder, personTest } from "@/assets/images";
+import { avatarPlaceholder } from "@/assets/images";
 import Icon from "@/components/icons";
 import { Image } from "expo-image";
 import { View } from "react-native";
 import { AvatarProps } from "./types";
 import useStyles from "./useStyles";
 
-const Avatar = ({ size = "md", enableUploader }: AvatarProps) => {
+const Avatar = ({ size = "md", enableUploader, source }: AvatarProps) => {
   const { styles, colors } = useStyles(size);
   return (
     <View style={styles.container}>
       <Image
         style={styles.img}
-        source={personTest}
+        source={source}
         contentFit="cover"
         placeholder={avatarPlaceholder}
         placeholderContentFit="cover"
