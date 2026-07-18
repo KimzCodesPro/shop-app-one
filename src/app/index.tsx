@@ -1,4 +1,4 @@
-import { Avatar } from "@/components/ui/display";
+import { UserGreeting } from "@/components/ui/display";
 import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useRef } from "react";
@@ -23,7 +23,12 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
-      <Avatar size="sm" source={personTest} />
+      <UserGreeting
+        imgSrc={personTest}
+        size="sm"
+        userName="Kareem"
+        meta="Welcome back"
+      />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
       <RNButton title="English" onPress={() => setLanguage("en")} />

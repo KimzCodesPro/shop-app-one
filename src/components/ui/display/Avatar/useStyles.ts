@@ -2,11 +2,11 @@ import { useTheme } from "@/hooks";
 import { radius } from "@/src/constants";
 import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
-import { Size } from "./types";
+import { Sizes } from "./types";
 
 const { HS, VS } = scalingMethods;
 
-const useStyles = (size: Size) => {
+const useStyles = (size: Sizes) => {
   const colors = useTheme();
 
   const sizes = {
@@ -24,7 +24,6 @@ const useStyles = (size: Size) => {
     },
   };
   const styles = StyleSheet.create({
-    container: {},
     img: {
       width: sizes[size].width,
       height: sizes[size].height,
