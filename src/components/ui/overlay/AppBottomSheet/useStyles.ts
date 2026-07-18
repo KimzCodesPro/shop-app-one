@@ -33,12 +33,12 @@ const useStyles = () => {
       paddingBottom: spacing.space24.height,
     },
     title: {
-      color: colors.fg.primary,
+      color: colors.foreground.primary,
       textAlign: "center",
       marginBottom: spacing.space8.height,
     },
     description: {
-      color: colors.fg.secondary,
+      color: colors.foreground.secondary,
 
       textAlign: "center",
     },

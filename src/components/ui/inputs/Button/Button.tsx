@@ -21,10 +21,10 @@ const Button = ({
   const typographyVariant = size === "sm" ? "smallBold" : "normalBold";
 
   const typographyColorVariant = {
-    primary: colors.fg.contrast,
+    primary: colors.foreground.contrast,
     link: colors.primary.base,
     chip: colors.primary.base,
-    ghost: colors.fg.primary,
+    ghost: colors.foreground.primary,
     danger: colors.danger.base,
   };
 
