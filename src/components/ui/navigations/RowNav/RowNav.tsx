@@ -16,7 +16,7 @@ const RowNav = ({
   const { styles, colors } = useStyles();
 
   const conditionalColor = {
-    default: colors.fg.primary,
+    default: colors.foreground.primary,
     danger: colors.danger.base,
   };
 

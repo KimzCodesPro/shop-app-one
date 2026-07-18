@@ -33,7 +33,7 @@ const FormInput = ({
   const resolvedIconName = type === "password" ? "lock" : iconName;
 
   const iconColorMapping = {
-    default: colors.fg.tertiary,
+    default: colors.foreground.tertiary,
     focused: colors.primary.base,
     filled: colors.primary.base,
     error: colors.danger.base,
@@ -53,7 +53,7 @@ const FormInput = ({
           value={value}
           onChangeText={onChangeText}
           placeholder={placeHolder}
-          placeholderTextColor={colors.fg.tertiary}
+          placeholderTextColor={colors.foreground.tertiary}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           secureTextEntry={type === "password" && !passwordVisible}
@@ -63,14 +63,14 @@ const FormInput = ({
             <Icon
               name={passwordVisible ? "eye-off" : "eye"}
               size={20}
-              color={colors.fg.tertiary}
+              color={colors.foreground.tertiary}
             />
           </Pressable>
         )}
 
         {type === "text" && value && (
           <Pressable onPress={clearInput}>
-            <Icon name="close" size={20} color={colors.fg.tertiary} />
+            <Icon name="close" size={20} color={colors.foreground.tertiary} />
           </Pressable>
         )}
       </View>

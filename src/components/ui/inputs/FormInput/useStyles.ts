@@ -12,7 +12,7 @@ const useStyles = (inputCurrentStatus: StatusType) => {
   const isAndroid = Platform.OS === "android";
 
   const borderColorMapping = {
-    default: colors.fg.tertiary,
+    default: colors.foreground.tertiary,
     focused: colors.primary.base,
     filled: colors.primary.base,
     error: colors.danger.base,
@@ -38,7 +38,7 @@ const useStyles = (inputCurrentStatus: StatusType) => {
     textInput: {
       alignSelf: "stretch",
       flex: 1,
-      color: colors.fg.primary,
+      color: colors.foreground.primary,
       ...fontFamilyStyles.smallRegular,
       lineHeight: isAndroid ? fontFamilyStyles.smallRegular.lineHeight : 0,
       textAlignVertical: "center",

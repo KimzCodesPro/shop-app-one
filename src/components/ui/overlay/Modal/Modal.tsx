@@ -25,12 +25,12 @@ const Modal = ({
       <View style={styles.backDrop}>
         <View style={styles.content}>
           <Pressable style={styles.contentCloseBTN} onPress={closeModal}>
-            <Icon name="close" size={20} color={colors.fg.primary} />
+            <Icon name="close" size={20} color={colors.foreground.primary} />
           </Pressable>
           <View style={styles.contentHeader}>
             <Typography
               variant="mediumBold"
-              color={colors.fg.primary}
+              color={colors.foreground.primary}
               style={styles.contentTitle}
             >
               {title}
@@ -39,7 +39,7 @@ const Modal = ({
             {description && (
               <Typography
                 variant="smallRegular"
-                color={colors.fg.secondary}
+                color={colors.foreground.secondary}
                 style={styles.contentDescription}
               >
                 {description}

@@ -1,5 +1,6 @@
 import BreifCase from "./BreifCase";
 import Building from "./Building";
+import Camera from "./Camera";
 import Check from "./Check";
 import Chevron from "./Chevron";
 import Close from "./Close";
@@ -18,6 +19,7 @@ const iconMapper = {
   building: Building,
   close: Close,
   lock: Lock,
+  camera: Camera,
 };
 
 export default iconMapper;

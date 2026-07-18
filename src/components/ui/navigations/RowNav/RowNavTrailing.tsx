@@ -13,13 +13,18 @@ const RowNavTrailing = ({ trailing, trailingValue }: RowNavTrailingProps) => {
       {trailing === "chevronWithValue" && (
         <Typography
           variant="smallRegular"
-          color={colors.fg.tertiary}
+          color={colors.foreground.tertiary}
           textTransform="capitalize"
         >
           {trailingValue}
         </Typography>
       )}
-      <Icon name="chevron" size={22} color={colors.fg.tertiary} flipOnRTL />
+      <Icon
+        name="chevron"
+        size={22}
+        color={colors.foreground.tertiary}
+        flipOnRTL
+      />
     </View>
   );
 };

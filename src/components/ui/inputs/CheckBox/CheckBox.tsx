@@ -19,7 +19,7 @@ const CheckBox = ({ isSelected, disabled, onChange, style }: CheckBoxProps) => {
     >
       {isSelected && (
         <View style={styles.indicator}>
-          <Icon name="check" size={16} color={colors.fg.contrast} />
+          <Icon name="check" size={16} color={colors.foreground.contrast} />
         </View>
       )}
     </Pressable>

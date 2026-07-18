@@ -11,7 +11,7 @@ const FormInputLabel = ({ label }: { label?: string }) => {
     <Typography
       variant="normalBold"
       style={styles.label}
-      color={colors.fg.primary}
+      color={colors.foreground.primary}
     >
       {label}
     </Typography>
