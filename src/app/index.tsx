@@ -2,7 +2,7 @@ import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useRef } from "react";
 import { Button as RNButton, StyleSheet, Text, View } from "react-native";
-import { InfoCard } from "../components/ui/display";
+import AddressCard from "../components/ui/display/AddressCard/AddressCard";
 
 const Index = () => {
   const BottomSheetREF = useRef<BottomSheetRef>(null);
@@ -22,12 +22,12 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
-      <InfoCard>
-        <InfoCard.Leading title="test new" description="test now" />
-        <InfoCard.Trailing>
-          <Text>Heoo</Text>
-        </InfoCard.Trailing>
-      </InfoCard>
+      <AddressCard
+        city="Giza"
+        address="Assem Hamuda"
+        type="apartment"
+        isSelected
+      />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
       <RNButton title="English" onPress={() => setLanguage("en")} />

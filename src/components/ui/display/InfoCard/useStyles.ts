@@ -31,7 +31,7 @@ const useStyles = (isSelected?: boolean) => {
       color: colors.foreground.tertiary,
     },
     trailing: {
-      //   alignItems: "flex-end",
+      alignItems: "flex-end",
       gap: spacing.space4.height,
     },
   });
