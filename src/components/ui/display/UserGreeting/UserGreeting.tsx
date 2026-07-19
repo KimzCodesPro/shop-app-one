@@ -5,35 +5,12 @@ import { UserGreetingProps } from "./types";
 import useStyles from "./useStyles";
 
 const UserGreeting = ({ size, imgSrc, userName, meta }: UserGreetingProps) => {
-  const { styles, colors } = useStyles();
-
-  const TypographyMapping = {
-    lg: {
-      userName: {
-        font: "mediumBold",
-        color: colors.foreground.primary,
-      },
-      meta: {
-        font: "smallRegular",
-        color: colors.foreground.tertiary,
-      },
-    },
-    sm: {
-      userName: {
-        font: "normalBold",
-        color: colors.foreground.primary,
-      },
-      meta: {
-        font: "smallRegular",
-        color: colors.foreground.secondary,
-      },
-    },
-  } as const;
+  const { styles, TypographyMapping } = useStyles();
 
   return (
     <View style={styles.container}>
       <Avatar imgSrc={imgSrc} size={size} />
-      <View style={styles.userInfo}>
+      <View>
         <Typography
           variant={TypographyMapping[size].userName.font}
           color={TypographyMapping[size].userName.color}
