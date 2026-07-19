@@ -10,10 +10,11 @@ const StatusBill = ({
   variant = "filled",
   label,
   color,
+  style,
 }: StatusBillProps) => {
   const { styles, strongColorType } = useStyles(color, variant);
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {iconName && (
         <Icon name={iconName} size={13} color={strongColorType[color]} />
       )}
