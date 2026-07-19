@@ -4,11 +4,17 @@ import Typography from "../Typography/Typography";
 import { UserGreetingProps } from "./types";
 import useStyles from "./useStyles";
 
-const UserGreeting = ({ size, imgSrc, userName, meta }: UserGreetingProps) => {
+const UserGreeting = ({
+  size,
+  imgSrc,
+  userName,
+  meta,
+  style,
+}: UserGreetingProps) => {
   const { styles, TypographyMapping } = useStyles();
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Avatar imgSrc={imgSrc} size={size} />
       <View>
         <Typography

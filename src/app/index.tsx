@@ -1,9 +1,8 @@
-import { UserGreeting } from "@/components/ui/display";
 import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useRef } from "react";
 import { Button as RNButton, StyleSheet, Text, View } from "react-native";
-import { personTest } from "../assets/images";
+import AddressCard from "../components/ui/display/AddressCard/AddressCard";
 
 const Index = () => {
   const BottomSheetREF = useRef<BottomSheetRef>(null);
@@ -23,11 +22,11 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
-      <UserGreeting
-        imgSrc={personTest}
-        size="sm"
-        userName="Kareem"
-        meta="Welcome back"
+      <AddressCard
+        city="Giza"
+        address="Assem Hamuda"
+        type="apartment"
+        isSelected
       />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
