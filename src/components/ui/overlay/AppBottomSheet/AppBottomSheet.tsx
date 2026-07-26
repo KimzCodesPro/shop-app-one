@@ -1,31 +1,20 @@
-import BottomSheet, {
-  BottomSheetBackdrop,
-  BottomSheetProps,
-  BottomSheetView,
-} from "@gorhom/bottom-sheet";
-import { Ref } from "react";
+import BottomSheet, { BottomSheetBackdrop } from "@gorhom/bottom-sheet";
+import { ComponentProps } from "react";
 import { View } from "react-native";
 import { Typography } from "../../display";
+import { AppBottomSheetProps } from "./types";
 import useStyles from "./useStyles";
-
-type AppBottomSheetProps = {
-  title: string;
-  description?: string;
-  ref: Ref<BottomSheet>;
-  bottomSheetProps?: BottomSheetProps;
-};
-
-export type BottomSheetRef = BottomSheet;
 
 const AppBottomSheet = ({
   title,
   description,
   bottomSheetProps,
   ref,
+  children,
 }: AppBottomSheetProps) => {
   const { styles } = useStyles();
 
-  const renderBackdrop = (props: any) => (
+  const RenderBackdrop = (props: any) => (
     <BottomSheetBackdrop
       disappearsOnIndex={-1}
       appearsOnIndex={1}
@@ -39,34 +28,43 @@ const AppBottomSheet = ({
     <>
       <BottomSheet
         ref={ref}
-        snapPoints={bottomSheetProps?.snapPoints ?? ["20%", "50%", "90%"]}
+        snapPoints={
+          bottomSheetProps?.snapPoints ?? ["20%", "50%", "70%", "90%"]
+        }
         index={bottomSheetProps?.index ?? -1}
         enableDynamicSizing={false}
         enablePanDownToClose
-        backdropComponent={renderBackdrop}
+        backdropComponent={RenderBackdrop}
         backgroundStyle={styles.bottomSheet}
         handleStyle={styles.handleStyle}
         handleIndicatorStyle={styles.handleIndicatorStyle}
         {...bottomSheetProps}
       >
-        <BottomSheetView style={styles.bottomSheetContainer}>
-          <View>
-            <Typography variant="mediumBold" style={styles.title}>
-              {title}
+        <View style={styles.container}>
+          <Typography variant="mediumBold" style={styles.title}>
+            {title}
+          </Typography>
+          {description && (
+            <Typography variant="smallRegular" style={styles.description}>
+              {description}
             </Typography>
-            {description && (
-              <Typography variant="smallRegular" style={styles.description}>
-                {description}
-              </Typography>
-            )}
-          </View>
-          <View style={styles.bottomSheetContent}>
-            {bottomSheetProps?.children}
-          </View>
-        </BottomSheetView>
+          )}
+        </View>
+        {children}
       </BottomSheet>
     </>
   );
 };
+
+const Content = ({ style, children, ...rest }: ComponentProps<typeof View>) => {
+  const { styles } = useStyles();
+  return (
+    <View style={[styles.content, style]} {...rest}>
+      {children}
+    </View>
+  );
+};
+
+AppBottomSheet.Content = Content;
 
 export default AppBottomSheet;

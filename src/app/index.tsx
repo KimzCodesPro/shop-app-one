@@ -48,13 +48,12 @@ const Index = () => {
         bottomSheetProps={{
           snapPoints: ["10%", "40%", "60%"],
           index: -1,
-          children: (
-            <View>
-              <Text>asdasd</Text>
-            </View>
-          ),
         }}
-      />
+      >
+        <View>
+          <Text>asdasd</Text>
+        </View>
+      </BottomSheet>
     </DismissKeyboard>
   );
 };

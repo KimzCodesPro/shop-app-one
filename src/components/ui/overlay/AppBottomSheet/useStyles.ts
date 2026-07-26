@@ -23,7 +23,7 @@ const useStyles = () => {
       height: VS(4),
       backgroundColor: colors.border.default,
     },
-    bottomSheetContainer: {
+    container: {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
@@ -42,7 +42,7 @@ const useStyles = () => {
 
       textAlign: "center",
     },
-    bottomSheetContent: {
+    content: {
       marginTop: spacing.space16.height,
     },
   });
