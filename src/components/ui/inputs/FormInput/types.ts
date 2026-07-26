@@ -3,7 +3,7 @@ import { StyleProp, ViewStyle } from "react-native";
 
 type FormInputPropsBase = {
   label?: string;
-  placeHolder: string;
+  placeholder: string;
   errorMessage?: string;
   value?: string;
   onChangeText?: (text: string) => void;

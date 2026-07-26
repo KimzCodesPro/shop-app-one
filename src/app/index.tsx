@@ -2,7 +2,8 @@ import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useRef } from "react";
 import { Button as RNButton, StyleSheet, Text, View } from "react-native";
-import AddressCard from "../components/ui/display/AddressCard/AddressCard";
+import { FormInput } from "../components/ui/inputs";
+import { DismissKeyboard } from "../components/ui/layout";
 
 const Index = () => {
   const BottomSheetREF = useRef<BottomSheetRef>(null);
@@ -21,12 +22,20 @@ const Index = () => {
   });
 
   return (
-    <View style={styles.container}>
-      <AddressCard
-        city="Giza"
-        address="Assem Hamuda"
-        type="apartment"
-        isSelected
+    <DismissKeyboard style={styles.container}>
+      <FormInput
+        type="text"
+        placeholder="Enter text"
+        iconName="eye"
+        value=""
+        onChangeText={() => {}}
+      />
+      <FormInput
+        type="text"
+        placeholder="Enter text"
+        iconName="eye"
+        value=""
+        onChangeText={() => {}}
       />
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
@@ -46,7 +55,7 @@ const Index = () => {
           ),
         }}
       />
-    </View>
+    </DismissKeyboard>
   );
 };
 

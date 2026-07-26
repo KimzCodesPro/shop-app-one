@@ -8,7 +8,7 @@ import useStyles from "./useStyles";
 
 const FormInput = ({
   label,
-  placeHolder,
+  placeholder,
   iconName,
   type,
   value,
@@ -52,7 +52,7 @@ const FormInput = ({
           style={styles.textInput}
           value={value}
           onChangeText={onChangeText}
-          placeholder={placeHolder}
+          placeholder={placeholder}
           placeholderTextColor={colors.foreground.tertiary}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
