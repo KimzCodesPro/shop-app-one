@@ -33,6 +33,14 @@ const useStyles = (
     danger: colors.background.base,
   };
 
+  const typographyColorVariant = {
+    primary: colors.foreground.contrast,
+    link: colors.primary.base,
+    chip: colors.primary.base,
+    ghost: colors.foreground.primary,
+    danger: colors.danger.base,
+  };
+
   const styles = StyleSheet.create({
     button: {
       opacity: disabled ? 0.7 : 1,
@@ -50,7 +58,7 @@ const useStyles = (
     },
   });
 
-  return { styles, colors };
+  return { styles, typographyColorVariant };
 };
 
 export default useStyles;
