@@ -14,23 +14,27 @@ const useStyles = () => {
       backgroundColor: colors.background.base,
       borderRadius: radius.sheet,
     },
-    handleStyle: {
-      paddingTop: spacing.space16.height,
-      paddingBottom: 0,
-    },
     handleIndicatorStyle: {
       width: HS(44),
       height: VS(4),
       backgroundColor: colors.border.default,
     },
+    handleStyle: {
+      paddingTop: spacing.space16.height,
+      paddingBottom: 0,
+    },
+
     container: {
       flex: 1,
-      justifyContent: "center",
       alignItems: "center",
-      gap: spacing.space16.height,
+
       paddingHorizontal: spacing.space24.width,
-      paddingTop: spacing.space16.height,
-      paddingBottom: spacing.space24.height,
+      paddingVertical: spacing.space16.height,
+    },
+    content: {
+      alignSelf: "stretch",
+      flex: 1,
+      marginTop: spacing.space16.height,
     },
     title: {
       color: colors.foreground.primary,
@@ -41,9 +45,6 @@ const useStyles = () => {
       color: colors.foreground.secondary,
 
       textAlign: "center",
-    },
-    content: {
-      marginTop: spacing.space16.height,
     },
   });
 

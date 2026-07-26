@@ -1,4 +1,9 @@
-import BottomSheet, { BottomSheetBackdrop } from "@gorhom/bottom-sheet";
+import BottomSheet, {
+  BottomSheetBackdrop,
+  BottomSheetFlatList,
+  BottomSheetScrollView,
+} from "@gorhom/bottom-sheet";
+import { Portal } from "@gorhom/portal";
 import { ComponentProps } from "react";
 import { View } from "react-native";
 import { Typography } from "../../display";
@@ -25,7 +30,7 @@ const AppBottomSheet = ({
   );
 
   return (
-    <>
+    <Portal>
       <BottomSheet
         ref={ref}
         snapPoints={
@@ -49,10 +54,10 @@ const AppBottomSheet = ({
               {description}
             </Typography>
           )}
+          {children}
         </View>
-        {children}
       </BottomSheet>
-    </>
+    </Portal>
   );
 };
 
@@ -65,6 +70,29 @@ const Content = ({ style, children, ...rest }: ComponentProps<typeof View>) => {
   );
 };
 
+const Scroll = ({
+  style,
+  children,
+  ...rest
+}: ComponentProps<typeof BottomSheetScrollView>) => {
+  const { styles } = useStyles();
+  return (
+    <BottomSheetScrollView style={[styles.content, style]} {...rest}>
+      {children}
+    </BottomSheetScrollView>
+  );
+};
+
+const List = ({
+  style,
+  ...rest
+}: ComponentProps<typeof BottomSheetFlatList>) => {
+  const { styles } = useStyles();
+  return <BottomSheetFlatList style={[styles.content, style]} {...rest} />;
+};
+
 AppBottomSheet.Content = Content;
+AppBottomSheet.Scroll = Scroll;
+AppBottomSheet.List = List;
 
 export default AppBottomSheet;

@@ -37,6 +37,11 @@ const Index = () => {
         value=""
         onChangeText={() => {}}
       />
+      <RNButton
+        title="open bottom sheet"
+        onPress={() => BottomSheetREF.current?.expand()}
+      />
+
       <RNButton title="Dark Mode" onPress={() => setTheme("dark")} />
       <RNButton title="Light Mode" onPress={() => setTheme("light")} />
       <RNButton title="English" onPress={() => setLanguage("en")} />
@@ -50,9 +55,11 @@ const Index = () => {
           index: -1,
         }}
       >
-        <View>
-          <Text>asdasd</Text>
-        </View>
+        <BottomSheet.Content>
+          <View>
+            <Text>asdasd</Text>
+          </View>
+        </BottomSheet.Content>
       </BottomSheet>
     </DismissKeyboard>
   );
