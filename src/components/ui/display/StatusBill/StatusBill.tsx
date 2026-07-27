@@ -12,15 +12,13 @@ const StatusBill = ({
   color,
   style,
 }: StatusBillProps) => {
-  const { styles, strongColorType } = useStyles(color, variant);
+  const { styles, strongColor } = useStyles(color, variant);
   return (
     <View style={[styles.container, style]}>
-      {iconName && (
-        <Icon name={iconName} size={13} color={strongColorType[color]} />
-      )}
+      {iconName && <Icon name={iconName} size={13} color={strongColor} />}
       <Typography
         variant="xsmallBold"
-        color={strongColorType[color]}
+        color={strongColor}
         textTransform="capitalize"
       >
         {label}

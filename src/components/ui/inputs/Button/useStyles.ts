@@ -17,29 +17,35 @@ const useStyles = (
 
   const buttonPaddingHorizontal = size === "sm" ? HS(16) : HS(24);
 
-  const backGroundColorVariant = {
-    primary: colors.primary.base,
-    link: colors.background.base,
-    chip: colors.background.base,
-    ghost: colors.background.base,
-    danger: colors.background.base,
-  };
+  const variantColors = {
+    primary: {
+      background: colors.primary.base,
+      typography: colors.foreground.contrast,
+      border: colors.primary.base,
+    },
+    chip: {
+      background: colors.background.base,
+      typography: colors.primary.base,
+      border: colors.primary.base,
+    },
+    link: {
+      background: colors.background.base,
+      typography: colors.primary.base,
+      border: colors.background.base,
+    },
+    ghost: {
+      background: colors.background.base,
+      typography: colors.foreground.primary,
+      border: colors.border.default,
+    },
+    danger: {
+      background: colors.background.base,
+      typography: colors.danger.base,
+      border: colors.background.base,
+    },
+  } as const;
 
-  const borderColorVariant = {
-    primary: colors.primary.base,
-    link: colors.background.base,
-    chip: colors.primary.base,
-    ghost: colors.border.default,
-    danger: colors.background.base,
-  };
-
-  const typographyColorVariant = {
-    primary: colors.foreground.contrast,
-    link: colors.primary.base,
-    chip: colors.primary.base,
-    ghost: colors.foreground.primary,
-    danger: colors.danger.base,
-  };
+  const currentVariantColors = variantColors[variant];
 
   const styles = StyleSheet.create({
     button: {
@@ -53,12 +59,12 @@ const useStyles = (
       borderRadius: variant === "chip" ? radius.full : radius.sm,
       borderWidth: HS(1),
       paddingHorizontal: buttonPaddingHorizontal,
-      borderColor: borderColorVariant[variant],
-      backgroundColor: backGroundColorVariant[variant],
+      borderColor: currentVariantColors.border,
+      backgroundColor: currentVariantColors.background,
     },
   });
 
-  return { styles, typographyColorVariant };
+  return { styles, typographyColor: currentVariantColors.typography };
 };
 
 export default useStyles;
