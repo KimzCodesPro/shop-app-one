@@ -1,9 +1,5 @@
-import { Keyboard, Pressable, StyleProp, ViewStyle } from "react-native";
-
-type DismissKeyboardProps = {
-  style?: StyleProp<ViewStyle>;
-  children: React.ReactNode;
-};
+import { Keyboard, Pressable } from "react-native";
+import { DismissKeyboardProps } from "./types";
 
 // Wrap a screen so tapping any empty area blurs the focused input and hides the
 // keyboard. Interactive children (buttons, inputs) still handle their own taps.

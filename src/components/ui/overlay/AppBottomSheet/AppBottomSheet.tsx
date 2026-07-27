@@ -3,6 +3,7 @@ import BottomSheet, {
   BottomSheetFlatList,
   BottomSheetScrollView,
 } from "@gorhom/bottom-sheet";
+import { opacity } from "@/constants";
 import { Portal } from "@gorhom/portal";
 import { ComponentProps } from "react";
 import { View } from "react-native";
@@ -23,7 +24,7 @@ const AppBottomSheet = ({
     <BottomSheetBackdrop
       disappearsOnIndex={-1}
       appearsOnIndex={1}
-      opacity={1}
+      opacity={opacity.full}
       {...props}
       style={styles.backDrop}
     />
