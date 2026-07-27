@@ -13,6 +13,14 @@ const useStyles = () => {
     bottomSheet: {
       backgroundColor: colors.background.base,
       borderRadius: radius.sheet,
+      shadowColor: colors.misc.shadow,
+      shadowOffset: {
+        width: 0,
+        height: -VS(4),
+      },
+      shadowOpacity: 0.08,
+      shadowRadius: HS(16),
+      elevation: 8,
     },
     handleIndicatorStyle: {
       width: HS(44),
