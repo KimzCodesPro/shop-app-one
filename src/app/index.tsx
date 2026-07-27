@@ -2,7 +2,6 @@ import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useRef } from "react";
 import { Button as RNButton, StyleSheet, Text, View } from "react-native";
-import { FormInput } from "../components/ui/inputs";
 import { DismissKeyboard } from "../components/ui/layout";
 
 const Index = () => {
@@ -23,20 +22,6 @@ const Index = () => {
 
   return (
     <DismissKeyboard style={styles.container}>
-      <FormInput
-        type="text"
-        placeholder="Enter text"
-        iconName="eye"
-        value=""
-        onChangeText={() => {}}
-      />
-      <FormInput
-        type="text"
-        placeholder="Enter text"
-        iconName="eye"
-        value=""
-        onChangeText={() => {}}
-      />
       <RNButton
         title="open bottom sheet"
         onPress={() => BottomSheetREF.current?.expand()}
