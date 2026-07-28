@@ -51,7 +51,6 @@ const useStyles = () => {
     },
     description: {
       color: colors.foreground.secondary,
-
       textAlign: "center",
     },
   });
