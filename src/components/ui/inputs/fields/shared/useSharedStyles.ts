@@ -24,8 +24,7 @@ const useSharedStyles = (currentStatus: StatusType) => {
     container: {
       alignSelf: "stretch",
     },
-
-    inputWrapper: {
+    fieldWrapper: {
       height: VS(52),
       flexDirection: "row",
       alignItems: "center",
@@ -36,6 +35,20 @@ const useSharedStyles = (currentStatus: StatusType) => {
       borderRadius: radius.sm,
       backgroundColor: colors.background.base,
       gap: spacing.space8.width,
+    },
+    pressableWrapper: {
+      alignSelf: "stretch",
+    },
+    dropdownValueText: {
+      flex: 1,
+    },
+    dropdownOption: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      height: VS(45),
+      borderBottomWidth: HS(1),
+      borderBottomColor: colors.border.default,
     },
     textInput: {
       alignSelf: "stretch",

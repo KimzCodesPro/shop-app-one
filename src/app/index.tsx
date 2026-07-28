@@ -1,4 +1,4 @@
-import { TextInput } from "@/components/ui/inputs";
+import { Dropdown, TextInput } from "@/components/ui/inputs";
 import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import { useTheme, useUserPreferences } from "@/hooks";
 import { useRef, useState } from "react";
@@ -14,6 +14,7 @@ const Index = () => {
   const [fullName, setFullName] = useState("");
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
+  const [city, setCity] = useState("");
 
   const styles = StyleSheet.create({
     container: {
@@ -23,9 +24,6 @@ const Index = () => {
       padding: 16,
       gap: 16,
       backgroundColor: colors.background.base,
-    },
-    field: {
-      width: "100%",
     },
   });
 
@@ -38,7 +36,6 @@ const Index = () => {
         value={fullName}
         onChangeText={setFullName}
         clearInput={() => setFullName("")}
-        style={styles.field}
       />
 
       <TextInput
@@ -53,7 +50,19 @@ const Index = () => {
             : undefined
         }
         clearInput={() => setAddress("")}
-        style={styles.field}
+      />
+
+      <Dropdown
+        label="City"
+        placeholder="Select your city"
+        iconName="building"
+        value={city}
+        onSelect={setCity}
+        options={[
+          { label: "Cairo", value: "cairo" },
+          { label: "Alexandria", value: "alexandria" },
+          { label: "Giza", value: "giza" },
+        ]}
       />
 
       <TextInput
@@ -62,7 +71,6 @@ const Index = () => {
         placeholder="Enter your password"
         value={password}
         onChangeText={setPassword}
-        style={styles.field}
       />
 
       <RNButton

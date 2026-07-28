@@ -3,6 +3,8 @@ import Building from "./Building";
 import Camera from "./Camera";
 import Check from "./Check";
 import Chevron from "./Chevron";
+import ChevronDown from "./ChevronDown";
+import ChevronUp from "./ChevronUp";
 import Close from "./Close";
 import CreditCard from "./CreditCard";
 import Eye from "./Eye";
@@ -26,6 +28,8 @@ const iconMapper = {
   "credit-card": CreditCard,
   "map-pin": MapPin,
   home: Home,
+  "chevron-down": ChevronDown,
+  "chevron-up": ChevronUp,
 };
 
 export default iconMapper;

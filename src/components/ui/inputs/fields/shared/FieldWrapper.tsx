@@ -18,7 +18,7 @@ const FieldWrapper = ({
   return (
     <View style={[styles.container, style]}>
       <FieldLabel label={label} />
-      <View style={styles.inputWrapper}>
+      <View style={styles.fieldWrapper}>
         <Icon name={fieldIconName} size={20} color={statusColor} />
         {children}
       </View>
