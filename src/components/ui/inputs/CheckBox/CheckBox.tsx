@@ -1,13 +1,8 @@
 import Icon from "@/components/icons";
-import { Pressable, StyleProp, View, ViewStyle } from "react-native";
+import { Pressable, View } from "react-native";
+import { CheckBoxProps } from "./types";
 import useStyles from "./useStyles";
 
-type CheckBoxProps = {
-  isSelected: boolean;
-  disabled?: boolean;
-  onChange: () => void;
-  style?: StyleProp<ViewStyle>;
-};
 const CheckBox = ({ isSelected, disabled, onChange, style }: CheckBoxProps) => {
   const { styles, colors } = useStyles(isSelected, disabled);
 

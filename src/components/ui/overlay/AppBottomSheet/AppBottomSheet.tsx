@@ -1,72 +1,109 @@
+import { opacity } from "@/constants";
 import BottomSheet, {
   BottomSheetBackdrop,
-  BottomSheetProps,
-  BottomSheetView,
+  BottomSheetFlatList,
+  BottomSheetScrollView,
 } from "@gorhom/bottom-sheet";
-import { Ref } from "react";
+import { Portal } from "@gorhom/portal";
+import { ComponentProps } from "react";
 import { View } from "react-native";
 import { Typography } from "../../display";
+import { AppBottomSheetProps } from "./types";
 import useStyles from "./useStyles";
-
-type AppBottomSheetProps = {
-  title: string;
-  description?: string;
-  ref: Ref<BottomSheet>;
-  bottomSheetProps?: BottomSheetProps;
-};
-
-export type BottomSheetRef = BottomSheet;
 
 const AppBottomSheet = ({
   title,
   description,
   bottomSheetProps,
   ref,
+  children,
 }: AppBottomSheetProps) => {
   const { styles } = useStyles();
 
-  const renderBackdrop = (props: any) => (
+  const RenderBackdrop = (props: any) => (
     <BottomSheetBackdrop
       disappearsOnIndex={-1}
       appearsOnIndex={1}
-      opacity={1}
+      opacity={opacity.full}
       {...props}
       style={styles.backDrop}
     />
   );
 
   return (
-    <>
+    <Portal>
       <BottomSheet
         ref={ref}
-        snapPoints={bottomSheetProps?.snapPoints ?? ["20%", "50%", "90%"]}
+        snapPoints={
+          bottomSheetProps?.snapPoints ?? ["20%", "50%", "70%", "90%"]
+        }
         index={bottomSheetProps?.index ?? -1}
         enableDynamicSizing={false}
         enablePanDownToClose
-        backdropComponent={renderBackdrop}
+        backdropComponent={RenderBackdrop}
         backgroundStyle={styles.bottomSheet}
         handleStyle={styles.handleStyle}
         handleIndicatorStyle={styles.handleIndicatorStyle}
         {...bottomSheetProps}
       >
-        <BottomSheetView style={styles.bottomSheetContainer}>
-          <View>
-            <Typography variant="mediumBold" style={styles.title}>
-              {title}
+        <View style={styles.header}>
+          <Typography variant="mediumBold" style={styles.title}>
+            {title}
+          </Typography>
+          {description && (
+            <Typography variant="smallRegular" style={styles.description}>
+              {description}
             </Typography>
-            {description && (
-              <Typography variant="smallRegular" style={styles.description}>
-                {description}
-              </Typography>
-            )}
-          </View>
-          <View style={styles.bottomSheetContent}>
-            {bottomSheetProps?.children}
-          </View>
-        </BottomSheetView>
+          )}
+        </View>
+        {children}
       </BottomSheet>
-    </>
+    </Portal>
   );
 };
+
+const Content = ({ style, children, ...rest }: ComponentProps<typeof View>) => {
+  const { styles } = useStyles();
+  return (
+    <View style={[styles.content, styles.contentContainer, style]} {...rest}>
+      {children}
+    </View>
+  );
+};
+
+const Scroll = ({
+  style,
+  children,
+  ...rest
+}: ComponentProps<typeof BottomSheetScrollView>) => {
+  const { styles } = useStyles();
+  return (
+    <BottomSheetScrollView
+      style={[styles.content, style]}
+      contentContainerStyle={styles.contentContainer}
+      {...rest}
+    >
+      {children}
+    </BottomSheetScrollView>
+  );
+};
+
+const FlatList = ({
+  style,
+  ...rest
+}: ComponentProps<typeof BottomSheetFlatList>) => {
+  const { styles } = useStyles();
+  return (
+    <BottomSheetFlatList
+      style={[styles.content, style]}
+      contentContainerStyle={styles.contentContainer}
+      {...rest}
+    />
+  );
+};
+
+AppBottomSheet.Content = Content;
+AppBottomSheet.Scroll = Scroll;
+AppBottomSheet.FlatList = FlatList;
 
 export default AppBottomSheet;

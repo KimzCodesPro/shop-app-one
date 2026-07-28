@@ -1,20 +1,9 @@
-import Icon, { IconName } from "@/components/icons";
-import { Href, useRouter } from "expo-router";
-import { Pressable, StyleProp, View, ViewStyle } from "react-native";
+import Icon from "@/components/icons";
+import { useRouter } from "expo-router";
+import { Pressable, View } from "react-native";
 import { Typography } from "../../display";
+import { TopBarProps } from "./types";
 import useStyles from "./useStyles";
-
-type TopBarBaseProps = {
-  title: string;
-  actionBtn?: { iconName: IconName; onPress: () => void; flipOnRTL: boolean };
-  style?: StyleProp<ViewStyle>;
-};
-
-type TopBarBackProps =
-  | { goBack?: false; forceBack?: never }
-  | { goBack: true; forceBack?: Href };
-
-type TopBarProps = TopBarBaseProps & TopBarBackProps;
 
 const TopBar = ({ title, goBack, forceBack, actionBtn }: TopBarProps) => {
   const router = useRouter();

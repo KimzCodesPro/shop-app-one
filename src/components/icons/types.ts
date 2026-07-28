@@ -8,3 +8,8 @@ export type IconProps = {
   color?: string;
   style?: StyleProp<ViewStyle>;
 };
+
+export type IconComponentProps = {
+  name: IconName;
+  flipOnRTL?: boolean;
+} & IconProps;
