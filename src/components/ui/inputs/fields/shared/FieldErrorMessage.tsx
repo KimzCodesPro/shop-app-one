@@ -1,9 +1,10 @@
+import { Typography } from "@/components/ui/display";
 import { spacing } from "@/constants";
 import { useTheme } from "@/hooks";
 import { StyleSheet } from "react-native";
-import { Typography } from "../../display";
+import { FieldErrorMessageProps } from "./sharedTypes";
 
-const FormInputErrorMessage = ({ errorMessage }: { errorMessage?: string }) => {
+const FieldErrorMessage = ({ errorMessage }: FieldErrorMessageProps) => {
   const colors = useTheme();
 
   if (!errorMessage) return null;
@@ -25,4 +26,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FormInputErrorMessage;
+export default FieldErrorMessage;

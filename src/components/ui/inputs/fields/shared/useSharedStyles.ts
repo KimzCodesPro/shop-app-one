@@ -2,21 +2,23 @@ import { radius, spacing } from "@/constants";
 import { useFontStyles, useTheme } from "@/hooks";
 import { scalingMethods } from "@/utils";
 import { Platform, StyleSheet } from "react-native";
-import { StatusType } from "./types";
+import { StatusType } from "./sharedTypes";
 const { HS, VS } = scalingMethods;
 
-const useStyles = (inputCurrentStatus: StatusType) => {
+const useSharedStyles = (currentStatus: StatusType) => {
   const colors = useTheme();
   const fontFamilyStyles = useFontStyles();
 
   const isAndroid = Platform.OS === "android";
 
-  const borderColorMapping = {
+  const colorMapping = {
     default: colors.foreground.tertiary,
     focused: colors.primary.base,
     filled: colors.primary.base,
     error: colors.danger.base,
   };
+
+  const statusColor = colorMapping[currentStatus];
 
   const styles = StyleSheet.create({
     container: {
@@ -30,7 +32,7 @@ const useStyles = (inputCurrentStatus: StatusType) => {
       paddingHorizontal: spacing.space12.width,
       paddingVertical: spacing.space12.height,
       borderWidth: HS(1),
-      borderColor: borderColorMapping[inputCurrentStatus],
+      borderColor: statusColor,
       borderRadius: radius.sm,
       backgroundColor: colors.background.base,
       gap: spacing.space8.width,
@@ -48,7 +50,7 @@ const useStyles = (inputCurrentStatus: StatusType) => {
       includeFontPadding: false,
     },
   });
-  return { styles, colors };
+  return { styles, colors, statusColor };
 };
 
-export default useStyles;
+export default useSharedStyles;
