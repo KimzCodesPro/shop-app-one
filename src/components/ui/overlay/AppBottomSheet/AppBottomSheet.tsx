@@ -1,9 +1,9 @@
+import { opacity } from "@/constants";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetFlatList,
   BottomSheetScrollView,
 } from "@gorhom/bottom-sheet";
-import { opacity } from "@/constants";
 import { Portal } from "@gorhom/portal";
 import { ComponentProps } from "react";
 import { View } from "react-native";
@@ -46,7 +46,7 @@ const AppBottomSheet = ({
         handleIndicatorStyle={styles.handleIndicatorStyle}
         {...bottomSheetProps}
       >
-        <View style={styles.container}>
+        <View style={styles.header}>
           <Typography variant="mediumBold" style={styles.title}>
             {title}
           </Typography>
@@ -55,8 +55,8 @@ const AppBottomSheet = ({
               {description}
             </Typography>
           )}
-          {children}
         </View>
+        {children}
       </BottomSheet>
     </Portal>
   );
@@ -65,7 +65,7 @@ const AppBottomSheet = ({
 const Content = ({ style, children, ...rest }: ComponentProps<typeof View>) => {
   const { styles } = useStyles();
   return (
-    <View style={[styles.content, style]} {...rest}>
+    <View style={[styles.content, styles.contentContainer, style]} {...rest}>
       {children}
     </View>
   );
@@ -78,22 +78,32 @@ const Scroll = ({
 }: ComponentProps<typeof BottomSheetScrollView>) => {
   const { styles } = useStyles();
   return (
-    <BottomSheetScrollView style={[styles.content, style]} {...rest}>
+    <BottomSheetScrollView
+      style={[styles.content, style]}
+      contentContainerStyle={styles.contentContainer}
+      {...rest}
+    >
       {children}
     </BottomSheetScrollView>
   );
 };
 
-const List = ({
+const FlatList = ({
   style,
   ...rest
 }: ComponentProps<typeof BottomSheetFlatList>) => {
   const { styles } = useStyles();
-  return <BottomSheetFlatList style={[styles.content, style]} {...rest} />;
+  return (
+    <BottomSheetFlatList
+      style={[styles.content, style]}
+      contentContainerStyle={styles.contentContainer}
+      {...rest}
+    />
+  );
 };
 
 AppBottomSheet.Content = Content;
 AppBottomSheet.Scroll = Scroll;
-AppBottomSheet.List = List;
+AppBottomSheet.FlatList = FlatList;
 
 export default AppBottomSheet;

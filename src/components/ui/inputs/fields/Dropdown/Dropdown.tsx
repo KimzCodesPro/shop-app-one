@@ -1,7 +1,7 @@
 import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import Icon from "@/src/components/icons";
 import { useRef, useState } from "react";
-import { Pressable } from "react-native";
+import { Keyboard, Pressable } from "react-native";
 import { Typography } from "../../../display";
 import FieldWrapper from "../shared/FieldWrapper";
 import useSharedStyles from "../shared/useSharedStyles";
@@ -33,11 +33,12 @@ const Dropdown = ({
   const { styles, colors } = useSharedStyles(currentStatus);
 
   const handleOpenSheet = () => {
+    Keyboard.dismiss();
     setIsOpen(true);
     sheetRef.current?.expand();
   };
 
-  const handleSelect = (val: string) => {
+  const handleSelectValue = (val: string) => {
     sheetRef.current?.close();
     onSelect(val);
     setIsOpen(false);
@@ -84,7 +85,7 @@ const Dropdown = ({
               options={options}
               value={value}
               onSelect={(val) => {
-                handleSelect(val);
+                handleSelectValue(val);
               }}
               style={styles.dropdownOption}
             />

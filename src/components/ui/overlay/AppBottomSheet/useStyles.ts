@@ -31,18 +31,17 @@ const useStyles = () => {
       paddingTop: spacing.space16.height,
       paddingBottom: 0,
     },
-
-    container: {
-      flex: 1,
+    header: {
       alignItems: "center",
-
       paddingHorizontal: spacing.space24.width,
-      paddingVertical: spacing.space16.height,
+      paddingTop: spacing.space24.height,
     },
     content: {
-      alignSelf: "stretch",
       flex: 1,
-      marginTop: spacing.space16.height,
+    },
+    contentContainer: {
+      paddingHorizontal: spacing.space24.width,
+      paddingBottom: spacing.space24.height,
     },
     title: {
       color: colors.foreground.primary,
