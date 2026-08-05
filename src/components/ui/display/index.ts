@@ -1,3 +1,4 @@
+export { default as Accordion } from "./Accordion/Accordion";
 export { default as Avatar } from "./Avatar/Avatar";
 export { default as IconBadge } from "./IconBadge/IconBadge";
 export { default as InfoCard } from "./InfoCard/InfoCard";
