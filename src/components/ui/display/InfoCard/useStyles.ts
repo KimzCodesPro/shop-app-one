@@ -19,7 +19,6 @@ const useStyles = (isSelected?: boolean) => {
       borderRadius: radius.lg,
       borderWidth: HS(1),
       borderColor: isSelected ? colors.primary.base : colors.border.default,
-      backgroundColor: colors.background.base,
     },
     leading: {
       gap: spacing.space4.height,

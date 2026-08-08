@@ -33,7 +33,6 @@ const useSharedStyles = (currentStatus: StatusType) => {
       borderWidth: HS(1),
       borderColor: statusColor,
       borderRadius: radius.sm,
-      backgroundColor: colors.background.base,
       gap: spacing.space8.width,
     },
     pressableWrapper: {

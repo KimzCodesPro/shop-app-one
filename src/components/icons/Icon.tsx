@@ -1,9 +1,9 @@
 import { useTranslation } from "@/hooks";
 import { Text, View } from "react-native";
 import iconMapper from "./components/iconMapper";
-import { IconComponentProps } from "./types";
+import { IconProps } from "./types";
 
-const Icon = ({ name, size, color, style, flipOnRTL }: IconComponentProps) => {
+const Icon = ({ name, size, color, style, flipOnRTL }: IconProps) => {
   const { direction } = useTranslation();
 
   const IconComponent = iconMapper[name];

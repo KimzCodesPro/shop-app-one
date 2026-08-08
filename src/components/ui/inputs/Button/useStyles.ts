@@ -24,24 +24,24 @@ const useStyles = (
       border: colors.primary.base,
     },
     chip: {
-      background: colors.background.base,
+      background: "transparent",
       typography: colors.primary.base,
       border: colors.primary.base,
     },
     link: {
-      background: colors.background.base,
+      background: "transparent",
       typography: colors.primary.base,
-      border: colors.background.base,
+      border: "transparent",
     },
     ghost: {
-      background: colors.background.base,
+      background: "transparent",
       typography: colors.foreground.primary,
       border: colors.border.default,
     },
     danger: {
-      background: colors.background.base,
+      background: "transparent",
       typography: colors.danger.base,
-      border: colors.background.base,
+      border: "transparent",
     },
   } as const;
 
