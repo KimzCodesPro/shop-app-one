@@ -1,7 +1,7 @@
 import { useTheme } from "@/hooks";
 import { StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { CONTENT_BOTTOM_GAP, SIDE_PADDING, TOP_BAR_GAP } from "./constant";
+import { SIDE_PADDING, TOP_BAR_GAP } from "./constant";
 import { UseStylesArgs } from "./types";
 
 const useStyles = ({ hasTopBar, hasTabBar, paddingSides }: UseStylesArgs) => {
@@ -27,10 +27,6 @@ const useStyles = ({ hasTopBar, hasTabBar, paddingSides }: UseStylesArgs) => {
       paddingBottom,
       gap: TOP_BAR_GAP,
       flex: 1,
-    },
-    scrollViewContent: {
-      flexGrow: 1,
-      paddingBottom: CONTENT_BOTTOM_GAP,
     },
     container: {
       flex: 1,

@@ -30,15 +30,7 @@ const ScreenLayout = ({
     return (
       <View style={styles.scrollViewWrapper}>
         {topBar}
-        <VerticalScrollView
-          {...scrollProps}
-          contentContainerStyle={[
-            styles.scrollViewContent,
-            scrollProps?.contentContainerStyle,
-          ]}
-        >
-          {children}
-        </VerticalScrollView>
+        <VerticalScrollView {...scrollProps}>{children}</VerticalScrollView>
       </View>
     );
   }
