@@ -22,39 +22,41 @@ const TopBar = ({ title, goBack, forceBack, actionBtn }: TopBarProps) => {
   };
 
   return (
-    <View style={styles.container}>
-      {goBack || hasForceBack ? (
-        <Pressable onPress={handleGoBack}>
-          <Icon
-            name="chevron"
-            size={22}
-            color={colors.foreground.primary}
-            flipOnRTL
-          />
-        </Pressable>
-      ) : (
-        <View />
-      )}
+    <View style={styles.safeAreaView}>
+      <View style={styles.container}>
+        {goBack || hasForceBack ? (
+          <Pressable onPress={handleGoBack}>
+            <Icon
+              name="chevron"
+              size={22}
+              color={colors.foreground.primary}
+              flipOnRTL
+            />
+          </Pressable>
+        ) : (
+          <View />
+        )}
 
-      <Typography
-        variant="mediumBold"
-        color={colors.foreground.primary}
-        textTransform="capitalize"
-      >
-        {title}
-      </Typography>
-      {actionBtn ? (
-        <Pressable onPress={actionBtn.onPress}>
-          <Icon
-            name={actionBtn.iconName}
-            size={22}
-            color={colors.foreground.primary}
-            flipOnRTL={actionBtn?.flipOnRTL}
-          />
-        </Pressable>
-      ) : (
-        <View />
-      )}
+        <Typography
+          variant="mediumBold"
+          color={colors.foreground.primary}
+          textTransform="capitalize"
+        >
+          {title}
+        </Typography>
+        {actionBtn ? (
+          <Pressable onPress={actionBtn.onPress}>
+            <Icon
+              name={actionBtn.iconName}
+              size={22}
+              color={colors.foreground.primary}
+              flipOnRTL={actionBtn?.flipOnRTL}
+            />
+          </Pressable>
+        ) : (
+          <View />
+        )}
+      </View>
     </View>
   );
 };

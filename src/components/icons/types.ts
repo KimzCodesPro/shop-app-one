@@ -1,15 +1,15 @@
-import { StyleProp, ViewStyle } from "react-native";
+import { ColorValue, StyleProp, ViewStyle } from "react-native";
 import iconMapper from "./components/iconMapper";
 
 export type IconName = keyof typeof iconMapper;
 
-export type IconProps = {
+export type IconBase = {
   size?: number;
-  color?: string;
+  color?: ColorValue;
   style?: StyleProp<ViewStyle>;
 };
 
-export type IconComponentProps = {
+export type IconProps = {
   name: IconName;
   flipOnRTL?: boolean;
-} & IconProps;
+} & IconBase;
