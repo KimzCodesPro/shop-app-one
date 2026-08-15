@@ -1,10 +1,13 @@
-import { scalingMethods } from "@/utils";
-import { ScrollView, ScrollViewProps, StyleSheet } from "react-native";
-const { VS } = scalingMethods;
+import { ScrollView, StyleSheet } from "react-native";
+import { CONTENT_BOTTOM_GAP } from "../ScreenLayout/constant";
+import type { VerticalScrollViewProps } from "./types";
 
 // Project defaults for every scrollable surface. Any prop can be overridden by
 // the caller since props are spread after the defaults.
-const VerticalScrollView = ({ children, ...props }: ScrollViewProps) => {
+const VerticalScrollView = ({
+  children,
+  ...props
+}: VerticalScrollViewProps) => {
   return (
     <ScrollView
       keyboardShouldPersistTaps="handled"
@@ -22,11 +25,9 @@ const VerticalScrollView = ({ children, ...props }: ScrollViewProps) => {
 };
 
 const styles = StyleSheet.create({
-  // flexGrow so short content still fills the viewport — without it a screen
-  // with one row can't stretch, and anything centred inside collapses.
   contentContainer: {
     flexGrow: 1,
-    paddingBottom: VS(25),
+    paddingBottom: CONTENT_BOTTOM_GAP,
   },
 });
 
