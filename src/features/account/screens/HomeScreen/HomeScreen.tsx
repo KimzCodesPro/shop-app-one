@@ -5,7 +5,7 @@ import { TopBar } from "@/src/components/ui/navigations";
 import NavigationList from "./components/NavigationList";
 import useHomeScreen from "./useHomeScreen";
 
-const HomeScreem = () => {
+const HomeScreen = () => {
   const { pageNavigationList } = useHomeScreen();
 
   return (
@@ -26,4 +26,4 @@ const HomeScreem = () => {
   );
 };
 
-export default HomeScreem;
+export default HomeScreen;
