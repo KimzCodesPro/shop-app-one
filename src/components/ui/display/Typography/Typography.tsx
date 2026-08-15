@@ -8,9 +8,11 @@ const Typography = ({
   style,
   color,
   textTransform,
+  forceLanguage,
   ...props
 }: TypographyProps) => {
-  const typographyStyles = useFontStyles();
+  const typographyStyles = useFontStyles(forceLanguage);
+
   return (
     <Text
       style={[typographyStyles[variant], { color, textTransform }, style]}

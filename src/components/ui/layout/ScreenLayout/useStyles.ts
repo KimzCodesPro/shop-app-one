@@ -17,7 +17,7 @@ const useStyles = ({ hasTopBar, hasTabBar, paddingSides }: UseStylesArgs) => {
     viewWrapper: {
       ...horizontalPadding,
       paddingTop,
-      paddingBottom,
+      paddingBottom: paddingBottom + CONTENT_BOTTOM_GAP,
       gap: TOP_BAR_GAP,
       flex: 1,
     },
@@ -27,10 +27,6 @@ const useStyles = ({ hasTopBar, hasTabBar, paddingSides }: UseStylesArgs) => {
       paddingBottom,
       gap: TOP_BAR_GAP,
       flex: 1,
-    },
-    scrollViewContent: {
-      flexGrow: 1,
-      paddingBottom: CONTENT_BOTTOM_GAP,
     },
     container: {
       flex: 1,

@@ -10,20 +10,17 @@ type ScreenLayoutBaseProps = {
   hasTabBar?: boolean;
   paddingSides?: ScreenPaddingSides;
   children: React.ReactNode;
+  contentContainerStyle?: StyleProp<ViewStyle>;
 };
 
 type ScreenLayoutConditionalProps =
   | {
       scrollable?: false;
       scrollProps?: never;
-      dismissKeyboardOnTap?: boolean;
-      contentContainerStyle?: StyleProp<ViewStyle>;
     }
   | {
       scrollable: true;
       scrollProps?: ScrollViewProps;
-      dismissKeyboardOnTap?: never;
-      contentContainerStyle?: never;
     };
 
 export type ScreenLayoutProps = ScreenLayoutBaseProps &
