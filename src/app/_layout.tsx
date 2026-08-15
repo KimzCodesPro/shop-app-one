@@ -1,7 +1,9 @@
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import AppBootstrap from "../components/wrappers/AppBootstrap";
+import { AppProviders } from "../components/wrappers/";
+
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -23,5 +25,5 @@ export default function RootLayout() {
     return null;
   }
 
-  return <AppBootstrap />;
+  return <AppProviders />;
 }
