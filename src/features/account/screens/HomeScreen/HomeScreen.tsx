@@ -1,6 +1,6 @@
 import { userPlaceholder } from "@/src/assets/images";
 import { UserGreeting } from "@/src/components/ui/display";
-import { Button } from "@/src/components/ui/inputs";
+import { Button, RadioGroup } from "@/src/components/ui/inputs";
 import { ScreenLayout } from "@/src/components/ui/layout";
 import { TopBar } from "@/src/components/ui/navigations";
 import { BottomSheet, Modal } from "@/src/components/ui/overlay";
@@ -17,6 +17,10 @@ const HomeScreen = () => {
     languageBottomSheetRef,
     themeBottomSheetRef,
     notificationsBottomSheetRef,
+    languageOptions,
+    selectedLanguage,
+    // selectedTheme,
+    onSelectLanguage,
   } = useHomeScreen();
 
   return (
@@ -40,7 +44,13 @@ const HomeScreen = () => {
         title={t("account_language")}
         bottomSheetProps={{ snapPoints: ["25%"] }}
       >
-        <BottomSheet.Content></BottomSheet.Content>
+        <BottomSheet.Content>
+          <RadioGroup
+            options={languageOptions}
+            selectedValue={selectedLanguage}
+            onValueChange={onSelectLanguage}
+          />
+        </BottomSheet.Content>
       </BottomSheet>
 
       <BottomSheet

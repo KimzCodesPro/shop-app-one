@@ -1,15 +1,35 @@
 import { BottomSheetRef } from "@/components/ui/overlay";
-import { useTranslation } from "@/src/hooks";
+import { useTranslation, useUserPreferences } from "@/src/hooks";
+import { Langauge } from "@/src/types";
 import { useRef, useState } from "react";
 import { PageNavigationList } from "./types";
 const useHomeScreen = () => {
   const [logoutVisible, setLogoutVisible] = useState(false);
-
   const languageBottomSheetRef = useRef<BottomSheetRef | null>(null);
   const themeBottomSheetRef = useRef<BottomSheetRef | null>(null);
   const notificationsBottomSheetRef = useRef<BottomSheetRef | null>(null);
-
   const { t } = useTranslation();
+  const {
+    language: selectedLanguage,
+    theme: selectedTheme,
+    setLanguage,
+    // setTheme,
+  } = useUserPreferences();
+
+  const languageOptions = [
+    { label: t("common_english"), value: "en" },
+    { label: t("common_arabic"), value: "ar" },
+  ];
+
+  const selectedLanguageLabel =
+    languageOptions.find((option) => option.value === selectedLanguage)
+      ?.label ?? "";
+
+  console.log("Selected Language Label:", typeof selectedLanguageLabel);
+  const onSelectLanguage = (value: string) => {
+    setLanguage(value as Langauge);
+    languageBottomSheetRef.current?.close();
+  };
 
   // navigation list for the home screen
   const pageNavigationList: PageNavigationList = [
@@ -67,7 +87,7 @@ const useHomeScreen = () => {
           icon: "world",
           title: t("account_language"),
           trailing: "chevronWithValue",
-          trailingValue: t("common_english"),
+          trailingValue: selectedLanguageLabel,
           onPress: () => languageBottomSheetRef.current?.expand(),
         },
         {
@@ -116,6 +136,10 @@ const useHomeScreen = () => {
     languageBottomSheetRef,
     themeBottomSheetRef,
     notificationsBottomSheetRef,
+    languageOptions,
+    selectedLanguage,
+    selectedTheme,
+    onSelectLanguage,
   };
 };
 

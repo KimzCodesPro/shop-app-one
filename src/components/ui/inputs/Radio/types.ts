@@ -1,8 +1,7 @@
 import { StyleProp, ViewStyle } from "react-native";
 
 export type RadioProps = {
-  isActive: boolean;
-  onChange: () => void;
+  isSelected: boolean;
   disabled?: boolean;
   style?: StyleProp<ViewStyle>;
 };
