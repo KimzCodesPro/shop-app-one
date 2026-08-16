@@ -1,103 +1,122 @@
+import { BottomSheetRef } from "@/components/ui/overlay";
+import { useTranslation } from "@/src/hooks";
+import { useRef, useState } from "react";
 import { PageNavigationList } from "./types";
-
 const useHomeScreen = () => {
+  const [logoutVisible, setLogoutVisible] = useState(false);
+
+  const languageBottomSheetRef = useRef<BottomSheetRef | null>(null);
+  const themeBottomSheetRef = useRef<BottomSheetRef | null>(null);
+  const notificationsBottomSheetRef = useRef<BottomSheetRef | null>(null);
+
+  const { t } = useTranslation();
+
+  // navigation list for the home screen
   const pageNavigationList: PageNavigationList = [
     {
-      title: "Account",
+      title: t("account_account"),
       rows: [
         {
           variant: "default",
           icon: "user",
-          title: "edit profile",
+          title: t("account_editProfile"),
           trailing: "chevron",
           onPress: () => {},
         },
         {
           variant: "default",
           icon: "lock",
-          title: "change password",
+          title: t("account_changePassword"),
           trailing: "chevron",
           onPress: () => {},
         },
       ],
     },
     {
-      title: "Shopping",
+      title: t("account_shopping"),
       rows: [
         {
           variant: "default",
           icon: "map-pin",
-          title: "adress",
+          title: t("account_address"),
           trailing: "chevron",
           onPress: () => {},
         },
         {
           variant: "default",
           icon: "truck",
-          title: "my orders",
+          title: t("account_myOrders"),
           trailing: "chevron",
           onPress: () => {},
         },
       ],
     },
     {
-      title: "preferences",
+      title: t("account_preferences"),
       rows: [
         {
           variant: "default",
           icon: "bell",
-          title: "notifications",
+          title: t("account_notifications"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => notificationsBottomSheetRef.current?.expand(),
         },
 
         {
           variant: "default",
           icon: "world",
-          title: "language",
+          title: t("account_language"),
           trailing: "chevronWithValue",
-          trailingValue: "english",
-          onPress: () => {},
+          trailingValue: t("common_english"),
+          onPress: () => languageBottomSheetRef.current?.expand(),
         },
         {
           variant: "default",
           icon: "palette",
-          title: "theme",
+          title: t("account_theme"),
           trailing: "chevronWithValue",
-          trailingValue: "light",
-          onPress: () => {},
+          trailingValue: t("common_light"),
+          onPress: () => themeBottomSheetRef.current?.expand(),
         },
       ],
     },
     {
-      title: "support",
+      title: t("account_support"),
       rows: [
         {
           variant: "default",
           icon: "help",
-          title: "help and Policies",
+          title: t("account_helpAndPolicies"),
           trailing: "chevron",
           onPress: () => {},
         },
         {
           variant: "default",
           icon: "file-text",
-          title: "legal and Policies",
+          title: t("account_legalAndPolicies"),
           trailing: "chevron",
           onPress: () => {},
         },
         {
           variant: "danger",
           icon: "logout",
-          title: "logout",
+          title: t("account_logout"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => setLogoutVisible(true),
         },
       ],
     },
   ] as const;
 
-  return { pageNavigationList };
+  return {
+    t,
+    pageNavigationList,
+    logoutVisible,
+    setLogoutVisible,
+    languageBottomSheetRef,
+    themeBottomSheetRef,
+    notificationsBottomSheetRef,
+  };
 };
 
 export default useHomeScreen;
