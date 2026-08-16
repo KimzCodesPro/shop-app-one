@@ -1,11 +1,12 @@
 import { userPlaceholder } from "@/src/assets/images";
 import { UserGreeting } from "@/src/components/ui/display";
-import { Button, RadioGroup } from "@/src/components/ui/inputs";
+import { Button, RadioGroup, SwitchGroup } from "@/src/components/ui/inputs";
 import { ScreenLayout } from "@/src/components/ui/layout";
 import { TopBar } from "@/src/components/ui/navigations";
 import { BottomSheet, Modal } from "@/src/components/ui/overlay";
 import { View } from "react-native";
-import NavigationList from "./components/NavigationList";
+import NavigationList from "./components/NavigationList/NavigationList";
+import ThemeRadioGroup from "./components/ThemeRadioGroup/ThemeRadioGroup";
 import useHomeScreen from "./useHomeScreen";
 
 const HomeScreen = () => {
@@ -19,8 +20,12 @@ const HomeScreen = () => {
     notificationsBottomSheetRef,
     languageOptions,
     selectedLanguage,
-    // selectedTheme,
     onSelectLanguage,
+    onToggleNotification,
+    themeOptions,
+    selectedTheme,
+    onSelectTheme,
+    notificationOptions,
   } = useHomeScreen();
 
   return (
@@ -56,9 +61,15 @@ const HomeScreen = () => {
       <BottomSheet
         ref={themeBottomSheetRef}
         title={t("account_theme")}
-        bottomSheetProps={{ snapPoints: ["35%"] }}
+        bottomSheetProps={{ snapPoints: ["36%"] }}
       >
-        <BottomSheet.Content></BottomSheet.Content>
+        <BottomSheet.Content>
+          <ThemeRadioGroup
+            options={themeOptions}
+            selectedValue={selectedTheme}
+            onValueChange={onSelectTheme}
+          />
+        </BottomSheet.Content>
       </BottomSheet>
 
       <BottomSheet
@@ -66,7 +77,12 @@ const HomeScreen = () => {
         title={t("account_notifications")}
         bottomSheetProps={{ snapPoints: ["20%"] }}
       >
-        <BottomSheet.Content></BottomSheet.Content>
+        <BottomSheet.Content>
+          <SwitchGroup
+            options={notificationOptions}
+            onValueChange={onToggleNotification}
+          />
+        </BottomSheet.Content>
       </BottomSheet>
 
       {/* logout modal */}

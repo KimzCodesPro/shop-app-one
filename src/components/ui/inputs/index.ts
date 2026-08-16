@@ -5,3 +5,4 @@ export { default as TextInput } from "./fields/TextInput/TextInput";
 export { default as Radio } from "./Radio/Radio";
 export { default as RadioGroup } from "./RadioGroup/RadioGroup";
 export { default as Switch } from "./Switch/Switch";
+export { default as SwitchGroup } from "./SwitchGroup/SwitchGroup";

@@ -1,6 +1,6 @@
 import { fonts } from "@/constants";
 import { scalingMethods } from "@/utils";
-import { Langauge } from "../types";
+import { Language } from "../types";
 import useTranslation from "./useTranslation";
 const { VS, FS } = scalingMethods;
 
@@ -202,10 +202,10 @@ const fontStyles = {
   },
 } as const;
 
-const useFontStyles = (forceLangauge?: Langauge) => {
+const useFontStyles = (forceLanguage?: Language) => {
   const { language } = useTranslation();
 
-  return fontStyles[forceLangauge ?? language];
+  return fontStyles[forceLanguage ?? language];
 };
 
 export default useFontStyles;

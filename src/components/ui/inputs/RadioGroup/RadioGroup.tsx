@@ -6,6 +6,7 @@ import { RadioGroupProps } from "./types";
 import useStyles from "./useStyles";
 
 const RadioGroup = ({
+  style,
   options,
   selectedValue,
   onValueChange,
@@ -20,7 +21,7 @@ const RadioGroup = ({
         return (
           <Pressable
             key={option.value}
-            style={styles.radioItem}
+            style={[styles.radioItem, style]}
             onPress={() => onValueChange(option.value)}
             disabled={option.disabled}
             accessibilityRole="radio"
