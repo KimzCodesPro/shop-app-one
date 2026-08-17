@@ -22,12 +22,11 @@ const useHomeScreen = () => {
   } = useUserPreferences();
 
   // push notification handler
-
   const notificationOptions = [
     {
       label: t("account_pushNotifications"),
       value: "pushNotifications",
-      isSelected: enableNotifications,
+      enabled: enableNotifications,
     },
   ];
 

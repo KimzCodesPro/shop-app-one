@@ -3,7 +3,7 @@ import { StyleProp, ViewStyle } from "react-native";
 export type SwitchGroupOption = {
   label: string;
   value: string;
-  isSelected: boolean;
+  enabled: boolean;
   disabled?: boolean;
 };
 export type SwitchGroupProps = {

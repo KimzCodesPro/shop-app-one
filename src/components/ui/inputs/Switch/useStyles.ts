@@ -5,17 +5,17 @@ import { StyleSheet } from "react-native";
 
 const { HS, VS } = scalingMethods;
 
-const useStyles = (isSelected: boolean, disabled?: boolean) => {
+const useStyles = (enabled: boolean, disabled?: boolean) => {
   const colors = useTheme();
   const styles = StyleSheet.create({
     track: {
       flexDirection: "row",
       alignItems: "center",
-      justifyContent: isSelected ? "flex-end" : "flex-start",
+      justifyContent: enabled ? "flex-end" : "flex-start",
       width: HS(36),
       height: VS(20),
       borderRadius: radius.full,
-      backgroundColor: isSelected ? colors.primary.base : colors.border.default,
+      backgroundColor: enabled ? colors.primary.base : colors.border.default,
       paddingHorizontal: spacing.space4.width,
       opacity: disabled ? opacity.disabled : opacity.full,
     },
