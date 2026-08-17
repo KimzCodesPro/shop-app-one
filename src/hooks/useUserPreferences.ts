@@ -3,7 +3,7 @@ import {
   setEnableNotifications,
   setLanguage,
   setTheme,
-} from "@/store/usePreferences/usePreferencesSlice";
+} from "@/store/userPreferences/userPreferencesSlice";
 import { Language, Theme } from "@/types";
 
 const useUserPreferences = () => {
@@ -14,7 +14,8 @@ const useUserPreferences = () => {
     ...preferences,
     setTheme: (theme: Theme) => dispatch(setTheme(theme)),
     setLanguage: (language: Language) => dispatch(setLanguage(language)),
-    setEnableNotifications: () => dispatch(setEnableNotifications()),
+    setEnableNotifications: (enabled: boolean) =>
+      dispatch(setEnableNotifications(enabled)),
   };
 };
 

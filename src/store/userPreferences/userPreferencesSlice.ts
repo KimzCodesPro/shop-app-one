@@ -13,7 +13,7 @@ const initialState: InitialStateType = {
   enableNotifications: false,
 };
 
-const usePreferences = createSlice({
+const userPreferences = createSlice({
   name: "userPreferences",
   initialState,
   reducers: {
@@ -23,12 +23,12 @@ const usePreferences = createSlice({
     setTheme(state, action) {
       state.theme = action.payload;
     },
-    setEnableNotifications: (state) => {
-      state.enableNotifications = !state.enableNotifications;
+    setEnableNotifications: (state, action: PayloadAction<boolean>) => {
+      state.enableNotifications = action.payload;
     },
   },
 });
 
 export const { setLanguage, setTheme, setEnableNotifications } =
-  usePreferences.actions;
-export default usePreferences.reducer;
+  userPreferences.actions;
+export default userPreferences.reducer;

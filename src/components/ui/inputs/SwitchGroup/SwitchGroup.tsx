@@ -9,12 +9,14 @@ const SwitchGroup = ({ style, options, onValueChange }: SwitchGroupProps) => {
   const { styles, colors } = useStyles();
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {options.map((option) => (
         <Pressable
           key={option.value}
-          style={[styles.switchItem, style]}
-          onPress={() => onValueChange(option.value)}
+          style={styles.switchItem}
+          onPress={() =>
+            onValueChange({ value: option.value, enabled: !option.enabled })
+          }
           disabled={option.disabled}
           accessibilityRole="switch"
           accessibilityState={{

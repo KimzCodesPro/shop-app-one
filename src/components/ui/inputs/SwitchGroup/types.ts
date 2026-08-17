@@ -6,8 +6,14 @@ export type SwitchGroupOption = {
   enabled: boolean;
   disabled?: boolean;
 };
+// `enabled` is the state the user is asking for, not the current one.
+export type SwitchGroupChange = {
+  value: string;
+  enabled: boolean;
+};
+
 export type SwitchGroupProps = {
   options: SwitchGroupOption[];
-  onValueChange: (value: string) => void;
+  onValueChange: (change: SwitchGroupChange) => void;
   style?: StyleProp<ViewStyle>;
 };
