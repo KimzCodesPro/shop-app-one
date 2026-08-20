@@ -1,11 +1,7 @@
-import { Text, View } from "react-native";
+import { HomeScreen } from "@/src/features";
 
 const AccountPage = () => {
-  return (
-    <View>
-      <Text>settings</Text>
-    </View>
-  );
+  return <HomeScreen />;
 };
 
 export default AccountPage;

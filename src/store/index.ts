@@ -13,7 +13,7 @@ import {
 } from "redux-persist";
 import themeReducer from "./theme/themeSlice";
 import translationReducer from "./translation/translationSlice";
-import usePreferences from "./usePreferences/usePreferencesSlice";
+import userPreferences from "./userPreferences/userPreferencesSlice";
 
 const userPreferencesPersistConfig = {
   key: "userPreferences",
@@ -24,7 +24,7 @@ const userPreferencesPersistConfig = {
 const rootReducer = combineReducers({
   theme: themeReducer,
   translation: translationReducer,
-  userPreferences: persistReducer(userPreferencesPersistConfig, usePreferences),
+  userPreferences: persistReducer(userPreferencesPersistConfig, userPreferences),
 });
 
 export const store = configureStore({

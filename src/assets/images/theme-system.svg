@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="156" viewBox="0 0 72 156">
+  <defs>
+    <clipPath id="cl-sys-l"><polygon points="0,0 72,0 0,156"/></clipPath>
+    <clipPath id="cl-sys-d"><polygon points="72,0 72,156 0,156"/></clipPath>
+  </defs>
+  <rect width="72" height="156" rx="10" fill="#f8fafc" clip-path="url(#cl-sys-l)"/>
+  <rect width="72" height="156" rx="10" fill="#0f1117" clip-path="url(#cl-sys-d)"/>
+  <line x1="72" y1="0" x2="0" y2="156" stroke="#ffffff" stroke-width="0.7"/>
+  <circle cx="10" cy="20" r="4" fill="#fbbf24"/>
+  <rect x="8" y="75" width="26" height="46" rx="6" fill="#d4a574"/>
+  <rect x="38" y="75" width="26" height="46" rx="6" fill="#d4a574" opacity="0.6"/>
+</svg>
