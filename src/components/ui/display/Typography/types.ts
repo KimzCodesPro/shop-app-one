@@ -9,4 +9,5 @@ export type TypographyProps = {
   color?: string;
   forceLanguage?: Language;
   textTransform?: "none" | "capitalize" | "uppercase" | "lowercase";
+  textAlign?: "left" | "right";
 } & Omit<TextProps, "children">;

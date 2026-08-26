@@ -23,6 +23,11 @@ const useStyles = (
       typography: colors.foreground.contrast,
       border: colors.primary.base,
     },
+    "primary-outline": {
+      background: colors.background.base,
+      typography: colors.primary.base,
+      border: colors.primary.base,
+    },
     chip: {
       background: "transparent",
       typography: colors.primary.base,
@@ -33,15 +38,15 @@ const useStyles = (
       typography: colors.primary.base,
       border: "transparent",
     },
+    "link-danger": {
+      background: "transparent",
+      typography: colors.danger.base,
+      border: "transparent",
+    },
     ghost: {
       background: "transparent",
       typography: colors.foreground.primary,
       border: colors.border.default,
-    },
-    danger: {
-      background: "transparent",
-      typography: colors.danger.base,
-      border: "transparent",
     },
   } as const;
 

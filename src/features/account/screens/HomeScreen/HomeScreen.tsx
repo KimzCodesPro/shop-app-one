@@ -44,10 +44,11 @@ const HomeScreen = () => {
       <NavigationList navigationList={pageNavigationList} />
 
       {/* bottomsheets */}
+      {/* language bottom sheet */}
       <BottomSheet
         ref={languageBottomSheetRef}
         title={t("account_language")}
-        bottomSheetProps={{ snapPoints: ["25%"] }}
+        bottomSheetProps={{ snapPoints: ["28%"] }}
       >
         <BottomSheet.Content>
           <RadioGroup
@@ -57,11 +58,11 @@ const HomeScreen = () => {
           />
         </BottomSheet.Content>
       </BottomSheet>
-
+      {/* theme  Bottom Sheet */}
       <BottomSheet
         ref={themeBottomSheetRef}
         title={t("account_theme")}
-        bottomSheetProps={{ snapPoints: ["36%"] }}
+        bottomSheetProps={{ snapPoints: ["39%"] }}
       >
         <BottomSheet.Content>
           <ThemeRadioGroup
@@ -71,11 +72,11 @@ const HomeScreen = () => {
           />
         </BottomSheet.Content>
       </BottomSheet>
-
+      {/* notifications Bottom Sheet*/}
       <BottomSheet
         ref={notificationsBottomSheetRef}
         title={t("account_notifications")}
-        bottomSheetProps={{ snapPoints: ["20%"] }}
+        bottomSheetProps={{ snapPoints: ["19%"] }}
       >
         <BottomSheet.Content>
           <SwitchGroup
@@ -93,7 +94,7 @@ const HomeScreen = () => {
             onPress={() => setLogoutVisible(false)}
           />
           <Button
-            variant="danger"
+            variant="link-danger"
             title={t("account_logout")}
             onPress={() => setLogoutVisible(false)}
           />
