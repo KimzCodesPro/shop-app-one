@@ -4,8 +4,8 @@ import { BottomSheetRef } from "@/components/ui/overlay";
 import { useTranslation, useUserPreferences } from "@/src/hooks";
 import { Language, Theme } from "@/src/types";
 import { useRef, useState } from "react";
+import { PageNavigationList } from "./components/NavigationList/types";
 import { ThemeOption } from "./components/ThemeRadioGroup/types";
-import { PageNavigationList } from "./types";
 
 const useHomeScreen = () => {
   const [logoutVisible, setLogoutVisible] = useState(false);

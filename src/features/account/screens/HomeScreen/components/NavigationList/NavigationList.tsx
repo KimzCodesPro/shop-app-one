@@ -3,7 +3,7 @@ import { RowNav } from "@/src/components/ui/navigations";
 import spacing from "@/src/constants/spacing";
 import useTheme from "@/src/hooks/useTheme";
 import { StyleSheet, View } from "react-native";
-import { PageNavigationList } from "../../types";
+import { PageNavigationList } from "./types";
 
 const NavigationList = ({
   navigationList,
