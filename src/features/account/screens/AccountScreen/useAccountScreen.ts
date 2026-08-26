@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 import { PageNavigationList } from "./components/NavigationList/types";
 import { ThemeOption } from "./components/ThemeRadioGroup/types";
 
-const useHomeScreen = () => {
+const useAccountScreen = () => {
   const [logoutVisible, setLogoutVisible] = useState(false);
   const languageBottomSheetRef = useRef<BottomSheetRef | null>(null);
   const themeBottomSheetRef = useRef<BottomSheetRef | null>(null);
@@ -184,4 +184,4 @@ const useHomeScreen = () => {
   };
 };
 
-export default useHomeScreen;
+export default useAccountScreen;

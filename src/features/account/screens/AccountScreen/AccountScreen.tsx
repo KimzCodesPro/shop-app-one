@@ -7,9 +7,9 @@ import { BottomSheet, Modal } from "@/src/components/ui/overlay";
 import { View } from "react-native";
 import NavigationList from "./components/NavigationList/NavigationList";
 import ThemeRadioGroup from "./components/ThemeRadioGroup/ThemeRadioGroup";
-import useHomeScreen from "./useHomeScreen";
+import useAccountScreen from "./useAccountScreen";
 
-const HomeScreen = () => {
+const AccountScreen = () => {
   const {
     t,
     pageNavigationList,
@@ -26,7 +26,7 @@ const HomeScreen = () => {
     selectedTheme,
     onSelectTheme,
     notificationOptions,
-  } = useHomeScreen();
+  } = useAccountScreen();
 
   return (
     <ScreenLayout
@@ -104,4 +104,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default AccountScreen;
