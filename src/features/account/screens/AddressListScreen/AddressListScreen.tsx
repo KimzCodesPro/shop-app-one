@@ -10,6 +10,7 @@ import useAddressListScreen from "./useAddressListScreen";
 export default function AddressListScreen() {
   const {
     t,
+    router,
     selectedItemId,
     addressBottomSheetRef,
     AddressOpenFullInfoHandler,
@@ -31,7 +32,12 @@ export default function AddressListScreen() {
             onPress={AddressOpenFullInfoHandler}
           />
         </VerticalScrollView>
-        <Button title={t("account_addNewAddress")} onPress={() => {}} />
+        <Button
+          title={t("account_addNewAddress")}
+          onPress={() => {
+            router.push("/account/addNewAddress");
+          }}
+        />
       </ScreenLayout>
       <BottomSheet
         ref={addressBottomSheetRef}

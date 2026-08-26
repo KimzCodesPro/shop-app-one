@@ -11,7 +11,7 @@ const useStyles = () => {
     success: colors.success.strong,
     warning: colors.warning.base,
     info: colors.primary.pressed,
-    danger: colors.danger.strong,
+    danger: colors.danger.base,
   };
 
   const styles = StyleSheet.create({

@@ -29,20 +29,21 @@ const AccountScreen = () => {
   } = useAccountScreen();
 
   return (
-    <ScreenLayout
-      scrollable
-      hasTabBar
-      renderTopBar={() => <TopBar title="Account" />}
-    >
-      <UserGreeting
-        size="lg"
-        imgSrc={userPlaceholder}
-        userName="John Doe"
-        meta="kareem@gmail.com"
-      />
-      {/* row navigation list  */}
-      <NavigationList navigationList={pageNavigationList} />
-
+    <>
+      <ScreenLayout
+        scrollable
+        hasTabBar
+        renderTopBar={() => <TopBar title="Account" />}
+      >
+        <UserGreeting
+          size="lg"
+          imgSrc={userPlaceholder}
+          userName="John Doe"
+          meta="kareem@gmail.com"
+        />
+        {/* row navigation list  */}
+        <NavigationList navigationList={pageNavigationList} />
+      </ScreenLayout>
       {/* bottomsheets */}
       {/* language bottom sheet */}
       <BottomSheet
@@ -85,7 +86,6 @@ const AccountScreen = () => {
           />
         </BottomSheet.Content>
       </BottomSheet>
-
       {/* logout modal */}
       <Modal title="Are you sure you want to logout?" visible={logoutVisible}>
         <View>
@@ -100,7 +100,7 @@ const AccountScreen = () => {
           />
         </View>
       </Modal>
-    </ScreenLayout>
+    </>
   );
 };
 
