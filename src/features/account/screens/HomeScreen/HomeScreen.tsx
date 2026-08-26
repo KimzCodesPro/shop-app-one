@@ -94,7 +94,7 @@ const HomeScreen = () => {
             onPress={() => setLogoutVisible(false)}
           />
           <Button
-            variant="danger"
+            variant="link-danger"
             title={t("account_logout")}
             onPress={() => setLogoutVisible(false)}
           />
