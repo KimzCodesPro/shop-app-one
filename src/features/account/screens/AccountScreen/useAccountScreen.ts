@@ -3,6 +3,7 @@ import { SwitchGroupChange } from "@/components/ui/inputs";
 import { BottomSheetRef } from "@/components/ui/overlay";
 import { useTranslation, useUserPreferences } from "@/src/hooks";
 import { Language, Theme } from "@/src/types";
+import { useRouter } from "expo-router";
 import { useRef, useState } from "react";
 import { PageNavigationList } from "./components/NavigationList/types";
 import { ThemeOption } from "./components/ThemeRadioGroup/types";
@@ -22,6 +23,7 @@ const useAccountScreen = () => {
     setTheme,
   } = useUserPreferences();
 
+  const router = useRouter();
   // push notification handler
   const notificationOptions = [
     {
@@ -78,14 +80,18 @@ const useAccountScreen = () => {
           icon: "user",
           title: t("account_editProfile"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/account/editProfile");
+          },
         },
         {
           variant: "default",
           icon: "lock",
           title: t("account_changePassword"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/(main)/account/changePassword");
+          },
         },
       ],
     },
@@ -97,7 +103,9 @@ const useAccountScreen = () => {
           icon: "map-pin",
           title: t("account_address"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/(main)/account/addressList");
+          },
         },
         {
           variant: "default",
@@ -143,16 +151,20 @@ const useAccountScreen = () => {
         {
           variant: "default",
           icon: "help",
-          title: t("account_helpAndPolicies"),
+          title: t("account_helpAndSupport"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/(main)/account/helpAndSupport");
+          },
         },
         {
           variant: "default",
           icon: "file-text",
           title: t("account_legalAndPolicies"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/(main)/account/legalAndPolicies");
+          },
         },
         {
           variant: "danger",

@@ -10,6 +10,7 @@ const ScreenLayout = ({
   children,
   contentContainerStyle,
   scrollable = false,
+  dismissKeyboardOnTap = false,
   scrollProps,
   renderTopBar,
 }: ScreenLayoutProps) => {
@@ -21,13 +22,17 @@ const ScreenLayout = ({
 
   const topBar = renderTopBar?.();
 
+  const ContentArea = dismissKeyboardOnTap ? DismissKeyboard : View;
+
   if (scrollable) {
     return (
       <View style={styles.scrollViewWrapper}>
         {topBar}
-        <DismissKeyboard style={[styles.container, contentContainerStyle]}>
-          <VerticalScrollView {...scrollProps}>{children}</VerticalScrollView>
-        </DismissKeyboard>
+        <VerticalScrollView {...scrollProps}>
+          <ContentArea style={[styles.scrollContent, contentContainerStyle]}>
+            {children}
+          </ContentArea>
+        </VerticalScrollView>
       </View>
     );
   }
@@ -35,9 +40,9 @@ const ScreenLayout = ({
   return (
     <View style={styles.viewWrapper}>
       {topBar}
-      <DismissKeyboard style={[styles.container, contentContainerStyle]}>
+      <ContentArea style={[styles.container, contentContainerStyle]}>
         {children}
-      </DismissKeyboard>
+      </ContentArea>
     </View>
   );
 };

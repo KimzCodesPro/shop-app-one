@@ -6,6 +6,6 @@ type TextInputTypePros =
   | { type: "password"; iconName?: never; clearInput?: never };
 
 export type TextInputProps = {
-  onChangeText: (text: string) => void;
+  onChangeText?: (text: string) => void;
 } & TextInputTypePros &
   FieldProps;

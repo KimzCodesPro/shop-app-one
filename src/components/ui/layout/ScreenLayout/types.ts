@@ -11,6 +11,7 @@ type ScreenLayoutBaseProps = {
   paddingSides?: ScreenPaddingSides;
   children: React.ReactNode;
   contentContainerStyle?: StyleProp<ViewStyle>;
+  dismissKeyboardOnTap?: boolean;
 };
 
 type ScreenLayoutConditionalProps =

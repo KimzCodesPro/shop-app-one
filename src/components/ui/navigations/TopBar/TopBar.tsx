@@ -2,6 +2,7 @@ import Icon from "@/components/icons";
 import { useRouter } from "expo-router";
 import { Pressable, View } from "react-native";
 import { Typography } from "../../display";
+import { ICON_SIZE } from "./constant";
 import { TopBarProps } from "./types";
 import useStyles from "./useStyles";
 
@@ -25,16 +26,19 @@ const TopBar = ({ title, goBack, forceBack, actionBtn }: TopBarProps) => {
     <View style={styles.safeAreaView}>
       <View style={styles.container}>
         {goBack || hasForceBack ? (
-          <Pressable onPress={handleGoBack}>
+          <Pressable
+            onPress={handleGoBack}
+            style={[styles.slot, styles.backSlot]}
+          >
             <Icon
-              name="chevron"
-              size={22}
+              name="chevron-left"
+              size={ICON_SIZE}
               color={colors.foreground.primary}
               flipOnRTL
             />
           </Pressable>
         ) : (
-          <View />
+          <View style={styles.slot} />
         )}
 
         <Typography
@@ -45,16 +49,19 @@ const TopBar = ({ title, goBack, forceBack, actionBtn }: TopBarProps) => {
           {title}
         </Typography>
         {actionBtn ? (
-          <Pressable onPress={actionBtn.onPress}>
+          <Pressable
+            onPress={actionBtn.onPress}
+            style={[styles.slot, styles.actionSlot]}
+          >
             <Icon
               name={actionBtn.iconName}
-              size={22}
+              size={ICON_SIZE}
               color={colors.foreground.primary}
               flipOnRTL={actionBtn?.flipOnRTL}
             />
           </Pressable>
         ) : (
-          <View />
+          <View style={styles.slot} />
         )}
       </View>
     </View>

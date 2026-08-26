@@ -12,7 +12,7 @@ const useSharedStyles = (currentStatus: StatusType) => {
   const isAndroid = Platform.OS === "android";
 
   const colorMapping = {
-    default: colors.foreground.tertiary,
+    default: colors.border.default,
     focused: colors.primary.base,
     filled: colors.primary.base,
     error: colors.danger.base,

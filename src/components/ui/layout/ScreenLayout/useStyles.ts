@@ -31,6 +31,9 @@ const useStyles = ({ hasTopBar, hasTabBar, paddingSides }: UseStylesArgs) => {
     container: {
       flex: 1,
     },
+    scrollContent: {
+      flexGrow: 1,
+    },
   });
 
   return {

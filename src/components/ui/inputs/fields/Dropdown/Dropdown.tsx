@@ -76,7 +76,7 @@ const Dropdown = ({
           ref={sheetRef}
           title={label ?? placeholder}
           bottomSheetProps={{
-            snapPoints: ["50%"],
+            snapPoints: ["40%"],
             onClose: () => setIsOpen(false),
           }}
         >

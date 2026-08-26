@@ -8,8 +8,9 @@ import Building from "./Building";
 import Camera from "./Camera";
 import Category from "./Category";
 import Check from "./Check";
-import Chevron from "./Chevron";
 import ChevronDown from "./ChevronDown";
+import ChevronLeft from "./ChevronLeft";
+import ChevronRight from "./ChevronRight";
 import ChevronUp from "./ChevronUp";
 import CircleCheck from "./CircleCheck";
 import Close from "./Close";
@@ -41,6 +42,7 @@ import ShieldX from "./ShieldX";
 import ShopingCart from "./ShopingCart";
 import ShoppingBag from "./ShoppingBag";
 import Star from "./Star";
+import Trash from "./Trash";
 import Truck from "./Truck";
 import User from "./User";
 import WifiOff from "./WifiOff";
@@ -51,7 +53,6 @@ const icons = {
   "eye-off": EyeOff,
   lock: Lock,
   user: User,
-  chevron: Chevron,
   "chevron-down": ChevronDown,
   "chevron-up": ChevronUp,
   mail: Mail,
@@ -94,6 +95,9 @@ const icons = {
   "wifi-off": WifiOff,
   "box-off": BoxOff,
   "image-off": ImageOff,
+  "chevron-right": ChevronRight,
+  "chevron-left": ChevronLeft,
+  trash: Trash,
 } as const;
 
 export default icons;

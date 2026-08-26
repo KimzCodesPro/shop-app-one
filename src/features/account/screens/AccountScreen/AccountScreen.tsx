@@ -29,20 +29,21 @@ const AccountScreen = () => {
   } = useAccountScreen();
 
   return (
-    <ScreenLayout
-      scrollable
-      hasTabBar
-      renderTopBar={() => <TopBar title="Account" />}
-    >
-      <UserGreeting
-        size="lg"
-        imgSrc={userPlaceholder}
-        userName="John Doe"
-        meta="kareem@gmail.com"
-      />
-      {/* row navigation list  */}
-      <NavigationList navigationList={pageNavigationList} />
-
+    <>
+      <ScreenLayout
+        scrollable
+        hasTabBar
+        renderTopBar={() => <TopBar title="Account" />}
+      >
+        <UserGreeting
+          size="lg"
+          imgSrc={userPlaceholder}
+          userName="John Doe"
+          meta="kareem@gmail.com"
+        />
+        {/* row navigation list  */}
+        <NavigationList navigationList={pageNavigationList} />
+      </ScreenLayout>
       {/* bottomsheets */}
       {/* language bottom sheet */}
       <BottomSheet
@@ -62,7 +63,7 @@ const AccountScreen = () => {
       <BottomSheet
         ref={themeBottomSheetRef}
         title={t("account_theme")}
-        bottomSheetProps={{ snapPoints: ["39%"] }}
+        bottomSheetProps={{ snapPoints: ["41%"] }}
       >
         <BottomSheet.Content>
           <ThemeRadioGroup
@@ -76,7 +77,7 @@ const AccountScreen = () => {
       <BottomSheet
         ref={notificationsBottomSheetRef}
         title={t("account_notifications")}
-        bottomSheetProps={{ snapPoints: ["19%"] }}
+        bottomSheetProps={{ snapPoints: ["20%"] }}
       >
         <BottomSheet.Content>
           <SwitchGroup
@@ -85,7 +86,6 @@ const AccountScreen = () => {
           />
         </BottomSheet.Content>
       </BottomSheet>
-
       {/* logout modal */}
       <Modal title="Are you sure you want to logout?" visible={logoutVisible}>
         <View>
@@ -100,7 +100,7 @@ const AccountScreen = () => {
           />
         </View>
       </Modal>
-    </ScreenLayout>
+    </>
   );
 };
 
