@@ -160,7 +160,9 @@ const useAccountScreen = () => {
           icon: "file-text",
           title: t("account_legalAndPolicies"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/(main)/account/legalAndPolicies");
+          },
         },
         {
           variant: "danger",
