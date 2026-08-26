@@ -24,6 +24,9 @@ const useStyles = (size: Sizes) => {
     },
   };
   const styles = StyleSheet.create({
+    container: {
+      alignSelf: "center",
+    },
     img: {
       width: sizes[size].width,
       height: sizes[size].height,

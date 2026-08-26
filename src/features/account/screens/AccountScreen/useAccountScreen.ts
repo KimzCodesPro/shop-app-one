@@ -3,6 +3,7 @@ import { SwitchGroupChange } from "@/components/ui/inputs";
 import { BottomSheetRef } from "@/components/ui/overlay";
 import { useTranslation, useUserPreferences } from "@/src/hooks";
 import { Language, Theme } from "@/src/types";
+import { useRouter } from "expo-router";
 import { useRef, useState } from "react";
 import { PageNavigationList } from "./components/NavigationList/types";
 import { ThemeOption } from "./components/ThemeRadioGroup/types";
@@ -22,6 +23,7 @@ const useAccountScreen = () => {
     setTheme,
   } = useUserPreferences();
 
+  const router = useRouter();
   // push notification handler
   const notificationOptions = [
     {
@@ -78,7 +80,9 @@ const useAccountScreen = () => {
           icon: "user",
           title: t("account_editProfile"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/account/editProfile");
+          },
         },
         {
           variant: "default",

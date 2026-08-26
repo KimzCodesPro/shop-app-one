@@ -31,10 +31,11 @@
       "account_currentPasswordPlaceholder": "أدخل كلمة المرور الحالية",
       "account_newPassword": "كلمة المرور الجديدة",
       "account_newPasswordPlaceholder": "أدخل كلمة المرور الجديدة",
-      "account_confirmPassword": "تأكيد كلمة المرور",
+      "account_confirmPassword": "تأكيد كلمة المرور الجديدة",
       "account_confirmPasswordPlaceholder": "أعد إدخال كلمة المرور الجديدة",
       "account_shopping": "التسوق",
       "account_address": "العنوان",
+      "account_addressDetails": "تفاصيل العنوان",
       "account_addNewAddress": "إضافة عنوان جديد",
       "account_addressType": "نوع العنوان",
       "account_addressTypePlaceholder": "اختر نوع العنوان",
@@ -44,6 +45,7 @@
       "account_addressTypeOther": "أخرى",
       "account_streetName": "اسم الشارع",
       "account_streetNamePlaceholder": "أدخل اسم الشارع",
+      "account_building": "مبني",
       "account_buildingName": "اسم أو رقم المبنى",
       "account_buildingNamePlaceholder": "أدخل اسم أو رقم المبنى",
       "account_governorate": "المحافظة",
@@ -55,6 +57,8 @@
       "account_landmark": "علامة مميزة",
       "account_landmarkPlaceholder": "أقرب علامة مميزة",
       "account_saveAddress": "حفظ العنوان",
+      "account_editAddress": "تعديل العنوان",
+      "account_setAsDefault": "تعيين كافتراضي",
       "account_myOrders": "طلباتي",
       "account_preferences": "التفضيلات",
       "account_notifications": "الإشعارات",
@@ -76,7 +80,11 @@
       "account_faqContactAnswer": "فريق الدعم متاح يوميًا من 9 صباحًا حتى 9 مساءً عبر البريد support@kimzshop.com أو من داخل التطبيق.",
       "account_legalAndPolicies": "الشروط والسياسات",
       "account_logout": "تسجيل الخروج",
-      "account_logoutConfirm": "هل أنت متأكد أنك تريد تسجيل الخروج؟"
+      "account_logoutConfirm": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+      "account_home": "المنزل",
+      "account_office": "العمل",
+      "account_apartment": "شقه سكنيه",
+      "account_other": "اخري"
     }
   },
   "en": {
@@ -111,10 +119,11 @@
       "account_currentPasswordPlaceholder": "Enter your current password",
       "account_newPassword": "New Password",
       "account_newPasswordPlaceholder": "Enter your new password",
-      "account_confirmPassword": "Confirm Password",
+      "account_confirmPassword": "Confirm New Password",
       "account_confirmPasswordPlaceholder": "Re-enter your new password",
       "account_shopping": "Shopping",
       "account_address": "Address",
+      "account_addressDetails": "Address Details",
       "account_addNewAddress": "Add New Address",
       "account_addressType": "Address Type",
       "account_addressTypePlaceholder": "Select the address type",
@@ -124,6 +133,7 @@
       "account_addressTypeOther": "Other",
       "account_streetName": "Street Name",
       "account_streetNamePlaceholder": "Enter the street name",
+      "account_building": "Building",
       "account_buildingName": "Building Name or Number",
       "account_buildingNamePlaceholder": "Enter the building name or number",
       "account_governorate": "Governorate",
@@ -135,6 +145,8 @@
       "account_landmark": "Landmark",
       "account_landmarkPlaceholder": "Nearest landmark",
       "account_saveAddress": "Save Address",
+      "account_editAddress": "Edit Address",
+      "account_setAsDefault": "Set as Default",
       "account_myOrders": "My Orders",
       "account_preferences": "Preferences",
       "account_notifications": "Notifications",
@@ -156,7 +168,11 @@
       "account_faqContactAnswer": "Our support team is available daily from 9 AM to 9 PM at support@kimzshop.com or through the in-app chat.",
       "account_legalAndPolicies": "Legal & Policies",
       "account_logout": "Logout",
-      "account_logoutConfirm": "Are you sure you want to logout?"
+      "account_logoutConfirm": "Are you sure you want to logout?",
+      "account_home": "Home",
+      "account_office": "Office",
+      "account_apartment": "Apartment",
+      "account_other": "Other"
     }
   }
 }
