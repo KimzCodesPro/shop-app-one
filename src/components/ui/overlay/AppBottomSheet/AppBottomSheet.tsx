@@ -5,20 +5,30 @@ import BottomSheet, {
   BottomSheetScrollView,
 } from "@gorhom/bottom-sheet";
 import { Portal } from "@gorhom/portal";
-import { ComponentProps } from "react";
-import { View } from "react-native";
+import { ComponentProps, useEffect, useRef } from "react";
+import { BackHandler, View } from "react-native";
 import { Typography } from "../../display";
 import { AppBottomSheetProps } from "./types";
 import useStyles from "./useStyles";
 
-const AppBottomSheet = ({
-  title,
-  description,
-  bottomSheetProps,
-  ref,
-  children,
-}: AppBottomSheetProps) => {
+const AppBottomSheet = (props: AppBottomSheetProps) => {
+  const { title, description, bottomSheetProps, ref, children } = props;
   const { styles } = useStyles();
+  const isOpen = useRef(false);
+
+  useEffect(() => {
+    if (typeof ref === "function" || ref === null) return;
+
+    const nativeNavigationListener = BackHandler.addEventListener(
+      "hardwareBackPress",
+      () => {
+        if (!isOpen) return false;
+        ref.current?.close();
+        return true;
+      },
+    );
+    return () => nativeNavigationListener.remove();
+  }, [ref]);
 
   const RenderBackdrop = (props: any) => (
     <BottomSheetBackdrop
@@ -45,6 +55,9 @@ const AppBottomSheet = ({
         handleStyle={styles.handleStyle}
         handleIndicatorStyle={styles.handleIndicatorStyle}
         {...bottomSheetProps}
+        onChange={(index) => {
+          isOpen.current = index >= 0;
+        }}
       >
         <View style={styles.header}>
           <Typography variant="mediumBold" style={styles.title}>
