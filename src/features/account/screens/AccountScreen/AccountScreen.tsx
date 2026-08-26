@@ -63,7 +63,7 @@ const AccountScreen = () => {
       <BottomSheet
         ref={themeBottomSheetRef}
         title={t("account_theme")}
-        bottomSheetProps={{ snapPoints: ["39%"] }}
+        bottomSheetProps={{ snapPoints: ["41%"] }}
       >
         <BottomSheet.Content>
           <ThemeRadioGroup
@@ -77,7 +77,7 @@ const AccountScreen = () => {
       <BottomSheet
         ref={notificationsBottomSheetRef}
         title={t("account_notifications")}
-        bottomSheetProps={{ snapPoints: ["19%"] }}
+        bottomSheetProps={{ snapPoints: ["20%"] }}
       >
         <BottomSheet.Content>
           <SwitchGroup
