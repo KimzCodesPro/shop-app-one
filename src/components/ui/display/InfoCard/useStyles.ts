@@ -22,6 +22,7 @@ const useStyles = (isSelected?: boolean) => {
     },
     leading: {
       gap: spacing.space4.height,
+      flex: 1,
     },
     leadingTitle: {
       color: colors.foreground.primary,

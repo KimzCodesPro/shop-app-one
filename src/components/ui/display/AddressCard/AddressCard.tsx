@@ -4,6 +4,9 @@ import InfoCard from "../InfoCard/InfoCard";
 import StatusBill from "../StatusBill/StatusBill";
 import { AddressCardProps } from "./types";
 
+import { useTranslation } from "@/src/hooks";
+import { addressColorMapping, addressIcon, addressLabel } from "./constant";
+
 const AddressCard = ({
   city,
   address,
@@ -12,30 +15,19 @@ const AddressCard = ({
   onPress,
   style,
 }: AddressCardProps) => {
-  const addressColorMapping = {
-    home: "success",
-    apartment: "warning",
-    office: "info",
-    other: "danger",
-  } as const;
-
-  const addressIcon = {
-    home: "home",
-    apartment: "building",
-    office: "brief-case",
-    other: "map-pin",
-  } as const;
-
+  const { t } = useTranslation();
   const colorSchema = addressColorMapping[type] as StatusVariant;
+
+  const StatusBillLabel = t(addressLabel[type]);
 
   return (
     <InfoCard onPress={onPress} style={style} isSelected={isSelected}>
       <InfoCard.Leading title={city} description={address} />
       <InfoCard.Trailing>
-        <IconBadge iconName="map-pin" color={colorSchema} />
+        <IconBadge iconName="map-pin" variant={colorSchema} />
         <StatusBill
           iconName={addressIcon[type]}
-          label={type}
+          label={StatusBillLabel}
           color={colorSchema}
         />
       </InfoCard.Trailing>

@@ -22,7 +22,7 @@ const PaymentCard = ({
         description={`${cardType} · Expires ${expiryDate}`}
       />
       <InfoCard.Trailing>
-        <IconBadge iconName="credit-card" color={IconColors} />
+        <IconBadge iconName="credit-card" variant={IconColors} />
         {isDefault && (
           <StatusBill iconName="check" label="Default" color="info" />
         )}

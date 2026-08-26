@@ -42,6 +42,7 @@ import ShieldX from "./ShieldX";
 import ShopingCart from "./ShopingCart";
 import ShoppingBag from "./ShoppingBag";
 import Star from "./Star";
+import Trash from "./Trash";
 import Truck from "./Truck";
 import User from "./User";
 import WifiOff from "./WifiOff";
@@ -96,6 +97,7 @@ const icons = {
   "image-off": ImageOff,
   "chevron-right": ChevronRight,
   "chevron-left": ChevronLeft,
+  trash: Trash,
 } as const;
 
 export default icons;

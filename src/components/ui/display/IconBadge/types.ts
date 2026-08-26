@@ -4,6 +4,6 @@ import { StyleProp, ViewStyle } from "react-native";
 
 export type IconBadgeProps = {
   iconName: IconName;
-  color: StatusVariant;
+  variant: StatusVariant;
   style?: StyleProp<ViewStyle>;
 };

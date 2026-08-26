@@ -1,18 +1,14 @@
 import { AddressTypes } from "@/components/ui/display/AddressCard/types";
 
-export type AddressItemInfo = {
-  id: string;
+export type AddressDetailsProps = {
+  type: AddressTypes;
   governorate: string;
   streetName: string;
   buildingNum: string;
   city: string;
   floorNum: string;
   landMark: string;
-  type: AddressTypes;
-};
-
-export type AddressListProps = {
-  items: AddressItemInfo[];
-  selectedItem: string;
-  onPress: (id: string) => void;
+  setAsDefaultHandler: () => void;
+  editHandler: () => void;
+  deleteHandler: () => void;
 };

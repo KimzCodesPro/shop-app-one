@@ -15,7 +15,11 @@ const InfoCardLeading = ({ title, description }: InfoCardLeadingProps) => {
       <Typography variant="smallBold" style={styles.leadingTitle}>
         {title}
       </Typography>
-      <Typography variant="xsmallRegular" style={styles.leadingDescription}>
+      <Typography
+        variant="xsmallRegular"
+        style={styles.leadingDescription}
+        numberOfLines={2}
+      >
         {description}
       </Typography>
     </View>
