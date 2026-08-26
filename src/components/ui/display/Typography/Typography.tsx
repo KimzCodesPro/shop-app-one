@@ -9,13 +9,18 @@ const Typography = ({
   color,
   textTransform,
   forceLanguage,
+  textAlign = "left",
   ...props
 }: TypographyProps) => {
   const typographyStyles = useFontStyles(forceLanguage);
 
   return (
     <Text
-      style={[typographyStyles[variant], { color, textTransform }, style]}
+      style={[
+        typographyStyles[variant],
+        { color, textTransform, textAlign },
+        style,
+      ]}
       {...props}
     >
       {children}
