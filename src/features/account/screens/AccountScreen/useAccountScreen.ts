@@ -103,7 +103,9 @@ const useAccountScreen = () => {
           icon: "map-pin",
           title: t("account_address"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/(main)/account/addressList");
+          },
         },
         {
           variant: "default",
