@@ -1,7 +1,7 @@
 import { ChangePasswordScreen } from "@/src/features";
 
-const changePassword = () => {
+const ChangePassword = () => {
   return <ChangePasswordScreen />;
 };
 
-export default changePassword;
+export default ChangePassword;

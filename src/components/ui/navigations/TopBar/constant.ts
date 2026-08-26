@@ -1,3 +1,3 @@
-const ICON_SIZE = 22;
+export const ICON_SIZE = 22;
 
-export default ICON_SIZE;
+export const GLYPH_INSET = ICON_SIZE * 0.34;

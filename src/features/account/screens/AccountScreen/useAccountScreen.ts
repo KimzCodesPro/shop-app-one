@@ -149,9 +149,11 @@ const useAccountScreen = () => {
         {
           variant: "default",
           icon: "help",
-          title: t("account_helpAndPolicies"),
+          title: t("account_helpAndSupport"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/(main)/account/helpAndSupport");
+          },
         },
         {
           variant: "default",

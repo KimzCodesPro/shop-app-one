@@ -1,7 +1,7 @@
 import { EditPorfileScreen } from "@/src/features";
 
-const editProfile = () => {
+const EditProfile = () => {
   return <EditPorfileScreen />;
 };
 
-export default editProfile;
+export default EditProfile;

@@ -5,6 +5,7 @@ const AccountLayout = () => {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="editProfile" />
       <Stack.Screen name="changePassword" />
+      <Stack.Screen name="helpAndSupport" />
     </Stack>
   );
 };

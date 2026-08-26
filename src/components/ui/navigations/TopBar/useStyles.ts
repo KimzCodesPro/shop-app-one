@@ -2,7 +2,7 @@ import { useTheme } from "@/hooks";
 import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import ICON_SIZE from "./constant";
+import { GLYPH_INSET, ICON_SIZE } from "./constant";
 const { VS, HS } = scalingMethods;
 
 const useStyles = () => {
@@ -22,6 +22,15 @@ const useStyles = () => {
     },
     slot: {
       width: HS(ICON_SIZE),
+      justifyContent: "center",
+    },
+    backSlot: {
+      alignItems: "flex-start",
+      marginStart: -HS(GLYPH_INSET),
+    },
+    actionSlot: {
+      alignItems: "flex-end",
+      marginEnd: HS(GLYPH_INSET),
     },
   });
 
