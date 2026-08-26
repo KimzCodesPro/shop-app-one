@@ -4,6 +4,7 @@ const AccountLayout = () => {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="editProfile" />
+      <Stack.Screen name="changePassword" />
     </Stack>
   );
 };

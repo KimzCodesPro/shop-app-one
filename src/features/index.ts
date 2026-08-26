@@ -1,2 +1,3 @@
 export { default as AccountScreen } from "./account/screens/AccountScreen/AccountScreen";
+export { default as ChangePasswordScreen } from "./account/screens/ChangePasswordScreen/ChangePasswordScreen";
 export { default as EditPorfileScreen } from "./account/screens/EditPorfileScreen/EditPorfileScreen";

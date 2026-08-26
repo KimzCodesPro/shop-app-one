@@ -89,7 +89,9 @@ const useAccountScreen = () => {
           icon: "lock",
           title: t("account_changePassword"),
           trailing: "chevron",
-          onPress: () => {},
+          onPress: () => {
+            router.push("/(main)/account/changePassword");
+          },
         },
       ],
     },

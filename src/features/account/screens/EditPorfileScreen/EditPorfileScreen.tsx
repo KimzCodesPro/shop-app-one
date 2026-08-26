@@ -5,7 +5,7 @@ import { ScreenLayout } from "@/src/components/ui/layout";
 import { TopBar } from "@/src/components/ui/navigations";
 import { useTranslation } from "@/src/hooks";
 import { View } from "react-native";
-import styles from "./EditPorfileScreenStyles";
+import styles from "./editPorfileScreenStyles";
 
 const EditPorfileScreen = () => {
   const { t } = useTranslation();
