@@ -1,7 +1,7 @@
-import { HomeScreen } from "@/src/features";
+import { AccountScreen } from "@/src/features";
 
 const AccountPage = () => {
-  return <HomeScreen />;
+  return <AccountScreen />;
 };
 
 export default AccountPage;
