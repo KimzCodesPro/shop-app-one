@@ -1,7 +1,7 @@
-import { ROW_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { Pressable, View } from "react-native";
 import { Typography } from "../../typography";
+import { ROW_ICON_SIZE } from "./constants";
 import RowNavTrailing from "./RowNavTrailing";
 import { RowNavProps } from "./types";
 import useStyles from "./useStyles";
@@ -14,18 +14,17 @@ const RowNav = ({
   onPress,
   ...trailingProps
 }: RowNavProps) => {
-  const { styles, colors } = useStyles();
-
-  const conditionalColor = {
-    default: colors.foreground.primary,
-    danger: colors.danger.base,
-  };
+  const { styles, rowNavItemColor } = useStyles();
 
   return (
     <Pressable style={[styles.container, style]} onPress={onPress}>
       <View style={styles.mainInfo}>
-        <Icon name={icon} size={ROW_ICON_SIZE} color={conditionalColor[variant]} />
-        <Typography variant="smallBold" color={conditionalColor[variant]}>
+        <Icon
+          name={icon}
+          size={ROW_ICON_SIZE}
+          color={rowNavItemColor[variant]}
+        />
+        <Typography variant="smallBold" color={rowNavItemColor[variant]}>
           {title}
         </Typography>
       </View>

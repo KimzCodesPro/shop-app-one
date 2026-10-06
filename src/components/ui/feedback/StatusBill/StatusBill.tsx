@@ -1,7 +1,7 @@
-import { STATUS_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { View } from "react-native";
 import { Typography } from "../../typography";
+import { STATUS_ICON_SIZE } from "./constants";
 
 import { StatusBillProps } from "./types";
 import useStyles from "./useStyles";
@@ -13,13 +13,15 @@ const StatusBill = ({
   color,
   style,
 }: StatusBillProps) => {
-  const { styles, strongColor } = useStyles(color, variant);
+  const { styles, typographyColor } = useStyles(color, variant);
   return (
     <View style={[styles.container, style]}>
-      {iconName && <Icon name={iconName} size={STATUS_ICON_SIZE} color={strongColor} />}
+      {iconName && (
+        <Icon name={iconName} size={STATUS_ICON_SIZE} color={typographyColor} />
+      )}
       <Typography
         variant="xsmallBold"
-        color={strongColor}
+        color={typographyColor}
         textTransform="capitalize"
       >
         {label}

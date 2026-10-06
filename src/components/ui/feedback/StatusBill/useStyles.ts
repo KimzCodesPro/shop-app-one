@@ -3,35 +3,29 @@ import { useTheme } from "@/hooks";
 import { StatusVariant } from "@/types";
 import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
+import { VARIANT_TO_SCHEMA } from "./constants";
+import { statusBillColor } from "./helper";
 import { StatusBillVariant } from "./types";
 const { HS } = scalingMethods;
 
-const useStyles = (colorSchema: StatusVariant, variant: StatusBillVariant) => {
+const useStyles = (
+  StatusVariant: StatusVariant,
+  variant: StatusBillVariant,
+) => {
   const colors = useTheme();
+  console.log();
 
-  const statusColors = {
-    success: { tint: colors.success.tint, strong: colors.success.strong },
-    warning: { tint: colors.warning.tint, strong: colors.warning.base },
-    info: { tint: colors.primary.tint, strong: colors.primary.pressed },
-    danger: { tint: colors.danger.tint, strong: colors.danger.strong },
-  } as const;
-
-  const currentStatusColors = statusColors[colorSchema];
+  const { borderColor, backgroundColor, typographyColor } =
+    statusBillColor(colors)[VARIANT_TO_SCHEMA[variant]][StatusVariant];
 
   const styles = StyleSheet.create({
     container: {
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor:
-        variant === "outlined"
-          ? colors.background.base
-          : currentStatusColors.tint,
+      backgroundColor,
       borderWidth: HS(1),
-      borderColor:
-        variant === "outlined"
-          ? currentStatusColors.strong
-          : currentStatusColors.tint,
+      borderColor,
       paddingHorizontal: spacing.space8.width,
       paddingVertical: spacing.space4.height,
       borderRadius: radius.full,
@@ -39,7 +33,7 @@ const useStyles = (colorSchema: StatusVariant, variant: StatusBillVariant) => {
     },
   });
 
-  return { colors, styles, strongColor: currentStatusColors.strong };
+  return { colors, styles, typographyColor };
 };
 
 export default useStyles;

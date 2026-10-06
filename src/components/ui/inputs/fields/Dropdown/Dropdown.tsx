@@ -1,12 +1,12 @@
-import { CHEVRON_ICON_SIZE } from "./constants";
 import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import Icon from "@/src/components/icons";
 import { useRef, useState } from "react";
 import { Keyboard, Pressable } from "react-native";
 import { Typography } from "../../../typography";
 import FieldWrapper from "../shared/FieldWrapper";
+import { fieldCurrentStatus } from "../shared/helpers";
 import useSharedStyles from "../shared/useSharedStyles";
-import { fieldCurrentStatus } from "../shared/utils";
+import { CHEVRON_ICON_SIZE } from "./constants";
 import DropdownList from "./DropdownList";
 import { DropdownProps } from "./types";
 

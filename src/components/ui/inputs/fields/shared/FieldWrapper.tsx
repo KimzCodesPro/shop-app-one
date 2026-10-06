@@ -1,6 +1,6 @@
-import { FIELD_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { View } from "react-native";
+import { FIELD_ICON_SIZE } from "./constants";
 import FieldErrorMessage from "./FieldErrorMessage";
 import FieldLabel from "./FieldLabel";
 import { FieldWrapperProps } from "./sharedTypes";
@@ -14,13 +14,13 @@ const FieldWrapper = ({
   currentStatus,
   style,
 }: FieldWrapperProps) => {
-  const { styles, statusColor } = useSharedStyles(currentStatus);
+  const { styles, iconColor } = useSharedStyles(currentStatus);
 
   return (
     <View style={[styles.container, style]}>
       <FieldLabel label={label} />
       <View style={styles.fieldWrapper}>
-        <Icon name={fieldIconName} size={FIELD_ICON_SIZE} color={statusColor} />
+        <Icon name={fieldIconName} size={FIELD_ICON_SIZE} color={iconColor} />
         {children}
       </View>
       <FieldErrorMessage errorMessage={errorMessage} />

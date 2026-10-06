@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Pressable, TextInput as RNTextInput } from "react-native";
 import FieldWrapper from "../shared/FieldWrapper";
 import useSharedStyles from "../shared/useSharedStyles";
-import { fieldCurrentStatus } from "../shared/utils";
+import { fieldCurrentStatus } from "../shared/helpers";
 import { TextInputProps } from "./types";
 const TextInput = ({
   label,

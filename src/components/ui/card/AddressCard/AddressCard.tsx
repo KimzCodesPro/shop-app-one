@@ -1,7 +1,6 @@
-import { StatusVariant } from "@/src/types";
 import { IconBadge } from "../../display";
-import InfoCard from "../InfoCard/InfoCard";
 import { StatusBill } from "../../feedback";
+import InfoCard from "../InfoCard/InfoCard";
 import { AddressCardProps } from "./types";
 
 import { useTranslation } from "@/src/hooks";
@@ -16,7 +15,7 @@ const AddressCard = ({
   style,
 }: AddressCardProps) => {
   const { t } = useTranslation();
-  const colorSchema = addressColorMapping[type] as StatusVariant;
+  const colorSchema = addressColorMapping[type];
 
   const StatusBillLabel = t(addressLabel[type]);
 

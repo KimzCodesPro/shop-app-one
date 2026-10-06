@@ -2,6 +2,7 @@ import { opacity, radius, spacing } from "@/constants";
 import { useTheme } from "@/hooks";
 import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
+import { buttonVariantColor } from "./helper";
 import { SizeType, VariantType } from "./types";
 
 const { HS, VS } = scalingMethods;
@@ -17,40 +18,7 @@ const useStyles = (
 
   const buttonPaddingHorizontal = size === "sm" ? HS(16) : HS(24);
 
-  const variantColors = {
-    primary: {
-      background: colors.primary.base,
-      typography: colors.foreground.contrast,
-      border: colors.primary.base,
-    },
-    "primary-outline": {
-      background: colors.background.base,
-      typography: colors.primary.base,
-      border: colors.primary.base,
-    },
-    chip: {
-      background: "transparent",
-      typography: colors.primary.base,
-      border: colors.primary.base,
-    },
-    link: {
-      background: "transparent",
-      typography: colors.primary.base,
-      border: "transparent",
-    },
-    "link-danger": {
-      background: "transparent",
-      typography: colors.danger.base,
-      border: "transparent",
-    },
-    ghost: {
-      background: "transparent",
-      typography: colors.foreground.primary,
-      border: colors.border.default,
-    },
-  } as const;
-
-  const currentVariantColors = variantColors[variant];
+  const currentVariantColors = buttonVariantColor(colors)[variant];
 
   const styles = StyleSheet.create({
     button: {
