@@ -1,5 +1,5 @@
 import { useTheme } from "@/hooks";
-import { spacing } from "@/src/constants";
+import { spacing } from "@/constants";
 import { StyleSheet } from "react-native";
 import { userGreetingTypography } from "./helper";
 

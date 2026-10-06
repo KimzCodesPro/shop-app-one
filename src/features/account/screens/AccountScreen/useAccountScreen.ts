@@ -1,8 +1,8 @@
 import { themeDark, themeLight, themeSystem } from "@/assets/images";
 import { SwitchGroupChange } from "@/components/ui/inputs";
 import { BottomSheetRef } from "@/components/ui/overlay";
-import { useTranslation, useUserPreferences } from "@/src/hooks";
-import { Language, Theme } from "@/src/types";
+import { useTranslation, useUserPreferences } from "@/hooks";
+import { Language, Theme } from "@/types";
 import { useRouter } from "expo-router";
 import { useRef, useState } from "react";
 import { PageNavigationList } from "./components/NavigationList/types";

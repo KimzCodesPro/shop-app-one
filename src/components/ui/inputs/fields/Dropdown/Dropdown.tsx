@@ -1,5 +1,5 @@
 import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
-import Icon from "@/src/components/icons";
+import Icon from "@/components/icons";
 import { useRef, useState } from "react";
 import { Keyboard, Pressable } from "react-native";
 import { Typography } from "../../../typography";

@@ -1,5 +1,5 @@
-import { spacing } from "@/src/constants";
-import { useFontStyles, useTheme } from "@/src/hooks";
+import { spacing } from "@/constants";
+import { useFontStyles, useTheme } from "@/hooks";
 import { StyleSheet } from "react-native";
 
 const useStyles = () => {

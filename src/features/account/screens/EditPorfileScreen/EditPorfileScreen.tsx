@@ -1,9 +1,9 @@
-import { userPlaceholder } from "@/src/assets/images";
-import { Avatar } from "@/src/components/ui/display";
-import { Button, TextInput } from "@/src/components/ui/inputs";
-import { ScreenLayout } from "@/src/components/ui/layout";
-import { TopBar } from "@/src/components/ui/navigations";
-import { useTranslation } from "@/src/hooks";
+import { userPlaceholder } from "@/assets/images";
+import { Avatar } from "@/components/ui/display";
+import { Button, TextInput } from "@/components/ui/inputs";
+import { ScreenLayout } from "@/components/ui/layout";
+import { TopBar } from "@/components/ui/navigations";
+import { useTranslation } from "@/hooks";
 import { View } from "react-native";
 import styles from "./editPorfileScreenStyles";
 

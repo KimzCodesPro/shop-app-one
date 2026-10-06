@@ -1,4 +1,4 @@
-import { AddressCard } from "@/src/components/ui/card";
+import { AddressCard } from "@/components/ui/card";
 import styles from "../../addressListScreenStyles";
 import { AddressListProps } from "./types";
 

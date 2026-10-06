@@ -5,11 +5,11 @@ import {
   addressLabel,
 } from "@/components/ui/card/AddressCard/constant";
 import { useTheme, useTranslation } from "@/hooks";
-import Icon from "@/src/components/icons";
-import { IconBadge } from "@/src/components/ui/display";
-import { StatusBill } from "@/src/components/ui/feedback";
-import { Typography } from "@/src/components/ui/typography";
-import { Button } from "@/src/components/ui/inputs";
+import Icon from "@/components/icons";
+import { IconBadge } from "@/components/ui/display";
+import { StatusBill } from "@/components/ui/feedback";
+import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/inputs";
 import { Pressable, View } from "react-native";
 import styles from "./AddressDetailsStyles";
 import { AddressDetailsProps } from "./types";

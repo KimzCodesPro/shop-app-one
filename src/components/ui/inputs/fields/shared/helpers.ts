@@ -1,4 +1,4 @@
-import { ThemePalette } from "@/src/types";
+import { ThemePalette } from "@/types";
 import { StatusType } from "./sharedTypes";
 
 export const fieldStatusColor = (colors: ThemePalette) =>

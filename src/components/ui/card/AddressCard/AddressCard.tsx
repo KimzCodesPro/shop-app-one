@@ -3,7 +3,7 @@ import { StatusBill } from "../../feedback";
 import InfoCard from "../InfoCard/InfoCard";
 import { AddressCardProps } from "./types";
 
-import { useTranslation } from "@/src/hooks";
+import { useTranslation } from "@/hooks";
 import { addressColorMapping, addressIcon, addressLabel } from "./constant";
 
 const AddressCard = ({

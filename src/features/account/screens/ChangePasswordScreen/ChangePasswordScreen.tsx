@@ -1,7 +1,7 @@
 import { Button, TextInput } from "@/components/ui/inputs";
 import { useTranslation } from "@/hooks";
-import { ScreenLayout } from "@/src/components/ui/layout";
-import { TopBar } from "@/src/components/ui/navigations";
+import { ScreenLayout } from "@/components/ui/layout";
+import { TopBar } from "@/components/ui/navigations";
 import { View } from "react-native";
 import styles from "./chnagePasswordStyles";
 

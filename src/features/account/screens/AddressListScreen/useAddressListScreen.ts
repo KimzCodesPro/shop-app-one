@@ -1,5 +1,5 @@
-import { BottomSheetRef } from "@/src/components/ui/overlay";
-import { useTranslation } from "@/src/hooks";
+import { BottomSheetRef } from "@/components/ui/overlay";
+import { useTranslation } from "@/hooks";
 import { useRouter } from "expo-router";
 import { useRef, useState } from "react";
 import addressesList from "./components/AddressesList/data";

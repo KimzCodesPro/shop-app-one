@@ -1,4 +1,4 @@
-import { EditPorfileScreen } from "@/src/features";
+import { EditPorfileScreen } from "@/features";
 
 const EditProfile = () => {
   return <EditPorfileScreen />;

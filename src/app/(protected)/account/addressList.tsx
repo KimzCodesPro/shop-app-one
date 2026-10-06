@@ -1,4 +1,4 @@
-import { AddressListScreen } from "@/src/features";
+import { AddressListScreen } from "@/features";
 
 const AddressList = () => {
   return <AddressListScreen />;

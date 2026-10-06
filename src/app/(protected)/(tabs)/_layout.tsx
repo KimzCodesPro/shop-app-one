@@ -1,8 +1,8 @@
 import {
   CustomBottomTab,
   CustomBottomTabButton,
-} from "@/src/components/ui/navigations";
-import { useTranslation } from "@/src/hooks";
+} from "@/components/ui/navigations";
+import { useTranslation } from "@/hooks";
 import { TabList, Tabs, TabSlot, TabTrigger } from "expo-router/ui";
 export default function TabLayout() {
   const { t } = useTranslation();

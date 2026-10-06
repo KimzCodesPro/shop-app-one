@@ -1,6 +1,6 @@
 import { OPTION_CHECK_ICON_SIZE } from "./constants";
-import Icon from "@/src/components/icons/Icon";
-import useTheme from "@/src/hooks/useTheme";
+import Icon from "@/components/icons/Icon";
+import useTheme from "@/hooks/useTheme";
 import { Pressable } from "react-native";
 import { Typography } from "../../../typography";
 import { DropdownListProps } from "./types";

@@ -1,4 +1,4 @@
-import { ThemePalette } from "@/src/types";
+import { ThemePalette } from "@/types";
 
 export const userGreetingTypography = (colors: ThemePalette) => {
   return {

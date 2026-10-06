@@ -1,9 +1,9 @@
-import { userPlaceholder } from "@/src/assets/images";
-import { UserGreeting } from "@/src/components/ui/display";
-import { Button, RadioGroup, SwitchGroup } from "@/src/components/ui/inputs";
-import { ScreenLayout } from "@/src/components/ui/layout";
-import { TopBar } from "@/src/components/ui/navigations";
-import { BottomSheet, Modal } from "@/src/components/ui/overlay";
+import { userPlaceholder } from "@/assets/images";
+import { UserGreeting } from "@/components/ui/display";
+import { Button, RadioGroup, SwitchGroup } from "@/components/ui/inputs";
+import { ScreenLayout } from "@/components/ui/layout";
+import { TopBar } from "@/components/ui/navigations";
+import { BottomSheet, Modal } from "@/components/ui/overlay";
 import { View } from "react-native";
 import NavigationList from "./components/NavigationList/NavigationList";
 import ThemeRadioGroup from "./components/ThemeRadioGroup/ThemeRadioGroup";

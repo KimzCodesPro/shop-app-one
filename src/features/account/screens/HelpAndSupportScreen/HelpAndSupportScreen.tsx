@@ -1,7 +1,7 @@
-import { Accordion } from "@/src/components/ui/list";
-import { ScreenLayout } from "@/src/components/ui/layout";
-import { TopBar } from "@/src/components/ui/navigations";
-import { useTranslation } from "@/src/hooks";
+import { Accordion } from "@/components/ui/list";
+import { ScreenLayout } from "@/components/ui/layout";
+import { TopBar } from "@/components/ui/navigations";
+import { useTranslation } from "@/hooks";
 
 const HelpAndSupportScreen = () => {
   const { t } = useTranslation();

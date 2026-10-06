@@ -1,7 +1,7 @@
-import { RenderHtml } from "@/src/components/ui/display";
-import { ScreenLayout } from "@/src/components/ui/layout";
-import { TopBar } from "@/src/components/ui/navigations";
-import { useTranslation } from "@/src/hooks";
+import { RenderHtml } from "@/components/ui/display";
+import { ScreenLayout } from "@/components/ui/layout";
+import { TopBar } from "@/components/ui/navigations";
+import { useTranslation } from "@/hooks";
 import useStyles from "./useStyles";
 
 const source = {

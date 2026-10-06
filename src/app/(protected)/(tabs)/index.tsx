@@ -1,5 +1,5 @@
-import { ScreenLayout } from "@/src/components/ui/layout";
-import { TopBar } from "@/src/components/ui/navigations";
+import { ScreenLayout } from "@/components/ui/layout";
+import { TopBar } from "@/components/ui/navigations";
 import { Text } from "react-native";
 
 const HomePage = () => {
