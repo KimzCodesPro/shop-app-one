@@ -1,6 +1,6 @@
-import IconBadge from "../IconBadge/IconBadge";
+import { IconBadge } from "../../display";
 import InfoCard from "../InfoCard/InfoCard";
-import StatusBill from "../StatusBill/StatusBill";
+import { StatusBill } from "../../feedback";
 import { PaymentCardProps } from "./types";
 
 const PaymentCard = ({

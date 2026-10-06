@@ -1,7 +1,8 @@
+import { CHEVRON_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { useState } from "react";
 import { Pressable, View } from "react-native";
-import Typography from "../Typography/Typography";
+import { Typography } from "../../typography";
 import { AccordionProps } from "./types";
 import useStyles from "./useStyles";
 
@@ -30,7 +31,7 @@ const Accordion = ({ items, style }: AccordionProps) => {
               </Typography>
               <Icon
                 name={isExpanded ? "chevron-up" : "chevron-down"}
-                size={22}
+                size={CHEVRON_ICON_SIZE}
                 color={colors.foreground.tertiary}
               />
             </View>

@@ -1,5 +1,5 @@
-import { Typography } from "@/src/components/ui/display";
-import { RowNav } from "@/src/components/ui/navigations";
+import { Typography } from "@/src/components/ui/typography";
+import { RowNav } from "@/src/components/ui/list";
 import spacing from "@/src/constants/spacing";
 import useTheme from "@/src/hooks/useTheme";
 import { StyleSheet, View } from "react-native";

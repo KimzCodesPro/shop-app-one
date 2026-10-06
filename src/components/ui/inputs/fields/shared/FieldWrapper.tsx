@@ -1,3 +1,4 @@
+import { FIELD_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { View } from "react-native";
 import FieldErrorMessage from "./FieldErrorMessage";
@@ -19,7 +20,7 @@ const FieldWrapper = ({
     <View style={[styles.container, style]}>
       <FieldLabel label={label} />
       <View style={styles.fieldWrapper}>
-        <Icon name={fieldIconName} size={20} color={statusColor} />
+        <Icon name={fieldIconName} size={FIELD_ICON_SIZE} color={statusColor} />
         {children}
       </View>
       <FieldErrorMessage errorMessage={errorMessage} />

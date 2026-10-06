@@ -1,3 +1,4 @@
+import { BADGE_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { View } from "react-native";
 import { IconBadgeProps } from "./types";
@@ -8,7 +9,7 @@ const IconBadge = ({ iconName, style, variant = "info" }: IconBadgeProps) => {
 
   return (
     <View style={[styles.container, style]}>
-      <Icon name={iconName} size={22} color={iconColors[variant]} />
+      <Icon name={iconName} size={BADGE_ICON_SIZE} color={iconColors[variant]} />
     </View>
   );
 };

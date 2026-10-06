@@ -1,6 +1,6 @@
 import { Pressable, View } from "react-native";
 
-import { Typography } from "../../display";
+import { Typography } from "../../typography";
 import Switch from "../Switch/Switch";
 import { SwitchGroupProps } from "./types";
 import useStyles from "./useStyles";

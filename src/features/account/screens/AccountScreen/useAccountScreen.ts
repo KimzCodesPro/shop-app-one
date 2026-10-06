@@ -90,7 +90,7 @@ const useAccountScreen = () => {
           title: t("account_changePassword"),
           trailing: "chevron",
           onPress: () => {
-            router.push("/(main)/account/changePassword");
+            router.push("/(protected)/account/changePassword");
           },
         },
       ],
@@ -104,7 +104,7 @@ const useAccountScreen = () => {
           title: t("account_address"),
           trailing: "chevron",
           onPress: () => {
-            router.push("/(main)/account/addressList");
+            router.push("/(protected)/account/addressList");
           },
         },
         {
@@ -154,7 +154,7 @@ const useAccountScreen = () => {
           title: t("account_helpAndSupport"),
           trailing: "chevron",
           onPress: () => {
-            router.push("/(main)/account/helpAndSupport");
+            router.push("/(protected)/account/helpAndSupport");
           },
         },
         {
@@ -163,7 +163,7 @@ const useAccountScreen = () => {
           title: t("account_legalAndPolicies"),
           trailing: "chevron",
           onPress: () => {
-            router.push("/(main)/account/legalAndPolicies");
+            router.push("/(protected)/account/legalAndPolicies");
           },
         },
         {

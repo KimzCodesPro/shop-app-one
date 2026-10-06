@@ -1,5 +1,6 @@
 import { Pressable, View } from "react-native";
-import Typography from "../Typography/Typography";
+import { Typography } from "../../typography";
+import CardWrapper from "../CardWrapper/CardWrapper";
 import {
   InfoCardLeadingProps,
   InfoCardProps,
@@ -35,8 +36,8 @@ const InfoCard = ({ children, isSelected, onPress, style }: InfoCardProps) => {
   const { styles } = useStyles(isSelected);
 
   return (
-    <Pressable onPress={onPress} style={[styles.container, style]}>
-      {children}
+    <Pressable onPress={onPress}>
+      <CardWrapper style={[styles.container, style]}>{children}</CardWrapper>
     </Pressable>
   );
 };

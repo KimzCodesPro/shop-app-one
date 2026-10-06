@@ -1,4 +1,4 @@
-import { RowNavProps } from "@/src/components/ui/navigations/RowNav/types";
+import { RowNavProps } from "@/src/components/ui/list/RowNav/types";
 
 export type PageNavigationSection = {
   title: string;

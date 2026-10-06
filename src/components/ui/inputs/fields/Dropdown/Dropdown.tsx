@@ -1,8 +1,9 @@
+import { CHEVRON_ICON_SIZE } from "./constants";
 import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import Icon from "@/src/components/icons";
 import { useRef, useState } from "react";
 import { Keyboard, Pressable } from "react-native";
-import { Typography } from "../../../display";
+import { Typography } from "../../../typography";
 import FieldWrapper from "../shared/FieldWrapper";
 import useSharedStyles from "../shared/useSharedStyles";
 import { fieldCurrentStatus } from "../shared/utils";
@@ -68,7 +69,7 @@ const Dropdown = ({
           </Typography>
           <Icon
             name={isOpen ? "chevron-up" : "chevron-down"}
-            size={22}
+            size={CHEVRON_ICON_SIZE}
             color={colors.foreground.tertiary}
           />
         </FieldWrapper>

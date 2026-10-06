@@ -1,6 +1,7 @@
+import { CLOSE_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { Pressable, Modal as RNModal, View } from "react-native";
-import { Typography } from "../../display";
+import { Typography } from "../../typography";
 import { ModalProps } from "./types";
 import useStyles from "./useStyles";
 
@@ -18,7 +19,7 @@ const Modal = ({
         <View style={styles.content}>
           {closeModal && (
             <Pressable style={styles.contentCloseBTN} onPress={closeModal}>
-              <Icon name="close" size={20} color={colors.foreground.primary} />
+              <Icon name="close" size={CLOSE_ICON_SIZE} color={colors.foreground.primary} />
             </Pressable>
           )}
 

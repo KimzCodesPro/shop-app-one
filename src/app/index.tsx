@@ -5,7 +5,7 @@ const Index = () => {
   const router = useRouter();
   return (
     <DismissKeyboard style={styles.container}>
-      <Pressable onPress={() => router.push("/(main)/(tabs)")}>
+      <Pressable onPress={() => router.push("/(protected)/(tabs)")}>
         <Text>go to main</Text>
       </Pressable>
     </DismissKeyboard>

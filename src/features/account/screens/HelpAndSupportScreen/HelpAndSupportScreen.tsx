@@ -1,4 +1,4 @@
-import { Accordion } from "@/src/components/ui/display";
+import { Accordion } from "@/src/components/ui/list";
 import { ScreenLayout } from "@/src/components/ui/layout";
 import { TopBar } from "@/src/components/ui/navigations";
 import { useTranslation } from "@/src/hooks";

@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import Avatar from "../Avatar/Avatar";
-import Typography from "../Typography/Typography";
+import { Typography } from "../../typography";
 import { UserGreetingProps } from "./types";
 import useStyles from "./useStyles";
 

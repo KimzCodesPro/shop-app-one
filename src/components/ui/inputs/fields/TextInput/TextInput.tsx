@@ -1,3 +1,4 @@
+import { TEXT_INPUT_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { useState } from "react";
 import { Pressable, TextInput as RNTextInput } from "react-native";
@@ -47,7 +48,7 @@ const TextInput = ({
         <Pressable onPress={() => setPasswordVisible(!passwordVisible)}>
           <Icon
             name={passwordVisible ? "eye-off" : "eye"}
-            size={20}
+            size={TEXT_INPUT_ICON_SIZE}
             color={colors.foreground.tertiary}
           />
         </Pressable>
@@ -55,7 +56,7 @@ const TextInput = ({
 
       {type !== "password" && clearInput && value && (
         <Pressable onPress={clearInput}>
-          <Icon name="close" size={20} color={colors.foreground.tertiary} />
+          <Icon name="close" size={TEXT_INPUT_ICON_SIZE} color={colors.foreground.tertiary} />
         </Pressable>
       )}
     </FieldWrapper>

@@ -1,7 +1,8 @@
+import { OPTION_CHECK_ICON_SIZE } from "./constants";
 import Icon from "@/src/components/icons/Icon";
 import useTheme from "@/src/hooks/useTheme";
 import { Pressable } from "react-native";
-import { Typography } from "../../../display";
+import { Typography } from "../../../typography";
 import { DropdownListProps } from "./types";
 
 const DropdownList = ({
@@ -32,7 +33,7 @@ const DropdownList = ({
               {option.label}
             </Typography>
             {isSelected && (
-              <Icon name="check" size={23} color={colors.primary.base} />
+              <Icon name="check" size={OPTION_CHECK_ICON_SIZE} color={colors.primary.base} />
             )}
           </Pressable>
         );

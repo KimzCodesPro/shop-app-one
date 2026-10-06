@@ -1,7 +1,7 @@
 import Icon from "@/components/icons";
 import { useRouter } from "expo-router";
 import { Pressable, View } from "react-native";
-import { Typography } from "../../display";
+import { Typography } from "../../typography";
 import { ICON_SIZE } from "./constant";
 import { TopBarProps } from "./types";
 import useStyles from "./useStyles";

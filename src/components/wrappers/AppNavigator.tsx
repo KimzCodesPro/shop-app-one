@@ -16,7 +16,7 @@ const AppNavigator = () => {
         }}
       >
         <Stack.Screen name="index" />
-        <Stack.Screen name="(main)" />
+        <Stack.Screen name="(protected)" />
       </Stack>
     </ThemeProvider>
   );

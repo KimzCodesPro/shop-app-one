@@ -7,7 +7,7 @@ import BottomSheet, {
 import { Portal } from "@gorhom/portal";
 import { ComponentProps, useEffect, useRef } from "react";
 import { BackHandler, View } from "react-native";
-import { Typography } from "../../display";
+import { Typography } from "../../typography";
 import { AppBottomSheetProps } from "./types";
 import useStyles from "./useStyles";
 
