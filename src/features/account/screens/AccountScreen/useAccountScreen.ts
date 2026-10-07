@@ -51,7 +51,7 @@ const useAccountScreen = () => {
 
   const onSelectLanguage = (value: string) => {
     setLanguage(value as Language);
-    languageBottomSheetRef.current?.close();
+    languageBottomSheetRef.current?.dismiss();
   };
 
   // theme handler
@@ -67,7 +67,7 @@ const useAccountScreen = () => {
 
   const onSelectTheme = (value: Theme) => {
     setTheme(value);
-    themeBottomSheetRef.current?.close();
+    themeBottomSheetRef.current?.dismiss();
   };
 
   // navigation list for the home screen
@@ -124,7 +124,7 @@ const useAccountScreen = () => {
           icon: "bell",
           title: t("account_notifications"),
           trailing: "chevron",
-          onPress: () => notificationsBottomSheetRef.current?.expand(),
+          onPress: () => notificationsBottomSheetRef.current?.present(),
         },
 
         {
@@ -133,7 +133,7 @@ const useAccountScreen = () => {
           title: t("account_language"),
           trailing: "chevronWithValue",
           trailingValue: selectedLanguageLabel,
-          onPress: () => languageBottomSheetRef.current?.expand(),
+          onPress: () => languageBottomSheetRef.current?.present(),
         },
         {
           variant: "default",
@@ -141,7 +141,7 @@ const useAccountScreen = () => {
           title: t("account_theme"),
           trailing: "chevronWithValue",
           trailingValue: selectedThemeLabel,
-          onPress: () => themeBottomSheetRef.current?.expand(),
+          onPress: () => themeBottomSheetRef.current?.present(),
         },
       ],
     },

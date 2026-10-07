@@ -17,7 +17,7 @@ const useTranslation = () => {
     });
   };
 
-  return { direction, keys, language, t };
+  return { direction, keys, t };
 };
 
 export default useTranslation;

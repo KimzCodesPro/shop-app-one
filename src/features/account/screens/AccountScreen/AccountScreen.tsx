@@ -49,7 +49,7 @@ const AccountScreen = () => {
       <BottomSheet
         ref={languageBottomSheetRef}
         title={t("account_language")}
-        bottomSheetProps={{ snapPoints: ["28%"] }}
+        bottomSheetProps={{ snapPoints: ["25%"] }}
       >
         <BottomSheet.Content>
           <RadioGroup
@@ -63,7 +63,7 @@ const AccountScreen = () => {
       <BottomSheet
         ref={themeBottomSheetRef}
         title={t("account_theme")}
-        bottomSheetProps={{ snapPoints: ["41%"] }}
+        bottomSheetProps={{ snapPoints: ["40%"] }}
       >
         <BottomSheet.Content>
           <ThemeRadioGroup

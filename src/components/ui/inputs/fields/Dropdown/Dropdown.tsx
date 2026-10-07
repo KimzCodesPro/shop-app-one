@@ -1,5 +1,5 @@
-import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import Icon from "@/components/icons";
+import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
 import { useRef, useState } from "react";
 import { Keyboard, Pressable } from "react-native";
 import { Typography } from "../../../typography";
@@ -36,11 +36,11 @@ const Dropdown = ({
   const handleOpenSheet = () => {
     Keyboard.dismiss();
     setIsOpen(true);
-    sheetRef.current?.expand();
+    sheetRef.current?.present();
   };
 
   const handleSelectValue = (val: string) => {
-    sheetRef.current?.close();
+    sheetRef.current?.dismiss();
     onSelect(val);
     setIsOpen(false);
   };
@@ -78,7 +78,7 @@ const Dropdown = ({
           title={label ?? placeholder}
           bottomSheetProps={{
             snapPoints: ["40%"],
-            onClose: () => setIsOpen(false),
+            onDismiss: () => setIsOpen(false),
           }}
         >
           <BottomSheet.Scroll>

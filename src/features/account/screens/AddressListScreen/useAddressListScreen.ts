@@ -20,22 +20,22 @@ const useAddressListScreen = () => {
 
   const AddressOpenFullInfoHandler = (id: string) => {
     setCurrentOpenedAddress(id);
-    addressBottomSheetRef.current?.expand();
+    addressBottomSheetRef.current?.present();
   };
 
   const setAddressAsDefaultHandler = () => {
     if (currentOpenedAddress) {
       seSelectedItemId(currentOpenedAddress);
-      addressBottomSheetRef.current?.close();
+      addressBottomSheetRef.current?.dismiss();
     }
   };
 
   const deleteAddressHandler = () => {
-    addressBottomSheetRef.current?.close();
+    addressBottomSheetRef.current?.dismiss();
   };
 
   const editAddressHandler = () => {
-    addressBottomSheetRef.current?.close();
+    addressBottomSheetRef.current?.dismiss();
   };
 
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 import { fonts } from "@/constants";
 import { scalingMethods } from "@/utils";
 import { Language } from "../types";
-import useTranslation from "./useTranslation";
+import useUserPreferences from "./useUserPreferences";
 const { VS, FS } = scalingMethods;
 
 const fontStyles = {
@@ -203,7 +203,7 @@ const fontStyles = {
 } as const;
 
 const useFontStyles = (forceLanguage?: Language) => {
-  const { language } = useTranslation();
+  const { language } = useUserPreferences();
 
   return fontStyles[forceLanguage ?? language];
 };

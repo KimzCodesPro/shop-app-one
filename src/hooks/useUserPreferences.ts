@@ -8,11 +8,13 @@ import {
 import { Language, Theme } from "@/types";
 import Constants, { ExecutionEnvironment } from "expo-constants";
 import * as Updates from "expo-updates";
-import { DevSettings, I18nManager } from "react-native";
+import { DevSettings, I18nManager, useColorScheme } from "react-native";
 import { persistor } from "../store";
 
 const useUserPreferences = () => {
   const dispatch = useAppDispatch();
+  const deviceColorScheme = useColorScheme();
+
   const preferences = useAppSelector((state) => state.userPreferences);
 
   const changeLanuage = async (language: Language) => {
@@ -34,8 +36,16 @@ const useUserPreferences = () => {
     }
   };
 
+  // resolve theme, we can derive the current theme from the preferences
+  // if it set to be system, we derive the theme from the device settings.
+  const systemTheme = deviceColorScheme === "dark" ? "dark" : "light";
+
+  const resolvedAppTheme: Exclude<Theme, "system"> =
+    preferences.theme === "system" ? systemTheme : preferences.theme;
+
   return {
     ...preferences,
+    resolvedAppTheme,
     setTheme: (theme: Theme) => dispatch(setTheme(theme)),
     setLanguage: changeLanuage,
     setEnableNotifications: (enabled: boolean) =>

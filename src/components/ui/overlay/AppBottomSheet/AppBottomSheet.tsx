@@ -1,11 +1,11 @@
 import { opacity } from "@/constants";
-import BottomSheet, {
+import {
   BottomSheetBackdrop,
+  BottomSheetModal,
   BottomSheetFlatList,
   BottomSheetScrollView,
 } from "@gorhom/bottom-sheet";
-import { Portal } from "@gorhom/portal";
-import { ComponentProps, useEffect, useRef } from "react";
+import { ComponentProps, useEffect, useMemo, useRef } from "react";
 import { BackHandler, View } from "react-native";
 import { Typography } from "../../typography";
 import { AppBottomSheetProps } from "./types";
@@ -13,7 +13,11 @@ import useStyles from "./useStyles";
 
 const AppBottomSheet = (props: AppBottomSheetProps) => {
   const { title, description, bottomSheetProps, ref, children } = props;
+
   const { styles } = useStyles();
+
+  const snapPoints = useMemo(() => ["25%", "50%"], []);
+
   const isOpen = useRef(false);
 
   useEffect(() => {
@@ -22,8 +26,9 @@ const AppBottomSheet = (props: AppBottomSheetProps) => {
     const nativeNavigationListener = BackHandler.addEventListener(
       "hardwareBackPress",
       () => {
-        if (!isOpen) return false;
-        ref.current?.close();
+        if (!isOpen.current) return false;
+
+        ref.current?.dismiss();
         return true;
       },
     );
@@ -41,37 +46,32 @@ const AppBottomSheet = (props: AppBottomSheetProps) => {
   );
 
   return (
-    <Portal>
-      <BottomSheet
-        ref={ref}
-        snapPoints={
-          bottomSheetProps?.snapPoints ?? ["20%", "50%", "70%", "90%"]
-        }
-        index={bottomSheetProps?.index ?? -1}
-        enableDynamicSizing={false}
-        enablePanDownToClose
-        backdropComponent={RenderBackdrop}
-        backgroundStyle={styles.bottomSheet}
-        handleStyle={styles.handleStyle}
-        handleIndicatorStyle={styles.handleIndicatorStyle}
-        {...bottomSheetProps}
-        onChange={(index) => {
-          isOpen.current = index >= 0;
-        }}
-      >
-        <View style={styles.header}>
-          <Typography variant="mediumBold" style={styles.title}>
-            {title}
+    <BottomSheetModal
+      ref={ref}
+      snapPoints={bottomSheetProps?.snapPoints ?? snapPoints}
+      enableDynamicSizing={false}
+      enablePanDownToClose
+      backdropComponent={RenderBackdrop}
+      backgroundStyle={styles.bottomSheet}
+      handleStyle={styles.handleStyle}
+      handleIndicatorStyle={styles.handleIndicatorStyle}
+      {...bottomSheetProps}
+      onChange={(index) => {
+        isOpen.current = index >= 0;
+      }}
+    >
+      <View style={styles.header}>
+        <Typography variant="mediumBold" style={styles.title}>
+          {title}
+        </Typography>
+        {description && (
+          <Typography variant="smallRegular" style={styles.description}>
+            {description}
           </Typography>
-          {description && (
-            <Typography variant="smallRegular" style={styles.description}>
-              {description}
-            </Typography>
-          )}
-        </View>
-        {children}
-      </BottomSheet>
-    </Portal>
+        )}
+      </View>
+      {children}
+    </BottomSheetModal>
   );
 };
 
