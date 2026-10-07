@@ -7,7 +7,7 @@ const expoConfig = require("eslint-config-expo/flat");
 const reactNative = require("eslint-plugin-react-native");
 const typescriptEslint = require("@typescript-eslint/eslint-plugin");
 const tsParser = require("@typescript-eslint/parser");
- 
+
 module.exports = defineConfig([
   expoConfig,
   {
@@ -22,6 +22,18 @@ module.exports = defineConfig([
       "react-hooks/rules-of-hooks": "error",
       // Disallow inline `style={{...}}` props; use StyleSheet.create for performance and consistency.
       "react-native/no-inline-styles": "error",
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["@/src", "@/src/*"],
+              message:
+                "Use '@/components', '@/utils', etc. instead of '@/src/...'.",
+            },
+          ],
+        },
+      ],
     },
   },
   {
