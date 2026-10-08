@@ -1,4 +1,5 @@
-import { Typography } from "@/components/ui/display";
+import { BUTTON_ICON_SIZE } from "./constants";
+import { Typography } from "@/components/ui/typography";
 
 import Icon from "@/components/icons";
 import { ActivityIndicator, Pressable } from "react-native";
@@ -27,7 +28,7 @@ const Button = ({
       disabled={loading?.indicator || disabled}
     >
       {!loading?.indicator && icon && (
-        <Icon name={icon} size={22} color={typographyColor} />
+        <Icon name={icon} size={BUTTON_ICON_SIZE} color={typographyColor} />
       )}
       {loading?.indicator && (
         <ActivityIndicator color={typographyColor} size="small" />

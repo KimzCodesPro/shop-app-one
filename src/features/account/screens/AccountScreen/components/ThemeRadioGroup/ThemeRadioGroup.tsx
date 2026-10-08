@@ -1,4 +1,4 @@
-import { Typography } from "@/components/ui/display";
+import { Typography } from "@/components/ui/typography";
 import { Radio } from "@/components/ui/inputs";
 import { Image } from "expo-image";
 import { Pressable, View } from "react-native";

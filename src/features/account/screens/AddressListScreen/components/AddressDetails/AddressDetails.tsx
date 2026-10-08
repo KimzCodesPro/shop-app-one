@@ -1,12 +1,15 @@
+import { ADDRESS_ICON_SIZE } from "./constants";
 import {
   addressColorMapping,
   addressIcon,
   addressLabel,
-} from "@/components/ui/display/AddressCard/constant";
+} from "@/components/ui/card/AddressCard/constant";
 import { useTheme, useTranslation } from "@/hooks";
-import Icon from "@/src/components/icons";
-import { IconBadge, StatusBill, Typography } from "@/src/components/ui/display";
-import { Button } from "@/src/components/ui/inputs";
+import Icon from "@/components/icons";
+import { IconBadge } from "@/components/ui/display";
+import { StatusBill } from "@/components/ui/feedback";
+import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/inputs";
 import { Pressable, View } from "react-native";
 import styles from "./AddressDetailsStyles";
 import { AddressDetailsProps } from "./types";
@@ -53,19 +56,19 @@ const AddressDetails = ({
       {/* info in list */}
       <View style={styles.addressInfoList}>
         <View style={styles.addressInfoSlot}>
-          <Icon name="map-pin" size={18} color={colors.foreground.tertiary} />
+          <Icon name="map-pin" size={ADDRESS_ICON_SIZE} color={colors.foreground.tertiary} />
           <Typography color={colors.foreground.tertiary} variant="smallRegular">
             {city}
           </Typography>
         </View>
         <View style={styles.addressInfoSlot}>
-          <Icon name="building" color={colors.foreground.tertiary} size={18} />
+          <Icon name="building" color={colors.foreground.tertiary} size={ADDRESS_ICON_SIZE} />
           <Typography color={colors.foreground.tertiary} variant="smallRegular">
             {t("account_building")} {buildingNum}
           </Typography>
         </View>
         <View style={styles.addressInfoSlot}>
-          <Icon name="layers" color={colors.foreground.tertiary} size={18} />
+          <Icon name="layers" color={colors.foreground.tertiary} size={ADDRESS_ICON_SIZE} />
           <Typography color={colors.foreground.tertiary} variant="smallRegular">
             {t("account_floorNumber")} {floorNum}
           </Typography>
@@ -74,7 +77,7 @@ const AddressDetails = ({
           <Icon
             name="info-circle"
             color={colors.foreground.tertiary}
-            size={18}
+            size={ADDRESS_ICON_SIZE}
           />
           <Typography color={colors.foreground.tertiary} variant="smallRegular">
             {landMark}

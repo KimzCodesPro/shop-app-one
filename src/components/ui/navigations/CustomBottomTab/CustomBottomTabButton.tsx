@@ -1,11 +1,11 @@
+import { TAB_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { Pressable, View } from "react-native";
-import { Typography } from "../../display";
+import { Typography } from "../../typography";
 import { CustomBottomTabButtonProps } from "./types";
 import useStyle from "./useStyles";
 
 const MAX_BADGE_COUNT = 9;
-const ICON_SIZE = 25;
 
 const CustomBottomTabButton = ({
   iconName,
@@ -34,7 +34,7 @@ const CustomBottomTabButton = ({
     >
       <View style={styles.tabItem}>
         <View style={styles.iconWrapper}>
-          <Icon size={ICON_SIZE} name={iconName} color={focusedColor} />
+          <Icon size={TAB_ICON_SIZE} name={iconName} color={focusedColor} />
           {!!badge && (
             <View style={styles.badge}>
               <Typography

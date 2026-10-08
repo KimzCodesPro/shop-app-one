@@ -1,5 +1,5 @@
-import { BottomSheetRef } from "@/src/components/ui/overlay";
-import { useTranslation } from "@/src/hooks";
+import { BottomSheetRef } from "@/components/ui/overlay";
+import { useTranslation } from "@/hooks";
 import { useRouter } from "expo-router";
 import { useRef, useState } from "react";
 import addressesList from "./components/AddressesList/data";
@@ -20,22 +20,22 @@ const useAddressListScreen = () => {
 
   const AddressOpenFullInfoHandler = (id: string) => {
     setCurrentOpenedAddress(id);
-    addressBottomSheetRef.current?.expand();
+    addressBottomSheetRef.current?.present();
   };
 
   const setAddressAsDefaultHandler = () => {
     if (currentOpenedAddress) {
       seSelectedItemId(currentOpenedAddress);
-      addressBottomSheetRef.current?.close();
+      addressBottomSheetRef.current?.dismiss();
     }
   };
 
   const deleteAddressHandler = () => {
-    addressBottomSheetRef.current?.close();
+    addressBottomSheetRef.current?.dismiss();
   };
 
   const editAddressHandler = () => {
-    addressBottomSheetRef.current?.close();
+    addressBottomSheetRef.current?.dismiss();
   };
 
   const { t } = useTranslation();

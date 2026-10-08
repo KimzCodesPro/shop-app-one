@@ -2,6 +2,7 @@ import { radius, spacing } from "@/constants";
 import { useFontStyles, useTheme } from "@/hooks";
 import { scalingMethods } from "@/utils";
 import { Platform, StyleSheet } from "react-native";
+import { fieldStatusColor } from "./helpers";
 import { StatusType } from "./sharedTypes";
 const { HS, VS } = scalingMethods;
 
@@ -11,14 +12,10 @@ const useSharedStyles = (currentStatus: StatusType) => {
 
   const isAndroid = Platform.OS === "android";
 
-  const colorMapping = {
-    default: colors.border.default,
-    focused: colors.primary.base,
-    filled: colors.primary.base,
-    error: colors.danger.base,
-  };
+  const colorMapping = fieldStatusColor(colors);
 
-  const statusColor = colorMapping[currentStatus];
+  const borderColor = colorMapping.borderColor[currentStatus];
+  const iconColor = colorMapping.iconColor[currentStatus];
 
   const styles = StyleSheet.create({
     container: {
@@ -31,7 +28,7 @@ const useSharedStyles = (currentStatus: StatusType) => {
       paddingHorizontal: spacing.space12.width,
       paddingVertical: spacing.space12.height,
       borderWidth: HS(1),
-      borderColor: statusColor,
+      borderColor: borderColor,
       borderRadius: radius.sm,
       gap: spacing.space8.width,
     },
@@ -62,7 +59,7 @@ const useSharedStyles = (currentStatus: StatusType) => {
       includeFontPadding: false,
     },
   });
-  return { styles, colors, statusColor };
+  return { styles, colors, borderColor, iconColor };
 };
 
 export default useSharedStyles;

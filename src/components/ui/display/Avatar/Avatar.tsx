@@ -2,6 +2,7 @@ import { avatarPlaceholder } from "@/assets/images";
 import Icon from "@/components/icons";
 import { Image } from "expo-image";
 import { View } from "react-native";
+import { UPLOADER_ICON_SIZE } from "./constants";
 import { AvatarProps } from "./types";
 import useStyles from "./useStyles";
 
@@ -25,7 +26,11 @@ const Avatar = ({
       {enableUploader && size === "lg" && (
         <View style={styles.uploaderRing}>
           <View style={styles.uploader}>
-            <Icon name="camera" size={20} color={colors.foreground.contrast} />
+            <Icon
+              name="camera"
+              size={UPLOADER_ICON_SIZE}
+              color={colors.foreground.contrast}
+            />
           </View>
         </View>
       )}

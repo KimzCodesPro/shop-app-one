@@ -1,3 +1,4 @@
+import { CHECK_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { Pressable, View } from "react-native";
 import { CheckBoxProps } from "./types";
@@ -14,7 +15,7 @@ const CheckBox = ({ isSelected, disabled, onChange, style }: CheckBoxProps) => {
     >
       {isSelected && (
         <View style={styles.indicator}>
-          <Icon name="check" size={16} color={colors.foreground.contrast} />
+          <Icon name="check" size={CHECK_ICON_SIZE} color={colors.foreground.contrast} />
         </View>
       )}
     </Pressable>

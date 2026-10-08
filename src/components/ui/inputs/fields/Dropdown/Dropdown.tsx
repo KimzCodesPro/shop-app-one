@@ -1,11 +1,12 @@
+import Icon from "@/components/icons";
 import { BottomSheet, BottomSheetRef } from "@/components/ui/overlay";
-import Icon from "@/src/components/icons";
 import { useRef, useState } from "react";
 import { Keyboard, Pressable } from "react-native";
-import { Typography } from "../../../display";
+import { Typography } from "../../../typography";
 import FieldWrapper from "../shared/FieldWrapper";
+import { fieldCurrentStatus } from "../shared/helpers";
 import useSharedStyles from "../shared/useSharedStyles";
-import { fieldCurrentStatus } from "../shared/utils";
+import { CHEVRON_ICON_SIZE } from "./constants";
 import DropdownList from "./DropdownList";
 import { DropdownProps } from "./types";
 
@@ -35,11 +36,11 @@ const Dropdown = ({
   const handleOpenSheet = () => {
     Keyboard.dismiss();
     setIsOpen(true);
-    sheetRef.current?.expand();
+    sheetRef.current?.present();
   };
 
   const handleSelectValue = (val: string) => {
-    sheetRef.current?.close();
+    sheetRef.current?.dismiss();
     onSelect(val);
     setIsOpen(false);
   };
@@ -68,7 +69,7 @@ const Dropdown = ({
           </Typography>
           <Icon
             name={isOpen ? "chevron-up" : "chevron-down"}
-            size={22}
+            size={CHEVRON_ICON_SIZE}
             color={colors.foreground.tertiary}
           />
         </FieldWrapper>
@@ -77,7 +78,7 @@ const Dropdown = ({
           title={label ?? placeholder}
           bottomSheetProps={{
             snapPoints: ["40%"],
-            onClose: () => setIsOpen(false),
+            onDismiss: () => setIsOpen(false),
           }}
         >
           <BottomSheet.Scroll>

@@ -1,8 +1,8 @@
 import { themeDark, themeLight, themeSystem } from "@/assets/images";
 import { SwitchGroupChange } from "@/components/ui/inputs";
 import { BottomSheetRef } from "@/components/ui/overlay";
-import { useTranslation, useUserPreferences } from "@/src/hooks";
-import { Language, Theme } from "@/src/types";
+import { useTranslation, useUserPreferences } from "@/hooks";
+import { Language, Theme } from "@/types";
 import { useRouter } from "expo-router";
 import { useRef, useState } from "react";
 import { PageNavigationList } from "./components/NavigationList/types";
@@ -51,7 +51,7 @@ const useAccountScreen = () => {
 
   const onSelectLanguage = (value: string) => {
     setLanguage(value as Language);
-    languageBottomSheetRef.current?.close();
+    languageBottomSheetRef.current?.dismiss();
   };
 
   // theme handler
@@ -67,7 +67,7 @@ const useAccountScreen = () => {
 
   const onSelectTheme = (value: Theme) => {
     setTheme(value);
-    themeBottomSheetRef.current?.close();
+    themeBottomSheetRef.current?.dismiss();
   };
 
   // navigation list for the home screen
@@ -90,7 +90,7 @@ const useAccountScreen = () => {
           title: t("account_changePassword"),
           trailing: "chevron",
           onPress: () => {
-            router.push("/(main)/account/changePassword");
+            router.push("/(protected)/account/changePassword");
           },
         },
       ],
@@ -104,7 +104,7 @@ const useAccountScreen = () => {
           title: t("account_address"),
           trailing: "chevron",
           onPress: () => {
-            router.push("/(main)/account/addressList");
+            router.push("/(protected)/account/addressList");
           },
         },
         {
@@ -124,7 +124,7 @@ const useAccountScreen = () => {
           icon: "bell",
           title: t("account_notifications"),
           trailing: "chevron",
-          onPress: () => notificationsBottomSheetRef.current?.expand(),
+          onPress: () => notificationsBottomSheetRef.current?.present(),
         },
 
         {
@@ -133,7 +133,7 @@ const useAccountScreen = () => {
           title: t("account_language"),
           trailing: "chevronWithValue",
           trailingValue: selectedLanguageLabel,
-          onPress: () => languageBottomSheetRef.current?.expand(),
+          onPress: () => languageBottomSheetRef.current?.present(),
         },
         {
           variant: "default",
@@ -141,7 +141,7 @@ const useAccountScreen = () => {
           title: t("account_theme"),
           trailing: "chevronWithValue",
           trailingValue: selectedThemeLabel,
-          onPress: () => themeBottomSheetRef.current?.expand(),
+          onPress: () => themeBottomSheetRef.current?.present(),
         },
       ],
     },
@@ -154,7 +154,7 @@ const useAccountScreen = () => {
           title: t("account_helpAndSupport"),
           trailing: "chevron",
           onPress: () => {
-            router.push("/(main)/account/helpAndSupport");
+            router.push("/(protected)/account/helpAndSupport");
           },
         },
         {
@@ -163,7 +163,7 @@ const useAccountScreen = () => {
           title: t("account_legalAndPolicies"),
           trailing: "chevron",
           onPress: () => {
-            router.push("/(main)/account/legalAndPolicies");
+            router.push("/(protected)/account/legalAndPolicies");
           },
         },
         {

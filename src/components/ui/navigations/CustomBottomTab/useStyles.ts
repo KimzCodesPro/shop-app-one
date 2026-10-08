@@ -35,7 +35,7 @@ const useStyle = (isFocused?: boolean) => {
       borderTopWidth: HS(2),
       borderTopColor: isFocused ? colors.primary.base : "transparent",
       paddingVertical: VS(12),
-      width: "80%",
+      width: "100%",
     },
     iconWrapper: {
       alignItems: "center",

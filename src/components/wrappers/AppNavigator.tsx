@@ -1,7 +1,11 @@
-import { useTheme } from "@/hooks";
+import { useTheme, useUserPreferences } from "@/hooks";
+import { NavigationBar } from "expo-navigation-bar";
 import { DefaultTheme, Stack, ThemeProvider } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+
 const AppNavigator = () => {
   const colors = useTheme();
+  const { resolvedAppTheme } = useUserPreferences();
 
   const navigationTheme = {
     ...DefaultTheme,
@@ -9,16 +13,20 @@ const AppNavigator = () => {
   };
 
   return (
-    <ThemeProvider value={navigationTheme}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="index" />
-        <Stack.Screen name="(main)" />
-      </Stack>
-    </ThemeProvider>
+    <>
+      <StatusBar style={resolvedAppTheme === "dark" ? "light" : "dark"} />
+      <ThemeProvider value={navigationTheme}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="index" />
+          <Stack.Screen name="(protected)" />
+        </Stack>
+      </ThemeProvider>
+      <NavigationBar style={resolvedAppTheme === "dark" ? "light" : "dark"} />
+    </>
   );
 };
 

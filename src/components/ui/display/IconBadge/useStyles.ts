@@ -2,17 +2,13 @@ import { radius } from "@/constants";
 import { useTheme } from "@/hooks";
 import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
+import { iconBadgeColor } from "./helper";
 const { HS, VS } = scalingMethods;
 
 const useStyles = () => {
   const colors = useTheme();
 
-  const iconColors = {
-    success: colors.success.strong,
-    warning: colors.warning.base,
-    info: colors.primary.pressed,
-    danger: colors.danger.base,
-  };
+  const iconColors = iconBadgeColor(colors);
 
   const styles = StyleSheet.create({
     container: {

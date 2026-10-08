@@ -1,5 +1,5 @@
 import { useTheme } from "@/hooks";
-import { radius } from "@/src/constants";
+import { radius } from "@/constants";
 import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
 import { Sizes } from "./types";

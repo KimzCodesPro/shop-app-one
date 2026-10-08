@@ -1,7 +1,7 @@
 import { BottomSheet } from "@/components/ui/overlay/";
-import { Button } from "@/src/components/ui/inputs";
-import { ScreenLayout, VerticalScrollView } from "@/src/components/ui/layout";
-import { TopBar } from "@/src/components/ui/navigations";
+import { Button } from "@/components/ui/inputs";
+import { ScreenLayout, VerticalScrollView } from "@/components/ui/layout";
+import { TopBar } from "@/components/ui/navigations";
 import AddressDetails from "./components/AddressDetails/AddressDetails";
 import AddressesList from "./components/AddressesList/AddressesList";
 import addressesList from "./components/AddressesList/data";
