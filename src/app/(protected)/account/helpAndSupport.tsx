@@ -1,4 +1,4 @@
-import { HelpAndSupportScreen } from "@/features";
+import { HelpAndSupportScreen } from "@/features/account";
 
 const HelpAndSupport = () => {
   return <HelpAndSupportScreen />;

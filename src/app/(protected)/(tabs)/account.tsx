@@ -1,4 +1,4 @@
-import { AccountScreen } from "@/features";
+import { AccountScreen } from "@/features/account";
 
 const AccountPage = () => {
   return <AccountScreen />;

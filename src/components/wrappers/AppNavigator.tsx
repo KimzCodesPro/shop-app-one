@@ -12,19 +12,29 @@ const AppNavigator = () => {
     colors: { ...DefaultTheme.colors, background: colors.background.base },
   };
 
+  const isLoggedIn = false;
+
   return (
     <>
+      {/* status bar style */}
       <StatusBar style={resolvedAppTheme === "dark" ? "light" : "dark"} />
+
       <ThemeProvider value={navigationTheme}>
+        {/* navigation stack */}
         <Stack
           screenOptions={{
             headerShown: false,
           }}
         >
-          <Stack.Screen name="index" />
-          <Stack.Screen name="(protected)" />
+          <Stack.Protected guard={isLoggedIn}>
+            <Stack.Screen name="(protected)" />
+          </Stack.Protected>
+          <Stack.Protected guard={!isLoggedIn}>
+            <Stack.Screen name="(public)" />
+          </Stack.Protected>
         </Stack>
       </ThemeProvider>
+      {/* andriod navigation bar */}
       <NavigationBar style={resolvedAppTheme === "dark" ? "light" : "dark"} />
     </>
   );
