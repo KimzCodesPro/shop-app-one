@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     paddingTop: spacing.space8.height,
   },
   languageSwitcher: {
-    marginBottom: spacing.space16.height,
+    marginBottom: spacing.space12.height,
   },
 
   actionsButton: {
