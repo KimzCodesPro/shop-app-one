@@ -1,10 +1,47 @@
+import { Carousel } from "@/components/ui/display";
+import { Button, LanguageSwitcher } from "@/components/ui/inputs";
 import { ScreenLayout } from "@/components/ui/layout";
-import { Text } from "react-native";
+import { useTranslation } from "@/hooks";
+import { View } from "react-native";
+import { CarouselItem } from "./components";
+import { LANDING_SLIDES } from "./data";
+import styles from "./welcomeScreenStyles";
 
 const WelcomeScreen = () => {
+  const { t } = useTranslation();
+
+  const slides = LANDING_SLIDES.map((slide) => ({
+    image: slide.img,
+    title: t(slide.title),
+    description: t(slide.description),
+  }));
+
   return (
-    <ScreenLayout>
-      <Text>Welcome</Text>
+    <ScreenLayout contentContainerStyle={styles.container}>
+      <LanguageSwitcher style={styles.languageSwitcher} />
+      <Carousel
+        paginationDotType="pill"
+        data={slides}
+        loop={true}
+        autoplay={true}
+        autoplayInterval={4000}
+        height={510}
+        renderItem={({ image, title, description }) => (
+          <CarouselItem image={image} title={title} description={description} />
+        )}
+      />
+      <View style={styles.actionsButton}>
+        <Button
+          title={t("onBoarding_createAccountButton")}
+          onPress={() => {}}
+        />
+        <Button
+          title={t("onBoarding_alreadyHaveAccount")}
+          variant="link"
+          style={styles.linkButton}
+          onPress={() => {}}
+        />
+      </View>
     </ScreenLayout>
   );
 };

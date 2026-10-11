@@ -1,5 +1,5 @@
-import { BUTTON_ICON_SIZE } from "./constants";
 import { Typography } from "@/components/ui/typography";
+import { BUTTON_ICON_SIZE } from "./constants";
 
 import Icon from "@/components/icons";
 import { ActivityIndicator, Pressable } from "react-native";
@@ -16,7 +16,6 @@ const Button = ({
   style,
   disabled = false,
 }: ButtonProps) => {
-  console.log("render");
   const { styles, typographyColor } = useStyles(variant, size, disabled);
 
   const typographyVariant = size === "sm" ? "smallBold" : "normalBold";
