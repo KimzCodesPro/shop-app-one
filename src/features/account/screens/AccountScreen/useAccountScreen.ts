@@ -41,8 +41,8 @@ const useAccountScreen = () => {
 
   // lnaguage handler
   const languageOptions = [
-    { label: t("common_english"), value: "en" },
-    { label: t("common_arabic"), value: "ar" },
+    { label: t("common_settingLanguageEnglish"), value: "en" },
+    { label: t("common_settingLanguageArabic"), value: "ar" },
   ];
 
   const selectedLanguageLabel =

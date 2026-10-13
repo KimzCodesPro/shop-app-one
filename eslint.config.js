@@ -22,6 +22,7 @@ module.exports = defineConfig([
       "react-hooks/rules-of-hooks": "error",
       // Disallow inline `style={{...}}` props; use StyleSheet.create for performance and consistency.
       "react-native/no-inline-styles": "error",
+      // Disallow restricted imports based on the defined patterns.
       "no-restricted-imports": [
         "error",
         {

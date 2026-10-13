@@ -1,4 +1,4 @@
-import { EditPorfileScreen } from "@/features";
+import { EditPorfileScreen } from "@/features/account";
 
 const EditProfile = () => {
   return <EditPorfileScreen />;

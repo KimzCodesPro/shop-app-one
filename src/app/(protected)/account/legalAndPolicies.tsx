@@ -1,4 +1,4 @@
-import { LegalAndPoliciesScreen } from "@/features";
+import { LegalAndPoliciesScreen } from "@/features/account";
 
 const LegalAndPolicies = () => {
   return <LegalAndPoliciesScreen />;
