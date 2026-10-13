@@ -2,6 +2,7 @@ import { Carousel } from "@/components/ui/display";
 import { Button, LanguageSwitcher } from "@/components/ui/inputs";
 import { ScreenLayout } from "@/components/ui/layout";
 import { useTranslation } from "@/hooks";
+import { useRouter } from "expo-router";
 import { View } from "react-native";
 import { CarouselItem } from "./components";
 import { LANDING_SLIDES } from "./data";
@@ -9,6 +10,7 @@ import styles from "./welcomeScreenStyles";
 
 const WelcomeScreen = () => {
   const { t } = useTranslation();
+  const router = useRouter();
 
   const slides = LANDING_SLIDES.map((slide) => ({
     image: slide.img,
@@ -33,13 +35,13 @@ const WelcomeScreen = () => {
       <View style={styles.actionsButton}>
         <Button
           title={t("onBoarding_createAccountButton")}
-          onPress={() => {}}
+          onPress={() => router.push("/createAccount")}
         />
         <Button
           title={t("onBoarding_alreadyHaveAccount")}
           variant="link"
           style={styles.linkButton}
-          onPress={() => {}}
+          onPress={() => router.push("/login")}
         />
       </View>
     </ScreenLayout>

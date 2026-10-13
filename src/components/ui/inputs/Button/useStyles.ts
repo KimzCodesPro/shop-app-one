@@ -4,8 +4,7 @@ import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
 import { buttonVariantColor } from "./helper";
 import { SizeType, VariantType } from "./types";
-
-const { HS, VS } = scalingMethods;
+const { VS } = scalingMethods;
 
 const useStyles = (
   variant: VariantType,
@@ -16,24 +15,21 @@ const useStyles = (
 
   const buttonHeight = size === "sm" ? VS(40) : VS(50);
 
-  const buttonPaddingHorizontal = size === "sm" ? HS(16) : HS(24);
-
   const currentVariantColors = buttonVariantColor(colors)[variant];
 
   const styles = StyleSheet.create({
     button: {
-      opacity: disabled ? opacity.disabled : opacity.full,
-      height: buttonHeight,
-      alignSelf: variant === "chip" ? "auto" : "stretch",
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",
+      alignSelf: "stretch",
+      height: buttonHeight,
       gap: spacing.space8.width,
+      borderWidth: 1,
       borderRadius: variant === "chip" ? radius.full : radius.sm,
-      borderWidth: HS(1),
-      paddingHorizontal: buttonPaddingHorizontal,
       borderColor: currentVariantColors.border,
       backgroundColor: currentVariantColors.background,
+      opacity: disabled ? opacity.disabled : opacity.full,
     },
   });
 

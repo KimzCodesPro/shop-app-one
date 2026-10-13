@@ -13,7 +13,7 @@ import { DropdownProps } from "./types";
 const Dropdown = ({
   label,
   placeholder,
-  iconName,
+  icon,
   options,
   value,
   onSelect,
@@ -50,7 +50,7 @@ const Dropdown = ({
       <Pressable onPress={handleOpenSheet} style={styles.pressableWrapper}>
         <FieldWrapper
           label={label}
-          fieldIconName={iconName}
+          fieldIconName={icon}
           errorMessage={errorMessage}
           currentStatus={currentStatus}
           style={style}

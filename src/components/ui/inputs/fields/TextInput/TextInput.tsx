@@ -1,15 +1,15 @@
-import { TEXT_INPUT_ICON_SIZE } from "./constants";
 import Icon from "@/components/icons";
 import { useState } from "react";
 import { Pressable, TextInput as RNTextInput } from "react-native";
 import FieldWrapper from "../shared/FieldWrapper";
-import useSharedStyles from "../shared/useSharedStyles";
 import { fieldCurrentStatus } from "../shared/helpers";
+import useSharedStyles from "../shared/useSharedStyles";
+import { TEXT_INPUT_ICON_SIZE } from "./constants";
 import { TextInputProps } from "./types";
 const TextInput = ({
   label,
   placeholder,
-  iconName,
+  icon,
   type,
   value,
   errorMessage,
@@ -24,12 +24,12 @@ const TextInput = ({
 
   const { styles, colors } = useSharedStyles(currentStatus);
 
-  const resolvedIconName = type === "password" ? "lock" : iconName;
+  const resolvedIcon = type === "password" ? "lock" : icon;
 
   return (
     <FieldWrapper
       label={label}
-      fieldIconName={resolvedIconName}
+      fieldIconName={resolvedIcon}
       errorMessage={errorMessage}
       currentStatus={currentStatus}
       style={style}
@@ -56,7 +56,11 @@ const TextInput = ({
 
       {type !== "password" && clearInput && value && (
         <Pressable onPress={clearInput}>
-          <Icon name="close" size={TEXT_INPUT_ICON_SIZE} color={colors.foreground.tertiary} />
+          <Icon
+            name="close"
+            size={TEXT_INPUT_ICON_SIZE}
+            color={colors.foreground.tertiary}
+          />
         </Pressable>
       )}
     </FieldWrapper>

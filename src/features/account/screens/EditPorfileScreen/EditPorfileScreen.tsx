@@ -24,19 +24,19 @@ const EditPorfileScreen = () => {
         <TextInput
           label={t("account_username")}
           placeholder={t("account_usernamePlaceholder")}
-          iconName="user"
+          icon="user"
           value=""
         />
         <TextInput
           label={t("account_email")}
           placeholder={t("account_emailPlaceholder")}
-          iconName="mail"
+          icon="mail"
           value=""
         />
         <TextInput
           label={t("account_phoneNumber")}
           placeholder={t("account_phoneNumberPlaceholder")}
-          iconName="bell"
+          icon="bell"
           value=""
         />
         <TextInput
