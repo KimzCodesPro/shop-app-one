@@ -11,58 +11,58 @@ const AddNewAddressScreen = () => {
   return (
     <ScreenLayout
       scrollable
-      renderTopBar={() => <TopBar title={t("account_addNewAddress")} goBack />}
+      renderTopBar={() => <TopBar title={t("account_addAddressTitle")} goBack />}
     >
       <View style={styles.form}>
         <Dropdown
-          label={t("account_addressType")}
-          placeholder={t("account_addressTypePlaceholder")}
+          label={t("account_addAddressFieldType")}
+          placeholder={t("account_placeholderAddressType")}
           icon="map-pin"
           options={addressTypeOptions}
           value=""
           onSelect={() => {}}
         />
         <TextInput
-          label={t("account_streetName")}
-          placeholder={t("account_streetNamePlaceholder")}
+          label={t("account_addAddressFieldStreet")}
+          placeholder={t("account_placeholderStreetName")}
           icon="map-pin-other"
           value=""
         />
         <TextInput
-          label={t("account_buildingName")}
-          placeholder={t("account_buildingNamePlaceholder")}
+          label={t("account_addAddressFieldBuilding")}
+          placeholder={t("account_placeholderBuildingName")}
           icon="building"
           value=""
         />
         <Dropdown
-          label={t("account_governorate")}
-          placeholder={t("account_governoratePlaceholder")}
+          label={t("account_addAddressFieldGovernorate")}
+          placeholder={t("account_placeholderGovernorate")}
           icon="world"
           options={GOVERNORATE_OPTIONS}
           value=""
           onSelect={() => {}}
         />
         <TextInput
-          label={t("account_city")}
-          placeholder={t("account_cityPlaceholder")}
+          label={t("account_addAddressFieldCity")}
+          placeholder={t("account_placeholderCity")}
           icon="home"
           value=""
         />
         <TextInput
-          label={t("account_floorNumber")}
-          placeholder={t("account_floorNumberPlaceholder")}
+          label={t("account_addAddressFieldFloor")}
+          placeholder={t("account_placeholderFloorNumber")}
           icon="layers"
           value=""
         />
         <TextInput
-          label={t("account_landmark")}
-          placeholder={t("account_landmarkPlaceholder")}
+          label={t("account_addAddressFieldLandmark")}
+          placeholder={t("account_placeholderLandmark")}
           icon="info-circle"
           value=""
         />
       </View>
       <Button
-        title={t("account_saveAddress")}
+        title={t("account_addAddressSave")}
         onPress={() => {}}
         style={styles.submitButton}
       />

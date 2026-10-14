@@ -48,7 +48,7 @@ const AccountScreen = () => {
       {/* language bottom sheet */}
       <BottomSheet
         ref={languageBottomSheetRef}
-        title={t("account_language")}
+        title={t("account_rowLanguage")}
         bottomSheetProps={{ snapPoints: ["25%"] }}
       >
         <BottomSheet.Content>
@@ -62,7 +62,7 @@ const AccountScreen = () => {
       {/* theme  Bottom Sheet */}
       <BottomSheet
         ref={themeBottomSheetRef}
-        title={t("account_theme")}
+        title={t("account_rowTheme")}
         bottomSheetProps={{ snapPoints: ["40%"] }}
       >
         <BottomSheet.Content>
@@ -76,7 +76,7 @@ const AccountScreen = () => {
       {/* notifications Bottom Sheet*/}
       <BottomSheet
         ref={notificationsBottomSheetRef}
-        title={t("account_notifications")}
+        title={t("account_rowNotifications")}
         bottomSheetProps={{ snapPoints: ["20%"] }}
       >
         <BottomSheet.Content>
@@ -87,7 +87,7 @@ const AccountScreen = () => {
         </BottomSheet.Content>
       </BottomSheet>
       {/* logout modal */}
-      <Modal title="Are you sure you want to logout?" visible={logoutVisible}>
+      <Modal title={t("account_logoutConfirm")} visible={logoutVisible}>
         <View>
           <Button
             title={t("common_cancel")}

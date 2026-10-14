@@ -27,7 +27,7 @@ const useAccountScreen = () => {
   // push notification handler
   const notificationOptions = [
     {
-      label: t("account_pushNotifications"),
+      label: t("account_settingPushNotifications"),
       value: "pushNotifications",
       enabled: enableNotifications,
     },
@@ -41,8 +41,8 @@ const useAccountScreen = () => {
 
   // lnaguage handler
   const languageOptions = [
-    { label: t("common_settingLanguageEnglish"), value: "en" },
-    { label: t("common_settingLanguageArabic"), value: "ar" },
+    { label: t("account_settingLanguageEnglish"), value: "en" },
+    { label: t("account_settingLanguageArabic"), value: "ar" },
   ];
 
   const selectedLanguageLabel =
@@ -57,9 +57,9 @@ const useAccountScreen = () => {
   // theme handler
 
   const themeOptions: ThemeOption[] = [
-    { label: t("common_light"), value: "light", image: themeLight },
-    { label: t("common_dark"), value: "dark", image: themeDark },
-    { label: t("common_system"), value: "system", image: themeSystem },
+    { label: t("account_settingThemeLight"), value: "light", image: themeLight },
+    { label: t("account_settingThemeDark"), value: "dark", image: themeDark },
+    { label: t("account_settingThemeSystem"), value: "system", image: themeSystem },
   ];
 
   const selectedThemeLabel =
@@ -73,12 +73,12 @@ const useAccountScreen = () => {
   // navigation list for the home screen
   const pageNavigationList: PageNavigationList = [
     {
-      title: t("account_account"),
+      title: t("account_sectionAccount"),
       rows: [
         {
           variant: "default",
           icon: "user",
-          title: t("account_editProfile"),
+          title: t("account_rowEditProfile"),
           trailing: "chevron",
           onPress: () => {
             router.push("/account/editProfile");
@@ -87,7 +87,7 @@ const useAccountScreen = () => {
         {
           variant: "default",
           icon: "lock",
-          title: t("account_changePassword"),
+          title: t("account_rowChangePassword"),
           trailing: "chevron",
           onPress: () => {
             router.push("/(protected)/account/changePassword");
@@ -96,12 +96,12 @@ const useAccountScreen = () => {
       ],
     },
     {
-      title: t("account_shopping"),
+      title: t("account_sectionShopping"),
       rows: [
         {
           variant: "default",
           icon: "map-pin",
-          title: t("account_address"),
+          title: t("account_rowAddress"),
           trailing: "chevron",
           onPress: () => {
             router.push("/(protected)/account/addressList");
@@ -110,19 +110,19 @@ const useAccountScreen = () => {
         {
           variant: "default",
           icon: "truck",
-          title: t("account_myOrders"),
+          title: t("account_rowMyOrders"),
           trailing: "chevron",
           onPress: () => {},
         },
       ],
     },
     {
-      title: t("account_preferences"),
+      title: t("account_sectionPreferences"),
       rows: [
         {
           variant: "default",
           icon: "bell",
-          title: t("account_notifications"),
+          title: t("account_rowNotifications"),
           trailing: "chevron",
           onPress: () => notificationsBottomSheetRef.current?.present(),
         },
@@ -130,7 +130,7 @@ const useAccountScreen = () => {
         {
           variant: "default",
           icon: "world",
-          title: t("account_language"),
+          title: t("account_rowLanguage"),
           trailing: "chevronWithValue",
           trailingValue: selectedLanguageLabel,
           onPress: () => languageBottomSheetRef.current?.present(),
@@ -138,7 +138,7 @@ const useAccountScreen = () => {
         {
           variant: "default",
           icon: "palette",
-          title: t("account_theme"),
+          title: t("account_rowTheme"),
           trailing: "chevronWithValue",
           trailingValue: selectedThemeLabel,
           onPress: () => themeBottomSheetRef.current?.present(),
@@ -146,12 +146,12 @@ const useAccountScreen = () => {
       ],
     },
     {
-      title: t("account_support"),
+      title: t("account_sectionSupport"),
       rows: [
         {
           variant: "default",
           icon: "help",
-          title: t("account_helpAndSupport"),
+          title: t("account_rowHelp"),
           trailing: "chevron",
           onPress: () => {
             router.push("/(protected)/account/helpAndSupport");
@@ -160,7 +160,7 @@ const useAccountScreen = () => {
         {
           variant: "default",
           icon: "file-text",
-          title: t("account_legalAndPolicies"),
+          title: t("account_rowLegal"),
           trailing: "chevron",
           onPress: () => {
             router.push("/(protected)/account/legalAndPolicies");
