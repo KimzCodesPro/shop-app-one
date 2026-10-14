@@ -35,13 +35,13 @@ const WelcomeScreen = () => {
       <View style={styles.actionsButton}>
         <Button
           title={t("onBoarding_createAccountButton")}
-          onPress={() => router.push("/createAccount")}
+          onPress={() => router.replace("/createAccount")}
         />
         <Button
           title={t("onBoarding_alreadyHaveAccount")}
           variant="link"
           style={styles.linkButton}
-          onPress={() => router.push("/login")}
+          onPress={() => router.replace("/login")}
         />
       </View>
     </ScreenLayout>

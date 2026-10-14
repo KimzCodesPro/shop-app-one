@@ -17,7 +17,7 @@ const LoginScreen = () => {
   const colors = useTheme();
 
   return (
-    <ScreenLayout contentContainerStyle={styles.container}>
+    <ScreenLayout dismissKeyboardOnTap contentContainerStyle={styles.container}>
       <LanguageSwitcher style={styles.languageSwitcher} />
       <Header title={t("auth_loginTitle")} subtitle={t("auth_loginSub")} />
       <View style={styles.formContainer}>
@@ -61,7 +61,7 @@ const LoginScreen = () => {
             title={t("auth_createAccountTitle")}
             variant="link"
             size="sm"
-            onPress={() => router.replace("/createAccount")}
+            onPress={() => router.push("/createAccount")}
             style={styles.secondActionCreateAccountButton}
           />
         </View>
