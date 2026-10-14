@@ -7,6 +7,7 @@ export type AppBottomSheetProps = {
   title: string;
   description?: string;
   children: React.ReactNode;
+  backDropPressBehavior?: "none" | "collapse" | "close";
   bottomSheetProps?: Omit<
     BottomSheetModalProps,
     "children" | "enableDynamicSizing"

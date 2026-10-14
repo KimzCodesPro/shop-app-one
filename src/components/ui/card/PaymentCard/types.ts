@@ -5,7 +5,7 @@ export type PaymentCardProps = {
   cardNumber: string;
   expiryDate: string;
   cardType: string;
-  variant: StatusVariant;
+  variant?: Exclude<StatusVariant, "secondary">;
   isDefault?: boolean;
   isSelected?: boolean;
   onPress?: () => void;

@@ -2,7 +2,7 @@ import { opacity, radius, spacing } from "@/constants";
 import { useTheme } from "@/hooks";
 import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
-import { buttonVariantColor } from "./helper";
+import { buttonVariantColor } from "./helpers";
 import { SizeType, VariantType } from "./types";
 const { VS } = scalingMethods;
 

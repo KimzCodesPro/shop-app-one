@@ -8,6 +8,6 @@ export type StatusBillProps = {
   iconName?: IconName;
   variant?: StatusBillVariant;
   label: string;
-  color: StatusVariant;
+  color: Exclude<StatusVariant, "secondary">;
   style?: StyleProp<ViewStyle>;
 };

@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
   secondActionCreateAccountButton: {
     height: "auto",
   },
+  forgotPasswordSheetContent: {
+    gap: spacing.space12.height,
+  },
 });
 
 export default styles;

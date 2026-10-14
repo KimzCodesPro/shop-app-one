@@ -1,13 +1,13 @@
 import { IconBadge } from "../../display";
-import InfoCard from "../InfoCard/InfoCard";
 import { StatusBill } from "../../feedback";
+import InfoCard from "../InfoCard/InfoCard";
 import { PaymentCardProps } from "./types";
 
 const PaymentCard = ({
   cardNumber,
   cardType,
   expiryDate,
-  variant,
+  variant = "info",
   isSelected,
   isDefault,
   onPress,
