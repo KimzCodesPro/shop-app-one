@@ -46,7 +46,7 @@
       "reactCompiler": true
     },
     "extra": {
-      "forcesRTL": true
+      "forcesRTL": false
     }
   }
 }
