@@ -49,9 +49,21 @@ const useAccountScreen = () => {
     languageOptions.find((option) => option.value === selectedLanguage)
       ?.label ?? "";
 
+  const [pendingLanguage, setPendingLanguage] =
+    useState<Language>(selectedLanguage);
+
   const onSelectLanguage = (value: string) => {
-    setLanguage(value as Language);
+    setPendingLanguage(value as Language);
+  };
+
+  const openLanguageSheet = () => {
+    setPendingLanguage(selectedLanguage);
+    languageBottomSheetRef.current?.present();
+  };
+
+  const confirmChangeLanguage = async () => {
     languageBottomSheetRef.current?.dismiss();
+    await setLanguage(pendingLanguage);
   };
 
   // theme handler
@@ -133,7 +145,7 @@ const useAccountScreen = () => {
           title: t("account_rowLanguage"),
           trailing: "chevronWithValue",
           trailingValue: selectedLanguageLabel,
-          onPress: () => languageBottomSheetRef.current?.present(),
+          onPress: openLanguageSheet,
         },
         {
           variant: "default",
@@ -183,8 +195,9 @@ const useAccountScreen = () => {
     themeBottomSheetRef,
     notificationsBottomSheetRef,
     languageOptions,
-    selectedLanguage,
+    pendingLanguage,
     onSelectLanguage,
+    confirmChangeLanguage,
     notificationOptions,
     onToggleNotification,
     selectedTheme,
