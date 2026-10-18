@@ -10,12 +10,16 @@ const Button = ({
   size,
   title,
   onPress,
-  loading,
+  loading = { indicator: false },
   icon,
   variant = "primary",
   style,
   disabled = false,
 }: ButtonProps) => {
+  const { indicator: isLoading, text: loadingText } = loading;
+
+  const isDisabled = disabled || isLoading;
+
   const { styles, typographyColor } = useStyles(variant, size, disabled);
 
   const typographyVariant = size === "sm" ? "smallBold" : "normalBold";
@@ -24,16 +28,17 @@ const Button = ({
     <Pressable
       onPress={onPress}
       style={[styles.button, style]}
-      disabled={loading?.indicator || disabled}
+      disabled={isDisabled}
     >
-      {!loading?.indicator && icon && (
-        <Icon name={icon} size={BUTTON_ICON_SIZE} color={typographyColor} />
-      )}
-      {loading?.indicator && (
-        <ActivityIndicator color={typographyColor} size="small" />
+      {isLoading ? (
+        <ActivityIndicator size="small" color={typographyColor} />
+      ) : (
+        icon && (
+          <Icon name={icon} size={BUTTON_ICON_SIZE} color={typographyColor} />
+        )
       )}
       <Typography variant={typographyVariant} color={typographyColor}>
-        {loading?.indicator ? loading.text || title : title}
+        {(isLoading && loadingText) || title}
       </Typography>
     </Pressable>
   );

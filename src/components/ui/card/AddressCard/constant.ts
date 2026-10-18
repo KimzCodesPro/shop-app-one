@@ -13,8 +13,8 @@ export const addressIcon = {
 } as const;
 
 export const addressLabel = {
-  home: "account_home",
-  office: "account_office",
-  apartment: "account_apartment",
-  other: "account_other",
+  home: "common_addressHome",
+  office: "common_addressOffice",
+  apartment: "common_addressApartment",
+  other: "common_addressOther",
 } as const;

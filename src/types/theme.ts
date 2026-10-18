@@ -6,4 +6,9 @@ export type ThemeColors = typeof colors;
 
 export type ThemePalette = ThemeColors["light"];
 
-export type StatusVariant = "success" | "warning" | "danger" | "info";
+export type StatusVariant =
+  | "success"
+  | "warning"
+  | "danger"
+  | "info"
+  | "secondary";

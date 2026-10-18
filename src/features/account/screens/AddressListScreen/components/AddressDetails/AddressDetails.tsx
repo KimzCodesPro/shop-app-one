@@ -70,7 +70,7 @@ const AddressDetails = ({
         <View style={styles.addressInfoSlot}>
           <Icon name="layers" color={colors.foreground.tertiary} size={ADDRESS_ICON_SIZE} />
           <Typography color={colors.foreground.tertiary} variant="smallRegular">
-            {t("account_floorNumber")} {floorNum}
+            {t("account_addAddressFieldFloor")} {floorNum}
           </Typography>
         </View>
         <View style={styles.addressInfoSlot}>
@@ -88,12 +88,12 @@ const AddressDetails = ({
       <View style={styles.actions}>
         <Button
           variant="primary-outline"
-          title={t("account_setAsDefault")}
+          title={t("account_addressDetailSetDefault")}
           onPress={setAsDefaultHandler}
         />
         <Button
           variant="primary"
-          title={t("account_editAddress")}
+          title={t("account_addressDetailEdit")}
           onPress={editHandler}
         />
       </View>

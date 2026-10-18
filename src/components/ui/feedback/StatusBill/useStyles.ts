@@ -4,16 +4,15 @@ import { StatusVariant } from "@/types";
 import { scalingMethods } from "@/utils";
 import { StyleSheet } from "react-native";
 import { VARIANT_TO_SCHEMA } from "./constants";
-import { statusBillColor } from "./helper";
+import { statusBillColor } from "./helpers";
 import { StatusBillVariant } from "./types";
 const { HS } = scalingMethods;
 
 const useStyles = (
-  StatusVariant: StatusVariant,
+  StatusVariant: Exclude<StatusVariant, "secondary">,
   variant: StatusBillVariant,
 ) => {
   const colors = useTheme();
-  console.log();
 
   const { borderColor, backgroundColor, typographyColor } =
     statusBillColor(colors)[VARIANT_TO_SCHEMA[variant]][StatusVariant];

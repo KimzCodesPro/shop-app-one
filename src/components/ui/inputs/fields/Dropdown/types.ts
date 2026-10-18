@@ -8,7 +8,7 @@ export type DropdownOption = {
 };
 
 export type DropdownProps = {
-  iconName: IconName;
+  icon: IconName;
   options: DropdownOption[];
   onSelect: (value: string) => void;
 } & FieldProps;

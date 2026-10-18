@@ -22,8 +22,8 @@ const LanguageSwitcher = ({ style }: LanguageSwitcherProps) => {
   const languageBottomSheetRef = useRef<BottomSheetRef | null>(null);
 
   const radioButtonsLanguageOptions = [
-    { label: t("common_settingLanguageEnglish"), value: "en" },
-    { label: t("common_settingLanguageArabic"), value: "ar" },
+    { label: t("account_settingLanguageEnglish"), value: "en" },
+    { label: t("account_settingLanguageArabic"), value: "ar" },
   ];
 
   const onSelectLanguage = (value: string) => {
@@ -55,7 +55,7 @@ const LanguageSwitcher = ({ style }: LanguageSwitcherProps) => {
       <BottomSheet
         ref={languageBottomSheetRef}
         bottomSheetProps={{ snapPoints: ["33%"] }}
-        title={t("account_language")}
+        title={t("account_rowLanguage")}
       >
         <BottomSheet.Content>
           <RadioGroup

@@ -3,6 +3,6 @@ import { iconSize } from "@/constants";
 export const WORLD_ICON_SIZE = iconSize.sm;
 
 export const switcherTranslationKeys = {
-  ar: "common_settingLanguageEnglish",
-  en: "common_settingLanguageArabic",
+  ar: "account_settingLanguageEnglish",
+  en: "account_settingLanguageArabic",
 } as const;

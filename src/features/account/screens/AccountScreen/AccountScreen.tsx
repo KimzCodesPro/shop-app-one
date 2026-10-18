@@ -4,6 +4,7 @@ import { Button, RadioGroup, SwitchGroup } from "@/components/ui/inputs";
 import { ScreenLayout } from "@/components/ui/layout";
 import { TopBar } from "@/components/ui/navigations";
 import { BottomSheet, Modal } from "@/components/ui/overlay";
+import { spacing } from "@/constants";
 import { View } from "react-native";
 import NavigationList from "./components/NavigationList/NavigationList";
 import ThemeRadioGroup from "./components/ThemeRadioGroup/ThemeRadioGroup";
@@ -19,8 +20,9 @@ const AccountScreen = () => {
     themeBottomSheetRef,
     notificationsBottomSheetRef,
     languageOptions,
-    selectedLanguage,
+    pendingLanguage,
     onSelectLanguage,
+    confirmChangeLanguage,
     onToggleNotification,
     themeOptions,
     selectedTheme,
@@ -48,22 +50,27 @@ const AccountScreen = () => {
       {/* language bottom sheet */}
       <BottomSheet
         ref={languageBottomSheetRef}
-        title={t("account_language")}
-        bottomSheetProps={{ snapPoints: ["25%"] }}
+        title={t("account_rowLanguage")}
+        bottomSheetProps={{ snapPoints: ["33%"] }}
       >
         <BottomSheet.Content>
           <RadioGroup
             options={languageOptions}
-            selectedValue={selectedLanguage}
+            selectedValue={pendingLanguage}
             onValueChange={onSelectLanguage}
+          />
+          <Button
+            style={{ marginTop: spacing.space24.height }}
+            title={t("common_confirm")}
+            onPress={confirmChangeLanguage}
           />
         </BottomSheet.Content>
       </BottomSheet>
       {/* theme  Bottom Sheet */}
       <BottomSheet
         ref={themeBottomSheetRef}
-        title={t("account_theme")}
-        bottomSheetProps={{ snapPoints: ["40%"] }}
+        title={t("account_rowTheme")}
+        bottomSheetProps={{ snapPoints: ["38%"] }}
       >
         <BottomSheet.Content>
           <ThemeRadioGroup
@@ -76,7 +83,7 @@ const AccountScreen = () => {
       {/* notifications Bottom Sheet*/}
       <BottomSheet
         ref={notificationsBottomSheetRef}
-        title={t("account_notifications")}
+        title={t("account_rowNotifications")}
         bottomSheetProps={{ snapPoints: ["20%"] }}
       >
         <BottomSheet.Content>
@@ -87,7 +94,7 @@ const AccountScreen = () => {
         </BottomSheet.Content>
       </BottomSheet>
       {/* logout modal */}
-      <Modal title="Are you sure you want to logout?" visible={logoutVisible}>
+      <Modal title={t("account_logoutConfirm")} visible={logoutVisible}>
         <View>
           <Button
             title={t("common_cancel")}

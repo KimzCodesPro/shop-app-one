@@ -24,7 +24,7 @@ const LegalAndPoliciesScreen = () => {
     <ScreenLayout
       scrollable
       renderTopBar={() => (
-        <TopBar title={t("account_legalAndPolicies")} goBack />
+        <TopBar title={t("account_legalTitle")} goBack />
       )}
     >
       <RenderHtml source={source} tagsStyles={styles} />

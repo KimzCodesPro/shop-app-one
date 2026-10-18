@@ -12,7 +12,7 @@ const AppNavigator = () => {
     colors: { ...DefaultTheme.colors, background: colors.background.base },
   };
 
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   return (
     <>

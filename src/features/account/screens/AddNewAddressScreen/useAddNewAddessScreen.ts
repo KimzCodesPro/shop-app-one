@@ -4,10 +4,10 @@ const useAddNewAddressScreen = () => {
   const { t } = useTranslation();
 
   const addressTypeOptions = [
-    { label: t("account_addressTypeHome"), value: "home" },
-    { label: t("account_addressTypeApartment"), value: "apartment" },
-    { label: t("account_addressTypeOffice"), value: "office" },
-    { label: t("account_addressTypeOther"), value: "other" },
+    { label: t("common_addressHome"), value: "home" },
+    { label: t("common_addressApartment"), value: "apartment" },
+    { label: t("common_addressOffice"), value: "office" },
+    { label: t("common_addressOther"), value: "other" },
   ];
 
   return { t, addressTypeOptions };

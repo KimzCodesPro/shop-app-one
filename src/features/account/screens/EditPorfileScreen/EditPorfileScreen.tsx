@@ -12,7 +12,7 @@ const EditPorfileScreen = () => {
 
   return (
     <ScreenLayout
-      renderTopBar={() => <TopBar title={t("account_editProfile")} goBack />}
+      renderTopBar={() => <TopBar title={t("account_profileTitle")} goBack />}
     >
       <Avatar
         size="lg"
@@ -22,27 +22,27 @@ const EditPorfileScreen = () => {
       />
       <View style={styles.form}>
         <TextInput
-          label={t("account_username")}
-          placeholder={t("account_usernamePlaceholder")}
-          iconName="user"
+          label={t("account_profileFieldUserName")}
+          placeholder={t("account_placeholderUserName")}
+          icon="user"
           value=""
         />
         <TextInput
-          label={t("account_email")}
-          placeholder={t("account_emailPlaceholder")}
-          iconName="mail"
+          label={t("account_profileFieldEmail")}
+          placeholder={t("account_placeholderEmail")}
+          icon="mail"
           value=""
         />
         <TextInput
-          label={t("account_phoneNumber")}
-          placeholder={t("account_phoneNumberPlaceholder")}
-          iconName="bell"
+          label={t("account_profileFieldPhone")}
+          placeholder={t("account_placeholderPhoneNumber")}
+          icon="bell"
           value=""
         />
         <TextInput
           type="password"
-          label={t("account_passwordToConfirm")}
-          placeholder={t("account_passwordToConfirmPlaceholder")}
+          label={t("account_profileFieldConfirmPassword")}
+          placeholder={t("account_placeholderPasswordToConfirm")}
           value=""
         />
       </View>

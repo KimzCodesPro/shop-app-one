@@ -13,24 +13,24 @@ export default function TabLayout() {
       <TabList asChild>
         <CustomBottomTab>
           <TabTrigger name="index" href="/" asChild>
-            <CustomBottomTabButton label={t("bottomTab_home")} iconName="home" />
+            <CustomBottomTabButton label={t("common_bottomTabHome")} iconName="home" />
           </TabTrigger>
           <TabTrigger name="myOrder" href="/myOrder" asChild>
             <CustomBottomTabButton
-              label={t("bottomTab_myOrder")}
+              label={t("common_bottomTabMyOrder")}
               iconName="truck"
             />
           </TabTrigger>
           <TabTrigger name="myCard" href="/myCard" asChild>
             <CustomBottomTabButton
-              label={t("bottomTab_myCard")}
+              label={t("common_bottomTabMyCart")}
               iconName="shopping-cart"
               badge={9}
             />
           </TabTrigger>
           <TabTrigger name="account" href="/account" asChild>
             <CustomBottomTabButton
-              label={t("bottomTab_account")}
+              label={t("common_bottomTabAccount")}
               iconName="user"
             />
           </TabTrigger>

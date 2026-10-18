@@ -59,6 +59,8 @@ const useStyles = () => {
     description: {
       marginTop: spacing.space8.height,
       color: colors.foreground.secondary,
+      textAlign: "center",
+      width: HS(303),
     },
   });
   return { colors, styles };

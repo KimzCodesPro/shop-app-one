@@ -1,8 +1,8 @@
 import { opacity } from "@/constants";
 import {
   BottomSheetBackdrop,
-  BottomSheetModal,
   BottomSheetFlatList,
+  BottomSheetModal,
   BottomSheetScrollView,
 } from "@gorhom/bottom-sheet";
 import { ComponentProps, useEffect, useMemo, useRef } from "react";
@@ -12,7 +12,14 @@ import { AppBottomSheetProps } from "./types";
 import useStyles from "./useStyles";
 
 const AppBottomSheet = (props: AppBottomSheetProps) => {
-  const { title, description, bottomSheetProps, ref, children } = props;
+  const {
+    title,
+    description,
+    bottomSheetProps,
+    ref,
+    children,
+    backDropPressBehavior = "close",
+  } = props;
 
   const { styles } = useStyles();
 
@@ -42,6 +49,7 @@ const AppBottomSheet = (props: AppBottomSheetProps) => {
       opacity={opacity.full}
       {...props}
       style={styles.backDrop}
+      pressBehavior={backDropPressBehavior}
     />
   );
 
